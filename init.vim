@@ -21,10 +21,7 @@ set undofile
 set wildmenu
 
 let g:python3_host_prog='~/.config/nvim/nvimpyenv/bin/python'
-
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-
-"autocmd FileType python <buffer> set colorcolumn=79
 
 call plug#begin()
 " Startup
@@ -63,6 +60,8 @@ Plug 'glench/vim-jinja2-syntax'
 
 Plug 'tpope/vim-surround'
 Plug 'Yggdroot/indentLine'
+
+" Syntax Checker
 Plug 'w0rp/ale'
 
 " Autocomplete
@@ -75,8 +74,6 @@ Plug 'LumaKernel/ddc-tabnine'
 
 " Formatting
 Plug 'sbdchd/neoformat'
-
-Plug 'ahmedkhalf/project.nvim'
 
 " LaTeX
 Plug 'lervag/vimtex'
@@ -126,16 +123,7 @@ nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
-" Project.vim
-lua << EOF
-require("project_nvim").setup {
-    patterns = { ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile", "package.json" },
-    show_hidden = false,
-    }
-EOF
-
 " DDC
-"source $HOME/.config/nvim/plugs/ddc.vim
 call ddc#custom#patch_global('sources', ['around'])
 call ddc#custom#patch_global('sourceOptions', {
             \ '_': {
