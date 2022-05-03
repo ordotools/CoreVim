@@ -1,216 +1,116 @@
-" corei8.github@gmail.com neovim configuration
-
-" tabs
-set tabstop=4 softtabstop=4
-set shiftwidth=4
 set expandtab
-set smartindent
-
 set exrc
 set guicursor=i:block
+set hidden
+set incsearch
+set nobackup
+set noerrorbells
+set nohlsearch
+set noshowmode
+set noswapfile
+set nowrap
 set nu
 set relativenumber
-set nohlsearch
-set hidden
-set noerrorbells
-set nowrap
-
-" file history
-set noswapfile
-set nobackup
-set undofile
-
-" search
-set incsearch
-
-" gui
-set termguicolors
 set scrolloff=8
-set noshowmode
-set colorcolumn=79
+set shiftwidth=4
 set signcolumn=yes
+set smartindent
+set tabstop=4 softtabstop=4
+set termguicolors
+set undofile
+set wildmenu
 
-set completeopt=menuone,noinsert,noselect
+let g:python3_host_prog='~/.config/nvim/nvimpyenv/bin/python'
 
-call plug#begin('~/.vim/plugged')
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-" File managing
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'ryanoasis/vim-devicons'
-Plug 'Xuyuanp/nerdtree-git-plugin'
+"autocmd FileType python <buffer> set colorcolumn=79
+
+call plug#begin()
+" Startup
+Plug 'mhinz/vim-startify'
+
+" NerdTree
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' } |
+            \ Plug 'ryanoasis/vim-devicons' |
+            \ Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " Git
 Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 
-" UI
-Plug 'chriskempson/base16-vim'
+" AirLine
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-" telescope 
+" File management
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-lua/plenary.nvim'
 
-" Commenting
+" Comments
 Plug 'scrooloose/nerdcommenter'
-
-" colorscheme
-Plug 'gruvbox-community/gruvbox'
-Plug 'joshdick/onedark.vim'
-Plug 'dracula/vim'
-
-" comments
 Plug 'jbgutierrez/vim-better-comments'
 
-" Plug 'sheerun/vim-polyglot'
-" Plug 'mattn/emmet-vim'
-" Plug 'tpope/vim-commentary'
+" Colorschemes
+Plug 'chriskempson/base16-vim'
+"Plug 'gruvbox-community/gruvbox'
+Plug 'joshdick/onedark.vim'
+Plug 'sonph/onehalf'
+
+" Syntax highlighting
+Plug 'sheerun/vim-polyglot'
+Plug 'glench/vim-jinja2-syntax'
+
 Plug 'tpope/vim-surround'
-" Plug 'dense-analysis/ale'
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Plug 'preservim/tagbar'
-" Plug 'junegunn/fzf' | Plug 'junegunn/fzf.vim'
-" Plug 'SirVer/ultisnips'
-
-" Better Visual Guide
 Plug 'Yggdroot/indentLine'
-
-  " syntax check
 Plug 'w0rp/ale'
 
-  " Autocomplete
-Plug 'ncm2/ncm2'
-Plug 'roxma/nvim-yarp'
-Plug 'ncm2/ncm2-bufword'
-Plug 'ncm2/ncm2-path'
-Plug 'ncm2/ncm2-jedi'
+" Autocomplete
+Plug 'Shougo/ddc.vim'
+Plug 'vim-denops/denops.vim'
+Plug 'Shougo/ddc-around'
+Plug 'Shougo/ddc-matcher_head'
+Plug 'Shougo/ddc-sorter_rank'
+Plug 'LumaKernel/ddc-tabnine'
 
-" Formater
-Plug 'Chiel92/vim-autoformat'
+" Formatting
+Plug 'sbdchd/neoformat'
 
-" Project Management
 Plug 'ahmedkhalf/project.nvim'
+
+" LaTeX
+Plug 'lervag/vimtex'
 
 call plug#end()
 
-set termguicolors
-highlight Normal guibg=none
-let g:onedark_italic=1
-colorscheme onedark
-set background=dark
-" colorscheme = 'dracula'
-" colorscheme_bg = 'dark'
-hi Normal guibg=NONE ctermbg=NONE
-let g:terminal_ansi_colors = [
-    \ '#282828', '#cc241d', '#98971a', '#d79921',
-    \ '#458588', '#b16286', '#689d6a', '#a89984',
-    \ '#928374', '#fb4934', '#b8bb26', '#fabd2f',
-    \ '#83a598', '#d3869b', '#8ec07c', '#ebdbb2',
-\]
-
-let mapleader = " "
-" nnoremap <leader>ps :lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ")})<CR>
-
-" easier way to choose buffers:
-nnoremap <leader>b :b<CR>
-
-" Vim Fugitive
-nmap <leader>gh :diffget //3<CR>
-nmap <leader>gu :diffget //3<CR>
-nmap <leader>gs :G<CR>
-
-" NerdTree
-nnoremap <leader>n :NERDTreeToggle<CR>
-let NERDTreeShowHidden=1
-let NERDTreeRespectWildIgnore=1
-let g:NERDTreeGitStatusUseNerdFonts = 1
-" open NerdTree on startup
-" Start NERDTree and leave the cursor in it.
-autocmd VimEnter * NERDTree
-"autocmd StdinReadPre * let s:std_in=1
-"autocmd VimEnter * if argc() == 0 && !exists(“s:std_in”) | NERDTree | endif
-" open NerdTree on the current file
-nnoremap <silent> <Leader>v :NERDTreeFind<CR>
-" close NerdTree upon opening a file
-let NERDTreeQuitOnOpen = 1
-" close tab if the only remaining window is NerdTree
-" Exit Vim if NERDTree is the only window remaining in the only tab.
-autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
-" autocmd bufenter * if (winnr(“$”) == 1 && exists(“b:NERDTreeType”) && b:NERDTreeType == “primary”) | q | endif
-" delete buffer of deleted file in NerdTree
-let NERDTreeAutoDeleteBuffer = 2
-" some stuff for looks
-let NERDTreeMinimalUI = 1
-let NERDTreeDirArrows = 1
-
-" NerdTree git plugin icon adjustment
-let g:NERDTreeGitStatusIndicatorMapCustom = {
-                \ 'Modified'  :'✹',
-                \ 'Staged'    :'✚',
-                \ 'Untracked' :'✭',
-                \ 'Renamed'   :'➜',
-                \ 'Unmerged'  :'═',
-                \ 'Deleted'   :'✖',
-                \ 'Dirty'     :'✗',
-                \ 'Ignored'   :'☒',
-                \ 'Clean'     :'✔︎',
-                \ 'Unknown'   :'?',
-                \ }
-
-" Fern.vim
-" nmap <leader>n :Fern . -drawer -toggle<CR>
-
-" AirLine
-let g:airline#extensions#tabline#enabled = 1 " Enable the list of buffers
-let g:airline_theme='onedark'
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
-" powerline symbols
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
-let g:airline_symbols.branch = '  '
-let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr = ' ☰ '
-let g:airline_symbols.maxlinenr = '  '
-let g:airline_symbols.dirty=' ⚡ '
-
-" Python 
-augroup python_files
-    autocmd!
-    autocmd FileType python setlocal noexpandtab
-    autocmd FileType python set tabstop=4
-    autocmd FileType python set shiftwidth=4
-augroup END
-
 filetype plugin indent on
 
-" vim-autoformat
-noremap <F3> :Autoformat<CR>
+let mapleader = " "
 
-" NCM2
-augroup NCM2
+" colorschemes
+"source $HOME/.config/nvim/plugs/base16-onedark.vim
+source $HOME/.config/nvim/plugs/onedark.vim
+"source $HOME/.config/nvim/plugs/onehalfdark.vim
+
+" Vim Fugitive
+source $HOME/.config/nvim/plugs/fugitive.vim
+
+" NerdTree
+source $HOME/.config/nvim/plugs/nerdtree.vim
+
+" AirLine
+source $HOME/.config/nvim/plugs/airline.vim
+
+" Python
+source $HOME/.config/nvim/filetypes/python.vim
+
+" neoformat
+noremap <leader>af :Neoformat<CR>
+augroup fmt
   autocmd!
-  " enable ncm2 for all buffers
-  autocmd BufEnter * call ncm2#enable_for_buffer()
-  " :help Ncm2PopupOpen for more information
-  set completeopt=noinsert,menuone,noselect
-  " When the <Enter> key is pressed while the popup menu is visible, it only
-  " hides the menu. Use this mapping to close the menu and also start a new line.
-  inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
-  " uncomment this block if you use vimtex for LaTex
-  autocmd Filetype tex call ncm2#register_source({
-            \ 'name': 'vimtex',
-            \ 'priority': 8,
-            \ 'scope': ['tex'],
-            \ 'mark': 'tex',
-            \ 'word_pattern': '\w+',
-            \ 'complete_pattern': g:vimtex#re#ncm2,
-            \ 'on_complete': ['ncm2#on_complete#omni', 'vimtex#complete#omnifunc'],
-            \ })
+  autocmd BufWritePre * undojoin | Neoformat
 augroup END
+let g:shfmt_opt="-ci" " zsh 
 
 " Ale
 let g:ale_lint_on_enter = 0
@@ -220,31 +120,51 @@ let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_linters = {'python': ['flake8']}
 
-" Autocomplete for ncm2
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
-" Plenary
-" local async = require "plenary.async
-
 " Telescope
-" Find files using Telescope command-line sugar.
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
+" Project.vim
 lua << EOF
-  require("project_nvim").setup {
+require("project_nvim").setup {
     patterns = { ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile", "package.json" },
     show_hidden = false,
- }
+    }
 EOF
 
-" Commands for vim-plug:
-" PlugInstall
-" PlugUpdate
-" PlugStatus
-" PlugClean
-" PlugUpgrade
-
+" DDC
+"source $HOME/.config/nvim/plugs/ddc.vim
+call ddc#custom#patch_global('sources', ['around'])
+call ddc#custom#patch_global('sourceOptions', {
+            \ '_': {
+                \   'matchers': ['matcher_head'],
+                \   'sorters': ['sorter_rank']},
+                \ })
+call ddc#custom#patch_global('sourceOptions', {
+            \ 'around': {'mark': 'A'},
+            \ })
+call ddc#custom#patch_global('sourceParams', {
+            \ 'around': {'maxSize': 500},
+            \ })
+call ddc#custom#patch_filetype(['c', 'cpp'], 'sources', ['around', 'clangd'])
+call ddc#custom#patch_filetype(['c', 'cpp'], 'sourceOptions', {
+            \ 'clangd': {'mark': 'C'},
+            \ })
+call ddc#custom#patch_filetype('markdown', 'sourceParams', {
+            \ 'around': {'maxSize': 100},
+            \ })
+inoremap <silent><expr> <TAB>
+            \ ddc#map#pum_visible() ? '<C-n>' :
+            \ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ?
+            \ '<TAB>' : ddc#map#manual_complete()
+inoremap <expr><S-TAB>  ddc#map#pum_visible() ? '<C-p>' : '<C-h>'
+call ddc#custom#patch_global('sources', ['tabnine'])
+call ddc#custom#patch_global('sourceOptions', {
+            \ 'tabnine': {
+                \   'mark': 'TN',
+                \   'maxCandidates': 5,
+                \   'isVolatile': v:true,
+                \ }})
+call ddc#enable()
