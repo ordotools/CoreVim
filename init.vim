@@ -57,10 +57,12 @@ Plug 'jbgutierrez/vim-better-comments'
 Plug 'chriskempson/base16-vim'
 "Plug 'gruvbox-community/gruvbox'
 Plug 'joshdick/onedark.vim'
+Plug 'olimorris/onedarkpro.nvim'
 Plug 'sonph/onehalf'
 
 " Syntax highlighting
-Plug 'sheerun/vim-polyglot'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+"Plug 'sheerun/vim-polyglot'
 Plug 'glench/vim-jinja2-syntax'
 
 Plug 'tpope/vim-surround'
@@ -90,9 +92,12 @@ filetype plugin indent on
 let mapleader = " "
 
 " colorschemes
+set termguicolors
 "source $HOME/.config/nvim/plugs/base16-onedark.vim
-source $HOME/.config/nvim/plugs/onedark.vim
+"source $HOME/.config/nvim/plugs/onedark.vim
 "source $HOME/.config/nvim/plugs/onehalfdark.vim
+source $HOME/.config/nvim/plugs/onedarkpro.lua
+"source $HOME/.config/nvim/plugs/onedarkpro.vim
 
 " Vim Fugitive
 source $HOME/.config/nvim/plugs/fugitive.vim
