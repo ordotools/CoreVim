@@ -36,9 +36,14 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' } |
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
-" AirLine
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+" Statusline
+"Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline-themes'
+Plug 'nvim-lualine/lualine.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
+
+" Tabline
+Plug 'kdheepak/tabline.nvim'
 
 " File management
 Plug 'nvim-telescope/telescope.nvim'
@@ -96,7 +101,10 @@ source $HOME/.config/nvim/plugs/fugitive.vim
 source $HOME/.config/nvim/plugs/nerdtree.vim
 
 " AirLine
-source $HOME/.config/nvim/plugs/airline.vim
+"source $HOME/.config/nvim/plugs/airline.vim
+
+" LuaLine
+source $HOME/.config/nvim/plugs/lualine.lua
 
 " Python
 source $HOME/.config/nvim/filetypes/python.vim
