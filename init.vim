@@ -23,7 +23,8 @@ set wildmenu
 let g:python3_host_prog='~/.config/nvim/nvimpyenv/bin/python'
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-call plug#begin('$HOME/.config/nvim/plugged')
+"call plug#begin('$HOME/.config/nvim/plugged')
+call plug#begin()
 " Startup
 Plug 'mhinz/vim-startify'
 
@@ -78,6 +79,7 @@ Plug 'Shougo/ddc-around'
 Plug 'Shougo/ddc-matcher_head'
 Plug 'Shougo/ddc-sorter_rank'
 Plug 'LumaKernel/ddc-tabnine'
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Formatting
 Plug 'sbdchd/neoformat'
@@ -96,7 +98,7 @@ set termguicolors
 "source $HOME/.config/nvim/plugs/base16-onedark.vim
 "source $HOME/.config/nvim/plugs/onedark.vim
 "source $HOME/.config/nvim/plugs/onehalfdark.vim
-source $HOME/.config/nvim/plugs/onedarkpro.lua
+luafile $HOME/.config/nvim/plugs/onedarkpro.lua
 "source $HOME/.config/nvim/plugs/onedarkpro.vim
 
 " Vim Fugitive
@@ -109,7 +111,7 @@ source $HOME/.config/nvim/plugs/nerdtree.vim
 "source $HOME/.config/nvim/plugs/airline.vim
 
 " LuaLine
-source $HOME/.config/nvim/plugs/lualine.lua
+luafile $HOME/.config/nvim/plugs/lualine.lua
 
 " Python
 source $HOME/.config/nvim/filetypes/python.vim
