@@ -23,7 +23,7 @@ set wildmenu
 let g:python3_host_prog='~/.config/nvim/nvimpyenv/bin/python'
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-call plug#begin()
+call plug#begin('$HOME/.config/nvim/plugged')
 " Startup
 Plug 'mhinz/vim-startify'
 
@@ -135,6 +135,20 @@ nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+" Treesitter
+lua << EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = { "python", "css", "html", "javascript", "vim", "bash", "lua" },
+  sync_install = true,
+  ignore_install = {},
+  highlight = {
+    enable = true,
+    disable = {},
+    additional_vim_regex_highlighting = false,
+  },
+}
+EOF
 
 " DDC
 call ddc#custom#patch_global('sources', ['around'])
