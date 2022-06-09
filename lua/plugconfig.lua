@@ -252,13 +252,13 @@ augroup END
 require('gitsigns').setup()
 
 --NeoFormat
-vim.cmd([[
-augroup fmt
-  autocmd!
-  autocmd BufWritePre * undojoin | Neoformat
-augroup END
-let g:shfmt_opt="-ci" " zsh 
-]])
+--vim.cmd([[
+--augroup fmt
+  --autocmd!
+  --autocmd BufWritePre * undojoin | Neoformat
+--augroup END
+--let g:shfmt_opt="-ci" " zsh
+--]])
 
 --Dashboard
 vim.cmd([[
