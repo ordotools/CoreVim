@@ -20,7 +20,7 @@ require'nvim-treesitter.configs'.setup {
   ignore_install = {},
   highlight = {
     enable = true,
-    disable = {"latex"},
+    disable = {"latex"}, -- this is handled by vimtex
     additional_vim_regex_highlighting = false,
   },
   indent = {
@@ -51,12 +51,6 @@ require('bufferline').setup{
 }
 
 -- nvimTree
-vim.cmd([[
-nnoremap <leader>n :NvimTreeToggle<CR>
-nnoremap <leader>r :NvimTreeRefresh<CR>
-nnoremap <leader>q :NvimTreeFindFile<CR>
-]])
-
 require'nvim-tree'.setup {
   auto_reload_on_write = true,
   create_in_closed_folder = false,
@@ -156,7 +150,7 @@ require'nvim-tree'.setup {
   },
   diagnostics = {
     enable = true,
-    show_on_dirs = false,
+    show_on_dirs = true,
     icons = {
       hint = "",
       info = "",
@@ -175,12 +169,6 @@ require'nvim-tree'.setup {
     timeout = 400,
   },
   actions = {
-    use_system_clipboard = true,
-    change_dir = {
-      enable = true,
-      global = false,
-      restrict_above_cwd = false,
-    },
     expand_all = {
       max_folder_discovery = 300,
     },
@@ -208,23 +196,10 @@ require'nvim-tree'.setup {
     prefix = "[FILTER]: ",
     always_show_folders = true,
   },
-  log = {
-    enable = false,
-    truncate = false,
-    types = {
-      all = false,
-      config = false,
-      copy_paste = false,
-      diagnostics = false,
-      git = false,
-      profile = false,
-      --watcher = false,
-    },
-  },
 }
 
 vim.cmd([[
-highlight NvimTreeFolderIcon guibg=blue
+"highlight NvimTreeFolderIcon guibg=blue
 ]])
 
 --Catppuccin
@@ -237,12 +212,12 @@ catppuccin.setup {
         nvimtree = {
             enabled = true,
             show_root = true,         -- makes the root folder not transparent
-            transparent_panel = true, -- make the panel transparent
+            transparent_panel = false, -- make the panel transparent
           },
           native_lsp = {
             enabled = true,
             virtual_text = {
-                errors = "italic",
+                errors = "bold",
                 hints = "italic",
                 warnings = "italic",
                 information = "italic",
@@ -273,18 +248,20 @@ autocmd FileType text,markdown,tex setlocal textwidth=80
 augroup END
 ]])
 
---GitGutter
---vim.cmd([[
---set updatetime=100 "TODO there should be a better place for this
---highlight GitGutterAdd    guifg=#009900 ctermfg=2
---highlight GitGutterChange guifg=#bbbb00 ctermfg=3
---highlight GitGutterDelete guifg=#ff2222 ctermfg=1
---"GitGutterAddLineNr          " default: links to CursorLineNr
---"GitGutterChangeLineNr       " default: links to CursorLineNr
---"GitGutterDeleteLineNr       " default: links to CursorLineNr
---"GitGutterChangeDeleteLineNr " default: links to CursorLineNr
---]])
-
 --GitSigns
 require('gitsigns').setup()
+
+--NeoFormat
+vim.cmd([[
+augroup fmt
+  autocmd!
+  autocmd BufWritePre * undojoin | Neoformat
+augroup END
+let g:shfmt_opt="-ci" " zsh 
+]])
+
+--Dashboard
+vim.cmd([[
+let g:dashboard_default_executive ='telescope'
+]])
 

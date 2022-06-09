@@ -12,6 +12,8 @@ set.swapfile = false
 set.wrap = false
 set.nu = true
 set.relativenumber = true
+set.cursorline = true
+set.cursorlineopt = 'number'
 set.scrolloff = 8
 set.shiftwidth = 4
 set.signcolumn = 'yes'
@@ -34,15 +36,7 @@ require('plugins')
 require('plugconfig')
 require('keymapping')
 require('lsp-config')
+--require('fileconfig.vim')
 
 -- nightfly, onedarkpro, onedark
 vim.cmd[[colorscheme catppuccin]]
-
-vim.cmd([[
-source $HOME/.config/nvim/config_filetypes/python.vim
-source $HOME/.config/nvim/config_plugs/dashboard.vim
-source $HOME/.config/nvim/config_plugs/fugitive.vim
-source $HOME/.config/nvim/config_plugs/neoformat.vim
-source $HOME/.config/nvim/config_plugs/telescope.vim
-]])
-
