@@ -1,17 +1,21 @@
+require('configs.nvimtree')
+require('configs.neoformat')
+require('configs.catppuccin')
+
 --VimTeX
 vim.g.vimtex_view_method = 'skim'
 
 --Nightfly
---vim.g.nightflyCursorColor = 1
---vim.g.nightflyItalics = 1
---vim.g.nightflyTransparent = 0
---vim.g.nightflyUnderlineMatchParen = 1
---vim.g.nightflyWinSeparator = 2
---vim.opt.fillchars = { horiz = '━', horizup = '┻', horizdown = '┳', vert = '┃', vertleft = '┫', vertright = '┣', verthoriz = '╋', }
+vim.g.nightflyCursorColor = 1
+vim.g.nightflyItalics = 1
+vim.g.nightflyTransparent = 0
+vim.g.nightflyUnderlineMatchParen = 1
+vim.g.nightflyWinSeparator = 2
+vim.opt.fillchars = { horiz = '━', horizup = '┻', horizdown = '┳', vert = '┃', vertleft = '┫', vertright = '┣', verthoriz = '╋', }
 
 --OneDarkPro
---vim.o.background = "dark" -- to load onedark
---require("onedarkpro").load()
+vim.o.background = "dark" -- to load onedark
+--require("onedarkpro").load() -- make it only load if it is used?
 
 --Treesitter
 require'nvim-treesitter.configs'.setup {
@@ -32,236 +36,56 @@ require'nvim-treesitter.configs'.setup {
 
 -- Feline
 require('feline').setup({
-	components = require('catppuccin.core.integrations.feline'),
+  components = require('catppuccin.core.integrations.feline'),
 })
 
 -- Bufferline
 require('bufferline').setup{
-    options = {
-        separator_style = 'thick',
-        indicator_icon = '▎',
-        buffer_close_icon = '',
-        modified_icon = '●',
-        close_icon = '',
-        left_trunc_marker = '',
-        right_trunc_marker = '',
-        offsets = { { filetype = "NvimTree", text = "", padding = 1 } },
-        show_close_icon = false,
-    }
+  options = {
+    separator_style = 'slant', --thick, thin, padded_slant
+    indicator_icon = '▎',
+    buffer_close_icon = '',
+    modified_icon = '●',
+    close_icon = '',
+    left_trunc_marker = '',
+    right_trunc_marker = '',
+    offsets = { { filetype = "NvimTree", text = "", padding = 1 } },
+    show_close_icon = false,
+  }
 }
-
--- nvimTree
-require'nvim-tree'.setup {
-  auto_reload_on_write = true,
-  create_in_closed_folder = false,
-  disable_netrw = false,
-  hijack_cursor = true,
-  hijack_netrw = true,
-  hijack_unnamed_buffer_when_opening = false,
-  ignore_buffer_on_setup = false,
-  open_on_setup = true,
-  open_on_setup_file = false,
-  open_on_tab = false,
-  sort_by = "name",
-  update_cwd = false,
-  reload_on_bufenter = true,
-  respect_buf_cwd = false,
-  view = {
-    adaptive_size = false,
-    width = 30,
-    height = 30,
-    hide_root_folder = false,
-    side = "left",
-    preserve_window_proportions = false,
-    number = false,
-    relativenumber = false,
-    signcolumn = "yes",
-    mappings = {
-      custom_only = false,
-      list = {
-      },
-    },
-  },
-  renderer = {
-    add_trailing = false,
-    group_empty = false,
-    highlight_git = false,
-    highlight_opened_files = "none",
-    root_folder_modifier = ":~",
-    indent_markers = {
-      enable = true,
-      icons = {
-        corner = "└ ",
-        edge = "│ ",
-        --item = "│ ",
-        none = "  ",
-      },
-    },
-    icons = {
-      webdev_colors = true,
-      git_placement = "before",
-      padding = " ",
-      symlink_arrow = " ➛ ",
-      show = {
-        file = true,
-        folder = true,
-        folder_arrow = true,
-        git = true,
-      },
-      glyphs = {
-        default = "",
-        symlink = "",
-        folder = {
-          arrow_closed = "",
-          arrow_open = "",
-          default = "",
-          open = "",
-          empty = "",
-          empty_open = "",
-          symlink = "",
-          symlink_open = "",
-        },
-        git = {
-          unstaged = "✗",
-          staged = "✓",
-          unmerged = "",
-          renamed = "➜",
-          untracked = "★",
-          deleted = "",
-          ignored = "◌",
-        },
-      },
-    },
-    special_files = { "Cargo.toml", "Makefile", "README.md", "readme.md" },
-  },
-  hijack_directories = {
-    enable = true,
-    auto_open = true,
-  },
-  update_focused_file = {
-    enable = false,
-    update_cwd = false,
-    ignore_list = {},
-  },
-  ignore_ft_on_setup = {},
-  system_open = {
-    cmd = "",
-    args = {},
-  },
-  diagnostics = {
-    enable = true,
-    show_on_dirs = true,
-    icons = {
-      hint = "",
-      info = "",
-      warning = "",
-      error = "",
-    },
-  },
-  filters = {
-    dotfiles = false,
-    custom = {},
-    exclude = {},
-  },
-  git = {
-    enable = true,
-    ignore = true,
-    timeout = 400,
-  },
-  actions = {
-    expand_all = {
-      max_folder_discovery = 300,
-    },
-    open_file = {
-      quit_on_open = true,
-      resize_window = true,
-      window_picker = {
-        enable = true,
-        chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
-        exclude = {
-          filetype = { "notify", "packer", "qf", "diff", "fugitive", "fugitiveblame" },
-          buftype = { "nofile", "terminal", "help" },
-        },
-      },
-    },
-    remove_file = {
-      close_window = true,
-    },
-  },
-  trash = {
-    cmd = "trash",
-    require_confirm = true,
-  },
-  live_filter = {
-    prefix = "[FILTER]: ",
-    always_show_folders = true,
-  },
-}
-
-vim.cmd([[
-"highlight NvimTreeFolderIcon guibg=blue
-]])
-
---Catppuccin
-local catppuccin = require("catppuccin")
-
-catppuccin.setup {
-    transparent_background = false,
-    integration = {
-        gitsigns = true,
-        nvimtree = {
-            enabled = true,
-            show_root = true,         -- makes the root folder not transparent
-            transparent_panel = false, -- make the panel transparent
-          },
-          native_lsp = {
-            enabled = true,
-            virtual_text = {
-                errors = "bold",
-                hints = "italic",
-                warnings = "italic",
-                information = "italic",
-            },
-            underlines = {
-                errors = "underline",
-                hints = "underline",
-                warnings = "underline",
-                information = "underline",
-            },
-        },
-        bufferline = true,
-    }
-}
-vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
-
---Deoplete
---vim.cmd([[
---inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
---call deoplete#custom#var('tabnine', { 'line_limit': 500, 'max_num_results': 5, })
---]])
 
 -- max line length for tex, text, and markdown
-vim.cmd([[
-augroup my_textwidth
-au!
-autocmd FileType text,markdown,tex setlocal textwidth=80
-augroup END
-]])
+--vim.cmd([[
+--augroup my_textwidth
+--au!
+--autocmd FileType text,markdown,tex setlocal textwidth=80
+--augroup END
+--]])
+local augroup = vim.api.nvim_create_augroup('my_textwidth', {clear = true})
+
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'text,markdown,tex',
+  group = augroup,
+  command = 'setlocal textwidth=80'
+})
 
 --GitSigns
 require('gitsigns').setup()
 
---NeoFormat
---vim.cmd([[
---augroup fmt
-  --autocmd!
-  --autocmd BufWritePre * undojoin | Neoformat
---augroup END
---let g:shfmt_opt="-ci" " zsh
---]])
-
 --Dashboard
-vim.cmd([[
-let g:dashboard_default_executive ='telescope'
-]])
+vim.g.dashboard_default_executive = 'telescope'
 
+--IndentBlankline
+require("indent_blankline").setup {
+    show_current_context = true,
+    show_current_context_start = true,
+}
+
+--Better Comments
+local HighlightTags = {}
+HighlightTags["!"] = {guifg='#ff2d00'}
+HighlightTags["?"] = {guifg='#1f98ff'}
+HighlightTags["todo"] = {guifg='#ff8c00'}
+HighlightTags["TODO"] = {guifg='#ff8c00'}
+HighlightTags["*"] = {guifg='#98C379'}
+vim.g.highlightTags = HighlightTags

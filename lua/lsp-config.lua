@@ -6,10 +6,9 @@ require("nvim-lsp-installer").setup {
 }
 
 local lspconfig = require('lspconfig')
-local servers = { 'pyright', 'sumneko_lua' }
+local servers = { 'pyright', 'sumneko_lua', 'texlab' }
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
-    -- on_attach = my_custom_on_attach,
     capabilities = capabilities,
   }
 end

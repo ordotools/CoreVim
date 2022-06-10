@@ -37,14 +37,17 @@ return require('packer').startup(function()
         requires = 'kyazdani42/nvim-web-devicons'
     }
 
-use {
-    "williamboman/nvim-lsp-installer",
-    "neovim/nvim-lspconfig",
-}
+    use {
+        "williamboman/nvim-lsp-installer",
+        "neovim/nvim-lspconfig",
+    }
 
     use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
+
     use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
+
     use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
+
     use 'L3MON4D3/LuaSnip' -- Snippets plugin
 
     use {
@@ -80,8 +83,14 @@ use {
 
     use {
         'lervag/vimtex',
-        ft = 'latex',
+        ft = 'tex',
     }
+
+     use 'lukas-reineke/indent-blankline.nvim'
+
+    use 'bluz71/vim-nightfly-guicolors'
+
+    use 'olimorris/onedarkpro.nvim'
 
     if PACKER_BOOTSTRAP then
         require('packer').sync()
