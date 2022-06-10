@@ -42,7 +42,7 @@ require('feline').setup({
 -- Bufferline
 require('bufferline').setup{
   options = {
-    separator_style = 'slant', --thick, thin, padded_slant
+    separator_style = 'thin', --thick, thin, slant, padded_slant
     indicator_icon = '▎',
     buffer_close_icon = '',
     modified_icon = '●',
