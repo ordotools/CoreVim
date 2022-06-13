@@ -26,7 +26,10 @@ nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
-"Escape terminal mode -- THIS IS NOT WORKING!!!
+" todo-comments
+nnoremap <leader>ft <cmd>TodoTelescope<cr>
+
+" Escape terminal mode -- THIS IS NOT WORKING!!!
 tnoremap <Esc> <C-\><C-n>
 
 " LaTeX bindings
