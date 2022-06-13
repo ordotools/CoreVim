@@ -1,16 +1,21 @@
 --NeoFormat
+vim.g.neoformat_basic_format_align = 1
+vim.g.neoformat_basic_format_retab = 1
+vim.g.neoformat_basic_format_trim = 1
+vim.g.neoformat_run_all_formatters = 1
+
 vim.cmd([[
 
 " Enable alignment
-let g:neoformat_basic_format_align = 1
+""let g:neoformat_basic_format_align = 1
 
 " Enable tab to spaces conversion
-let g:neoformat_basic_format_retab = 1
+""let g:neoformat_basic_format_retab = 1
 
 " Enable trimmming of trailing whitespace
-let g:neoformat_basic_format_trim = 1
+""let g:neoformat_basic_format_trim = 1
 
-let g:neoformat_run_all_formatters = 1
+""let g:neoformat_run_all_formatters = 1
 "let g:neoformat_only_msg_on_error = 1
 
 let g:neoformat_python_autopep8 = {
@@ -29,8 +34,14 @@ let g:neoformat_enabled_lua = ['stylua']
 
 augroup fmt
   autocmd!
-  autocmd BufWritePre * undojoin | Neoformat
+  autocmd BufWritePre * Neoformat
 augroup END
-let g:shfmt_opt="-ci" " zsh
+
+""let g:shfmt_opt="-ci" " zsh
+
 ]])
 
+--vim.g.neoformat_enable_python = "autopep8"
+--vim.g.neoformat_enabled_lua = "stylua"
+
+vim.g.shtf_opt = "-ci"

@@ -26,5 +26,12 @@ nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
-]])
+"Escape terminal mode -- THIS IS NOT WORKING!!!
+tnoremap <Esc> <C-\><C-n>
 
+" LaTeX bindings
+vmap <leader>xb c\textbf{<C-r>"}<ESC>
+nmap <leader>xb c\textbf{<C-r>"}<left>
+vmap <leader>xi c\textit{<C-r>"}<ESC>
+nmap <leader>xi c\textit{<C-r>"}<left>
+]])

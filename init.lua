@@ -13,30 +13,40 @@ set.wrap = false
 set.nu = true
 set.relativenumber = true
 set.cursorline = true
-set.cursorlineopt = 'number'
+set.cursorlineopt = "number"
 set.scrolloff = 8
 set.shiftwidth = 4
-set.signcolumn = 'yes'
+set.signcolumn = "yes"
 set.smartindent = true
 set.tabstop = 4
 set.softtabstop = 4
 set.termguicolors = true
 set.undofile = true
 set.wildmenu = true
-vim.g.python3_host_prog = '~/.config/nvim/nvimpyenv/bin/python'
-vim.g.mapleader = ' '
+vim.g.python3_host_prog = "~/.config/nvim/nvimpyenv/bin/python"
+vim.g.mapleader = " "
 vim.g.syntax = true
+vim.o.updatetime = 250
 set.termguicolors = true
 
-vim.cmd([[
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-]])
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "*",
+	command = "setlocal formatoptions-=c formatoptions-=r formatoptions-=o",
+})
 
-require('plugins')
-require('plugconfig')
-require('keymapping')
-require('lsp-config')
+--vim.cmd([[autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]])
+
+vim.api.nvim_create_autocmd("CursorHold,CursorHoldI", {
+	pattern = "*",
+	command = "lua vim.diagnostic.open_float(nil, {focus=false})",
+})
+
+require("plugins")
+require("plugconfig")
+require("keymapping")
+require("lsp-config")
+require("cmp-config")
 --require('fileconfig.vim')
 
 -- nightfly, onedarkpro, onedark
-vim.cmd[[colorscheme catppuccin]]
+vim.cmd([[colorscheme catppuccin]])
