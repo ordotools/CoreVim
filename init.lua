@@ -28,7 +28,7 @@ vim.g.mapleader = " "
 vim.g.syntax = true
 vim.o.updatetime = 250
 set.termguicolors = true
-set.cmdheight = 0
+--set.cmdheight = 0
 
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "*",
