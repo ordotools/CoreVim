@@ -2,6 +2,9 @@ local catppuccin = require("catppuccin")
 
 catppuccin.setup {
     transparent_background = false,
+    styles = {
+        comments = "NONE",
+    },
     integration = {
         gitsigns = true,
         nvimtree = {
@@ -29,6 +32,7 @@ catppuccin.setup {
                 colored_indent_levels = false,
         },
         bufferline = true,
+        lsp_trouble = true,
     }
 }
 vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
