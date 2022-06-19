@@ -1,5 +1,11 @@
 -- nvimTree
 require'nvim-tree'.setup {
+  respect_buf_cwd = true,
+  update_cwd = true,
+  update_focused_file = {
+    enable = true,
+    update_cwd = true
+  },
   auto_reload_on_write = true,
   create_in_closed_folder = false,
   disable_netrw = false,
@@ -11,9 +17,7 @@ require'nvim-tree'.setup {
   open_on_setup_file = false,
   open_on_tab = false,
   sort_by = "name",
-  update_cwd = false,
   reload_on_bufenter = true,
-  respect_buf_cwd = false,
   view = {
     adaptive_size = false,
     width = 30,
@@ -85,11 +89,6 @@ require'nvim-tree'.setup {
   hijack_directories = {
     enable = true,
     auto_open = true,
-  },
-  update_focused_file = {
-    enable = false,
-    update_cwd = false,
-    ignore_list = {},
   },
   ignore_ft_on_setup = {},
   system_open = {

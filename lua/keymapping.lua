@@ -20,11 +20,16 @@ nnoremap <leader>q :NvimTreeFindFile<CR>
 " Neoformat
 noremap <leader>af :Neoformat<CR>
 
-"Telescope
+" Telescope
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+nnoremap <leader>fP <cmd>Telescope projects<cr>
+nnoremap <leader>fF <cmd>Telescope find_project_files<cr>
+nnoremap <leader>fB <cmd>Telescope browse_project_files<cr>
+nnoremap <leader>fR <cmd>Telescope recent_project_files<cr>
+nnoremap <leader>fW <cmd>Telescope change_working_directory<cr>
 
 " todo-comments
 nnoremap <leader>ft <cmd>TodoTelescope<cr>

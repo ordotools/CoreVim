@@ -101,6 +101,13 @@ return require("packer").startup(function()
 
 	use("olimorris/onedarkpro.nvim")
 
+	use {
+		"ahmedkhalf/project.nvim",
+		config = function()
+		require("project_nvim").setup {}
+	  end
+	}
+
 	use({
 		"folke/trouble.nvim",
 		requires = "kyazdani42/nvim-web-devicons",

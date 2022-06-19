@@ -4,6 +4,7 @@ require("configs.catppuccin")
 
 --VimTeX
 vim.g.vimtex_view_method = "skim"
+vim.g.vimtex_compiler_engine = "lualatex"
 
 --Nightfly
 vim.g.nightflyCursorColor = 1
@@ -37,6 +38,7 @@ require('telescope').setup{
   extensions = {
   }
 }
+require('telescope').load_extension('projects')
 
 --Treesitter
 require("nvim-treesitter.configs").setup({
@@ -109,11 +111,8 @@ require("indent_blankline").setup({
 	show_current_context_start = true,
 })
 
---Better Comments
---local HighlightTags = {}
---HighlightTags["!"] = { guifg = "#ff2d00" }
---HighlightTags["?"] = { guifg = "#1f98ff" }
---HighlightTags["todo"] = { guifg = "#ff8c00" }
---HighlightTags["TODO"] = { guifg = "#ff8c00" }
---HighlightTags["*"] = { guifg = "#98C379" }
---vim.g.highlightTags = HighlightTags
+-- Project_Nvim
+local project_nvim = require("project_nvim")
+local recent_projects = project_nvim.get_recent_projects()
+
+print(vim.inspect(recent_projects))
