@@ -92,7 +92,7 @@ return require("packer").startup(function()
 
 	use({
 		"lervag/vimtex",
-		ft = "tex",
+		--ft = "tex",
 	})
 
 	use("lukas-reineke/indent-blankline.nvim")
