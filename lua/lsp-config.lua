@@ -1,4 +1,5 @@
 local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
 capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
 
 require("nvim-lsp-installer").setup({
@@ -12,7 +13,7 @@ for type, icon in pairs(signs) do
 end
 
 local lspconfig = require("lspconfig")
-local servers = { "jedi_language_server", "sumneko_lua", "texlab" }
+local servers = { "jedi_language_server", "sumneko_lua", "texlab", "html", "emmet_ls" }
 for _, lsp in ipairs(servers) do
 	lspconfig[lsp].setup({
 		capabilities = capabilities,
@@ -90,6 +91,12 @@ lspconfig.sumneko_lua.setup({
 			},
 		},
 	},
+})
+
+lspconfig.emmet_ls.setup({
+    -- on_attach = on_attach,
+    --capabilities = capabilities,
+    filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less' },
 })
 
 -- from u/lukas-reineke on reddit:

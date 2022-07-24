@@ -35,8 +35,6 @@ vim.api.nvim_create_autocmd("FileType", {
 	command = "setlocal formatoptions-=c formatoptions-=r formatoptions-=o",
 })
 
---vim.cmd([[autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]])
-
 vim.api.nvim_create_autocmd("CursorHold,CursorHoldI", {
 	pattern = "*",
 	command = "lua vim.diagnostic.open_float(nil, {focus=false})",
@@ -47,7 +45,9 @@ require("plugconfig")
 require("keymapping")
 require("lsp-config")
 require("cmp-config")
---require('fileconfig.vim')
 
--- nightfly, onedarkpro, onedark
-vim.cmd([[colorscheme catppuccin]])
+-- catppuccin, onedarkpro, nightfly, onedark
+require('onedark').setup {
+    style = 'warmer'
+}
+require('onedark').load()
