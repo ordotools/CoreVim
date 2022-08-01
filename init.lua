@@ -28,7 +28,6 @@ vim.g.mapleader = " "
 vim.g.syntax = true
 vim.o.updatetime = 250
 set.termguicolors = true
---set.cmdheight = 0
 
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "*",
@@ -46,8 +45,8 @@ require("keymapping")
 require("lsp-config")
 require("cmp-config")
 
--- catppuccin, onedarkpro, nightfly, onedark
+local scheme = "onedark" -- catppuccin, onedarkpro, nightfly, onedark
 require('onedark').setup {
-    style = 'warmer'
+    style = 'deep'
 }
-require('onedark').load()
+require(scheme).load()
