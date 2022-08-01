@@ -1,0 +1,106 @@
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.006  000.006: --- NVIM STARTING ---
+000.691  000.685: locale set
+001.173  000.481: inits 1
+001.194  000.021: window checked
+001.199  000.005: parsing arguments
+001.854  000.654: init lua interpreter
+002.106  000.252: expanding arguments
+002.173  000.067: inits 2
+002.700  000.527: init highlight
+002.702  000.002: waiting for UI
+005.005  002.303: done waiting for UI
+005.030  000.026: init screen for UI
+005.077  000.047: init default mappings
+005.138  000.061: init default autocommands
+007.014  000.090  000.090: sourcing /usr/local/Cellar/neovim/HEAD-0c6ad03/share/nvim/runtime/ftplugin.vim
+007.341  000.043  000.043: sourcing /usr/local/Cellar/neovim/HEAD-0c6ad03/share/nvim/runtime/indent.vim
+111.740  008.016  008.016: sourcing /Users/gregbarnes/.local/share/nvim/site/pack/packer/start/onedark.nvim/colors/onedark.lua
+114.457  106.938  098.922: sourcing /Users/gregbarnes/.config/nvim/init.lua
+114.475  002.266: sourcing vimrc file(s)
+114.829  000.058  000.058: sourcing /usr/local/Cellar/neovim/HEAD-0c6ad03/share/nvim/runtime/filetype.lua
+120.173  000.016  000.016: sourcing /Users/gregbarnes/.local/share/nvim/site/pack/packer/start/LuaSnip/ftdetect/snippets.vim
+120.349  000.013  000.013: sourcing /Users/gregbarnes/.local/share/nvim/site/pack/packer/start/vim-fugitive/ftdetect/fugitive.vim
+120.501  000.021  000.021: sourcing /Users/gregbarnes/.local/share/nvim/site/pack/packer/start/vimtex/ftdetect/cls.vim
+120.563  000.019  000.019: sourcing /Users/gregbarnes/.local/share/nvim/site/pack/packer/start/vimtex/ftdetect/tex.vim
+120.623  000.019  000.019: sourcing /Users/gregbarnes/.local/share/nvim/site/pack/packer/start/vimtex/ftdetect/tikz.vim
+120.990  006.104  006.016: sourcing /usr/local/Cellar/neovim/HEAD-0c6ad03/share/nvim/runtime/filetype.vim
+121.366  000.071  000.071: sourcing /usr/local/Cellar/neovim/HEAD-0c6ad03/share/nvim/runtime/syntax/synload.vim
+121.481  000.384  000.313: sourcing /usr/local/Cellar/neovim/HEAD-0c6ad03/share/nvim/runtime/syntax/syntax.vim
+123.238  000.156  000.156: sourcing /usr/local/Cellar/neovim/HEAD-0c6ad03/share/nvim/runtime/plugin/gzip.vim
+123.300  000.013  000.013: sourcing /usr/local/Cellar/neovim/HEAD-0c6ad03/share/nvim/runtime/plugin/health.vim
+123.389  000.046  000.046: sourcing /usr/local/Cellar/neovim/HEAD-0c6ad03/share/nvim/runtime/plugin/man.vim
+124.144  000.158  000.158: sourcing /usr/local/Cellar/neovim/HEAD-0c6ad03/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim
+124.291  000.858  000.700: sourcing /usr/local/Cellar/neovim/HEAD-0c6ad03/share/nvim/runtime/plugin/matchit.vim
+124.472  000.132  000.132: sourcing /usr/local/Cellar/neovim/HEAD-0c6ad03/share/nvim/runtime/plugin/matchparen.vim
+124.808  000.287  000.287: sourcing /usr/local/Cellar/neovim/HEAD-0c6ad03/share/nvim/runtime/plugin/netrwPlugin.vim
+125.044  000.011  000.011: sourcing /Users/gregbarnes/.local/share/nvim/rplugin.vim
+125.051  000.184  000.172: sourcing /usr/local/Cellar/neovim/HEAD-0c6ad03/share/nvim/runtime/plugin/rplugin.vim
+125.170  000.068  000.068: sourcing /usr/local/Cellar/neovim/HEAD-0c6ad03/share/nvim/runtime/plugin/shada.vim
+125.248  000.025  000.025: sourcing /usr/local/Cellar/neovim/HEAD-0c6ad03/share/nvim/runtime/plugin/spellfile.vim
+125.425  000.108  000.108: sourcing /usr/local/Cellar/neovim/HEAD-0c6ad03/share/nvim/runtime/plugin/tarPlugin.vim
+125.555  000.075  000.075: sourcing /usr/local/Cellar/neovim/HEAD-0c6ad03/share/nvim/runtime/plugin/tohtml.vim
+125.628  000.022  000.022: sourcing /usr/local/Cellar/neovim/HEAD-0c6ad03/share/nvim/runtime/plugin/tutor.vim
+125.816  000.137  000.137: sourcing /usr/local/Cellar/neovim/HEAD-0c6ad03/share/nvim/runtime/plugin/zipPlugin.vim
+129.788  003.798  003.798: sourcing /Users/gregbarnes/.config/nvim/plugin/packer_compiled.lua
+130.360  003.430: loading rtp plugins
+131.415  000.441  000.441: sourcing /Users/gregbarnes/.local/share/nvim/site/pack/packer/start/auto-pairs/plugin/auto-pairs.vim
+131.856  000.016  000.016: sourcing /Users/gregbarnes/.local/share/nvim/site/pack/packer/start/catppuccin/plugin/catppuccin.vim
+133.069  000.354  000.354: sourcing /Users/gregbarnes/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim/plugin/indent_blankline.vim
+133.696  000.190  000.190: sourcing /Users/gregbarnes/.local/share/nvim/site/pack/packer/start/LuaSnip/plugin/luasnip.vim
+135.674  001.683  001.683: sourcing /Users/gregbarnes/.local/share/nvim/site/pack/packer/start/nerdcommenter/plugin/nerdcommenter.vim
+136.522  000.460  000.460: sourcing /Users/gregbarnes/.local/share/nvim/site/pack/packer/start/nvim-cmp/plugin/cmp.lua
+136.804  000.080  000.080: sourcing /Users/gregbarnes/.local/share/nvim/site/pack/packer/start/nvim-lsp-installer/plugin/nvim-lsp-installer.vim
+137.150  000.070  000.070: sourcing /Users/gregbarnes/.local/share/nvim/site/pack/packer/start/nvim-lspconfig/plugin/lspconfig.vim
+139.186  001.613  001.613: sourcing /Users/gregbarnes/.local/share/nvim/site/pack/packer/start/nvim-treesitter/plugin/nvim-treesitter.lua
+139.550  000.036  000.036: sourcing /Users/gregbarnes/.local/share/nvim/site/pack/packer/start/nvim-web-devicons/plugin/nvim-web-devicons.vim
+140.052  000.037  000.037: sourcing /Users/gregbarnes/.local/share/nvim/site/pack/packer/start/plenary.nvim/plugin/plenary.vim
+140.684  000.284  000.284: sourcing /Users/gregbarnes/.local/share/nvim/site/pack/packer/start/telescope.nvim/plugin/telescope.lua
+140.916  000.030  000.030: sourcing /Users/gregbarnes/.local/share/nvim/site/pack/packer/start/todo-comments.nvim/plugin/todo.vim
+141.248  000.059  000.059: sourcing /Users/gregbarnes/.local/share/nvim/site/pack/packer/start/trouble.nvim/plugin/trouble.vim
+141.805  000.286  000.286: sourcing /Users/gregbarnes/.local/share/nvim/site/pack/packer/start/vim-closetag/plugin/closetag.vim
+142.983  000.900  000.900: sourcing /Users/gregbarnes/.local/share/nvim/site/pack/packer/start/vim-fugitive/plugin/fugitive.vim
+143.673  000.336  000.336: sourcing /Users/gregbarnes/.local/share/nvim/site/pack/packer/start/vim-sleuth/plugin/sleuth.vim
+144.070  000.113  000.113: sourcing /Users/gregbarnes/.local/share/nvim/site/pack/packer/start/vim-startify/plugin/startify.vim
+144.680  000.338  000.338: sourcing /Users/gregbarnes/.local/share/nvim/site/pack/packer/start/vim-surround/plugin/surround.vim
+146.103  000.348  000.348: sourcing /Users/gregbarnes/.local/share/nvim/site/pack/packer/start/vim-vsnip/autoload/vital/vsnip.vim
+146.464  000.088  000.088: sourcing /Users/gregbarnes/.local/share/nvim/site/pack/packer/start/vim-vsnip/autoload/vital/_vsnip/VS/LSP/Position.vim
+146.689  000.036  000.036: sourcing /Users/gregbarnes/.local/share/nvim/site/pack/packer/start/vim-vsnip/autoload/vital/_vsnip.vim
+147.015  001.455  000.984: sourcing /Users/gregbarnes/.local/share/nvim/site/pack/packer/start/vim-vsnip/autoload/vsnip/snippet.vim
+147.381  000.116  000.116: sourcing /Users/gregbarnes/.local/share/nvim/site/pack/packer/start/vim-vsnip/autoload/vital/_vsnip/VS/LSP/TextEdit.vim
+147.737  000.055  000.055: sourcing /Users/gregbarnes/.local/share/nvim/site/pack/packer/start/vim-vsnip/autoload/vital/_vsnip/VS/LSP/Text.vim
+148.145  000.101  000.101: sourcing /Users/gregbarnes/.local/share/nvim/site/pack/packer/start/vim-vsnip/autoload/vital/_vsnip/VS/Vim/Buffer.vim
+148.492  000.050  000.050: sourcing /Users/gregbarnes/.local/share/nvim/site/pack/packer/start/vim-vsnip/autoload/vital/_vsnip/VS/Vim/Option.vim
+149.020  000.203  000.203: sourcing /Users/gregbarnes/.local/share/nvim/site/pack/packer/start/vim-vsnip/autoload/vital/_vsnip/VS/LSP/Diff.vim
+149.183  003.807  001.826: sourcing /Users/gregbarnes/.local/share/nvim/site/pack/packer/start/vim-vsnip/autoload/vsnip/session.vim
+149.349  004.169  000.362: sourcing /Users/gregbarnes/.local/share/nvim/site/pack/packer/start/vim-vsnip/autoload/vsnip.vim
+149.595  004.629  000.460: sourcing /Users/gregbarnes/.local/share/nvim/site/pack/packer/start/vim-vsnip/plugin/vsnip.vim
+149.932  000.058  000.058: sourcing /Users/gregbarnes/.local/share/nvim/site/pack/packer/start/vim-vsnip-integ/plugin/vsnip_integ.vim
+150.248  000.042  000.042: sourcing /Users/gregbarnes/.local/share/nvim/site/pack/packer/start/vimtex/plugin/vimtex.vim
+150.467  008.050: loading packages
+151.295  000.033  000.033: sourcing /Users/gregbarnes/.local/share/nvim/site/pack/packer/start/vim-vsnip-integ/autoload/vsnip_integ/integration.vim
+151.537  000.055  000.055: sourcing /Users/gregbarnes/.local/share/nvim/site/pack/packer/start/vim-vsnip-integ/autoload/vsnip_integ/detection.vim
+152.609  001.549  001.461: sourcing /Users/gregbarnes/.local/share/nvim/site/pack/packer/start/vim-vsnip-integ/after/plugin/vsnip_integ.vim
+153.410  000.627  000.627: sourcing /Users/gregbarnes/.local/share/nvim/site/pack/packer/start/cmp-buffer/after/plugin/cmp_buffer.lua
+153.823  000.250  000.250: sourcing /Users/gregbarnes/.local/share/nvim/site/pack/packer/start/cmp-cmdline/after/plugin/cmp_cmdline.lua
+154.043  000.060  000.060: sourcing /Users/gregbarnes/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp/after/plugin/cmp_nvim_lsp.lua
+154.468  000.277  000.277: sourcing /Users/gregbarnes/.local/share/nvim/site/pack/packer/start/cmp-path/after/plugin/cmp_path.lua
+154.885  000.257  000.257: sourcing /Users/gregbarnes/.local/share/nvim/site/pack/packer/start/cmp_luasnip/after/plugin/cmp_luasnip.lua
+155.023  001.537: loading after plugins
+155.030  000.008: inits 3
+157.141  002.111: reading ShaDa
+158.708  001.567: opening buffers
+159.817  001.109: BufEnter autocommands
+159.819  000.002: editing files in windows
+161.684  000.510  000.510: sourcing /Users/gregbarnes/.local/share/nvim/site/pack/packer/start/vim-startify/autoload/startify.vim
+172.789  000.162  000.162: sourcing /Users/gregbarnes/.local/share/nvim/site/pack/packer/start/vim-startify/syntax/startify.vim
+175.394  014.903: VimEnter autocommands
+175.397  000.002: UIEnter autocommands
+175.398  000.001: before starting main loop
+182.353  006.955: first screen update
+182.356  000.003: --- NVIM STARTED ---

@@ -4,6 +4,8 @@
 
 Simple configuration with fast loading and little more than the essentials.
 
+```nvim --startuptime``` = 182.356ms
+
 ### Future
 
 Working on built-in color schemes for easier switching.
