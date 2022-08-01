@@ -13,3 +13,7 @@ Collection of my most used key combinations.
 | ```<space>``` | leader |
 | ```<space>cc``` | comment out line |
 | ```<space>cu``` | uncomment line |
+| ```<space>ga``` | git add |
+| ```<space>gc``` | git commit with message |
+| ```<space>gp``` | git push |
+| ```<space>gl``` | git pull |
