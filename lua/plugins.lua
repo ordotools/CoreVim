@@ -18,7 +18,15 @@ return require("packer").startup(function()
 	use("wbthomason/packer.nvim")
 
 	-- STARTUP
-	use("mhinz/vim-startify")
+	--use("mhinz/vim-startify")
+	use {
+		'goolord/alpha-nvim',
+		--config = function ()
+			--require'alpha'.setup(require'alpha.themes.dashboard'.config)
+		--end
+	}
+	use{'Shatur/neovim-session-manager'}
+	use 'lewis6991/impatient.nvim'
 
 	-- THEMES
 	use({
@@ -28,6 +36,7 @@ return require("packer").startup(function()
 	use 'navarasu/onedark.nvim'
 	use("bluz71/vim-nightfly-guicolors")
 	use("olimorris/onedarkpro.nvim")
+	use("EdenEast/nightfox.nvim")
 
 	-- SYNTAX HIGHLIGHTING
 	use("nvim-treesitter/nvim-treesitter")
@@ -87,14 +96,15 @@ return require("packer").startup(function()
 	-- GIT INTEGRATION
 	use({
 		"lewis6991/gitsigns.nvim",
-		config = function()
-			require("gitsigns").setup()
-		end,
+		--config = function()
+			--require("gitsigns").setup()
+		--end,
 	})
 	use({
 		"tpope/vim-fugitive",
 		--after = "feline.nvim",
 	})
+	use 'kdheepak/lazygit.nvim'
 
 	-- SHIFTS vs TABS
 	use("tpope/vim-sleuth")
@@ -109,18 +119,31 @@ return require("packer").startup(function()
 	use {
 		"folke/todo-comments.nvim",
 		requires = "nvim-lua/plenary.nvim",
-		config = function()
-		require("todo-comments").setup {}
-		end
+		--config = function()
+		--require("todo-comments").setup {}
+		--end
 	}
 
-	-- FILETYPES
-	use({
-		"lervag/vimtex",
+	-- CURSOR
+	use {'edluffy/specs.nvim'}
+
+	-- FILETYPES/SYNTAX-TYPES
+	use("lervag/vimtex")
+	use({ 'bennypowers/nvim-regexplainer',
+      --config = function() require'regexplainer'.setup() end,
+      requires = {
+        'nvim-treesitter/nvim-treesitter',
+        'MunifTanjim/nui.nvim',
+      }
 	})
 
 	-- OTHER
 	use("lukas-reineke/indent-blankline.nvim")
+	use('mrjones2014/smart-splits.nvim')
+
+
+	-- THEME CREATION
+	use('rktjmp/lush.nvim')
 
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()

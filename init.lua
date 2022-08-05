@@ -28,6 +28,8 @@ vim.g.mapleader = " "
 vim.g.syntax = true
 vim.o.updatetime = 250
 set.termguicolors = true
+set.splitbelow = true
+set.splitright = true
 
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "*",
@@ -39,14 +41,28 @@ vim.api.nvim_create_autocmd("CursorHold,CursorHoldI", {
 	command = "lua vim.diagnostic.open_float(nil, {focus=false})",
 })
 
+local augroup = vim.api.nvim_create_augroup("my_textwidth", { clear = true })
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "text,markdown,tex",
+	group = augroup,
+	command = "setlocal textwidth=80",
+})
+
 require("plugins")
+
+-- make sure that impatient is the first to load!
+require('impatient')
+
+--local scheme = "nightfox" -- catppuccin, onedarkpro, nightfly, onedark, nightfox
+require('onedark').setup {
+    style = 'deep'
+}
+
+-- nightfox themes => nightfox, dayfox, dawnfox, duskfox, nordfox, terafox
+vim.cmd("colorscheme duskfox")
+
 require("plugconfig")
 require("keymapping")
 require("lsp-config")
 require("cmp-config")
-
-local scheme = "onedark" -- catppuccin, onedarkpro, nightfly, onedark
-require('onedark').setup {
-    style = 'deep'
-}
-require(scheme).load()
