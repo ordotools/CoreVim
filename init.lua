@@ -49,18 +49,32 @@ vim.api.nvim_create_autocmd("FileType", {
 	command = "setlocal textwidth=80",
 })
 
+-- TODO: Install:
+-- vim-closetag
+-- coc-pairs
+-- see https://youtu.be/NnjkZYKzPds for more information
+
 require("plugins")
 
 -- make sure that impatient is the first to load!
 require('impatient')
 
---local scheme = "nightfox" -- catppuccin, onedarkpro, nightfly, onedark, nightfox
-require('onedark').setup {
-    style = 'deep'
-}
+-- catppuccin, onedarkpro, nightfly, onedark, nightfox, tokyonight
+-- nightfox themes   => nightfox, dayfox, dawnfox, duskfox, nordfox, terafox
+-- onedark themes    => darker, deep
 
--- nightfox themes => nightfox, dayfox, dawnfox, duskfox, nordfox, terafox
-vim.cmd("colorscheme duskfox")
+Scheme = 'tokyonight'
+
+require('user.colorschemes.'..Scheme..'_config')
+
+-- TODO: put this in the colorscheme directory
+if Scheme == 'onedark' then
+	require('onedark').setup {
+	    style = 'deep'
+	}
+end
+
+vim.cmd("colorscheme " .. Scheme)
 
 require("plugconfig")
 require("keymapping")

@@ -1,5 +1,4 @@
 vim.cmd([[
-
 " Splitting
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -43,9 +42,18 @@ nnoremap <leader>ft <cmd>TodoTelescope<cr>
 " Escape terminal mode -- THIS IS NOT WORKING!!!
 tnoremap <Esc> <C-\><C-n>
 
+" nnoremap <leader>sL <cmd>SessionManager[load_last_session]<cr>
+
+" LazyGit
+nnoremap <silent> <leader>gg :LazyGit<CR>
+
 " LaTeX bindings
 vmap <leader>xb c\textbf{<C-r>"}<ESC>
 nmap <leader>xb c\textbf{<C-r>"}<left>
 vmap <leader>xi c\textit{<C-r>"}<ESC>
 nmap <leader>xi c\textit{<C-r>"}<left>
+
+" vim which key 
+""nnoremap <silent><leader> :<c-u>WhichKey '<Space>'<CR>
+
 ]])

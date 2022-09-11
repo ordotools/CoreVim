@@ -234,10 +234,10 @@ _G.packer_plugins = {
     path = "/Users/gregbarnes/.local/share/nvim/site/pack/packer/start/smart-splits.nvim",
     url = "https://github.com/mrjones2014/smart-splits.nvim"
   },
-  ["specs.nvim"] = {
+  ["sqlite.lua"] = {
     loaded = true,
-    path = "/Users/gregbarnes/.local/share/nvim/site/pack/packer/start/specs.nvim",
-    url = "https://github.com/edluffy/specs.nvim"
+    path = "/Users/gregbarnes/.local/share/nvim/site/pack/packer/start/sqlite.lua",
+    url = "https://github.com/kkharji/sqlite.lua"
   },
   ["telescope.nvim"] = {
     loaded = true,
@@ -248,6 +248,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/gregbarnes/.local/share/nvim/site/pack/packer/start/todo-comments.nvim",
     url = "https://github.com/folke/todo-comments.nvim"
+  },
+  ["tokyonight.nvim"] = {
+    loaded = true,
+    path = "/Users/gregbarnes/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
+    url = "https://github.com/folke/tokyonight.nvim"
   },
   ["trouble.nvim"] = {
     loaded = true,
@@ -288,6 +293,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/gregbarnes/.local/share/nvim/site/pack/packer/start/vim-vsnip-integ",
     url = "https://github.com/hrsh7th/vim-vsnip-integ"
+  },
+  ["vim-which-key"] = {
+    loaded = true,
+    path = "/Users/gregbarnes/.local/share/nvim/site/pack/packer/start/vim-which-key",
+    url = "https://github.com/liuchengxu/vim-which-key"
   },
   vimtex = {
     loaded = true,

@@ -4,7 +4,7 @@
 
 Simple configuration with fast loading and little more than the essentials.
 
-```nvim --startuptime``` = 182.356ms
+```nvim --startuptime``` = 145.615ms
 
 ### Future
 

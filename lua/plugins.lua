@@ -18,14 +18,8 @@ return require("packer").startup(function()
 	use("wbthomason/packer.nvim")
 
 	-- STARTUP
-	--use("mhinz/vim-startify")
-	use {
-		'goolord/alpha-nvim',
-		--config = function ()
-			--require'alpha'.setup(require'alpha.themes.dashboard'.config)
-		--end
-	}
-	use{'Shatur/neovim-session-manager'}
+	use 'goolord/alpha-nvim'
+	use 'Shatur/neovim-session-manager'
 	use 'lewis6991/impatient.nvim'
 
 	-- THEMES
@@ -34,12 +28,13 @@ return require("packer").startup(function()
 		as = "catppuccin",
 	})
 	use 'navarasu/onedark.nvim'
-	use("bluz71/vim-nightfly-guicolors")
-	use("olimorris/onedarkpro.nvim")
-	use("EdenEast/nightfox.nvim")
+	use 'bluz71/vim-nightfly-guicolors'
+	use 'olimorris/onedarkpro.nvim'
+	use 'EdenEast/nightfox.nvim'
+	use 'folke/tokyonight.nvim'
 
 	-- SYNTAX HIGHLIGHTING
-	use("nvim-treesitter/nvim-treesitter")
+	use 'nvim-treesitter/nvim-treesitter'
 
 	-- FILE EXPLORERATION
 	use({
@@ -55,20 +50,23 @@ return require("packer").startup(function()
 	})
 
 	-- BUFFERS & TABS
-	use({
-		"akinsho/bufferline.nvim",
-		requires = "kyazdani42/nvim-web-devicons",
-	})
+	--use({
+		--"akinsho/bufferline.nvim",
+		--requires = "kyazdani42/nvim-web-devicons",
+	--})
 	--use {
 		--"nanozuki/tabby.nvim",
 		--config = function() require("tabby").setup() end,
 	--}
+    use 'nanozuki/tabby.nvim'
 
 	-- STATUSLINE
 	use({
 		'nvim-lualine/lualine.nvim',
 		requires = { 'kyazdani42/nvim-web-devicons', opt = true }
 	})
+	use 'liuchengxu/vim-which-key'
+
 
 	-- COMPLETION
 	use({
@@ -92,6 +90,8 @@ return require("packer").startup(function()
 		"folke/trouble.nvim",
 		requires = "kyazdani42/nvim-web-devicons",
 	})
+	--use {'neoclide/coc.nvim', branch = 'release'}
+
 
 	-- GIT INTEGRATION
 	use({
@@ -119,23 +119,20 @@ return require("packer").startup(function()
 	use {
 		"folke/todo-comments.nvim",
 		requires = "nvim-lua/plenary.nvim",
-		--config = function()
-		--require("todo-comments").setup {}
-		--end
 	}
 
 	-- CURSOR
-	use {'edluffy/specs.nvim'}
+	--use {'edluffy/specs.nvim'}
 
 	-- FILETYPES/SYNTAX-TYPES
 	use("lervag/vimtex")
 	use({ 'bennypowers/nvim-regexplainer',
-      --config = function() require'regexplainer'.setup() end,
-      requires = {
-        'nvim-treesitter/nvim-treesitter',
-        'MunifTanjim/nui.nvim',
-      }
+		requires = {
+			'nvim-treesitter/nvim-treesitter',
+			'MunifTanjim/nui.nvim',
+		}
 	})
+	use 'kkharji/sqlite.lua' -- requires $ luarocks install sqlite luv
 
 	-- OTHER
 	use("lukas-reineke/indent-blankline.nvim")
