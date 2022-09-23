@@ -68,6 +68,11 @@ return require("packer").startup(function()
 	})
 	use 'liuchengxu/vim-which-key'
 
+    -- TERMINAL
+    use {
+        "akinsho/toggleterm.nvim",
+        tag = '*',
+        }
 
 	-- COMPLETION
 	use({

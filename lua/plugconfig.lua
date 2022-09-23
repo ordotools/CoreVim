@@ -2,19 +2,11 @@
 
 require("alpha").setup(require'alpha.themes.startify'.config) -- dashboard
 
---require('user.ui.specs_config')
-
 require("user.ui.lualine_config")
-
---require("user.ui.nvim-which-key_config")
 
 require("user.ui.nvimtree_config")
 
---require('user.ui.bufferline_config')
-
-require("tabby").setup({
-    tabline = require("tabby.presets").tab_with_top_win,
-})
+require("tabby").setup({tabline = require("tabby.presets").tab_with_top_win,})
 
 require('user.git.gitsigns_config')
 
@@ -38,8 +30,8 @@ require('user.files.vimtex_config')
 
 require('user.ui.smart-splits_config')
 
---require("configs.catppuccin")
-
 require('user.colorschemes.nightfly_config')
 
 require('user.colorschemes.onedarkpro_config')
+
+require('user.term.toggleterm_config')
