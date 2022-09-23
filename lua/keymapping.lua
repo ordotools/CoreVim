@@ -42,8 +42,6 @@ nnoremap <leader>ft <cmd>TodoTelescope<cr>
 " Escape terminal mode -- THIS IS NOT WORKING!!!
 tnoremap <Esc> <C-\><C-n>
 
-" nnoremap <leader>sL <cmd>SessionManager[load_last_session]<cr>
-
 " LazyGit
 nnoremap <silent> <leader>gg :LazyGit<CR>
 

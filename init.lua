@@ -59,11 +59,11 @@ require("plugins")
 -- make sure that impatient is the first to load!
 require('impatient')
 
--- catppuccin, onedarkpro, nightfly, onedark, nightfox, tokyonight
+-- catppuccin, onedarkpro, nightfly, onedark, nightfox, tokyonight, kanagawa
 -- nightfox themes   => nightfox, dayfox, dawnfox, duskfox, nordfox, terafox
 -- onedark themes    => darker, deep
 
-Scheme = 'tokyonight'
+Scheme = 'kanagawa'
 
 require('user.colorschemes.'..Scheme..'_config')
 

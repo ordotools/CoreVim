@@ -5,7 +5,7 @@
 
 require('lualine').setup {
   options = {
-    theme = 'auto',
+    theme = 'kanagawa',
     extensions = {
       'fugitive',
       'nvim-tree'
