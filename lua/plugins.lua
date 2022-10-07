@@ -33,6 +33,7 @@ return require("packer").startup(function()
 	use 'EdenEast/nightfox.nvim'
 	use 'folke/tokyonight.nvim'
     use 'rebelot/kanagawa.nvim'
+    use  'ellisonleao/gruvbox.nvim'
 
 	-- SYNTAX HIGHLIGHTING
 	use 'nvim-treesitter/nvim-treesitter'

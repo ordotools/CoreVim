@@ -54,16 +54,16 @@ vim.api.nvim_create_autocmd("FileType", {
 -- coc-pairs
 -- see https://youtu.be/NnjkZYKzPds for more information
 
-require("plugins")
+require('plugins')
 
 -- make sure that impatient is the first to load!
 require('impatient')
 
--- catppuccin, onedarkpro, nightfly, onedark, nightfox, tokyonight, kanagawa
+-- catppuccin, onedarkpro, nightfly, onedark, nightfox, tokyonight, kanagawa, gruvbox
 -- nightfox themes   => nightfox, dayfox, dawnfox, duskfox, nordfox, terafox
 -- onedark themes    => darker, deep
 
-Scheme = 'kanagawa'
+Scheme = 'gruvbox'
 
 require('user.colorschemes.'..Scheme..'_config')
 
@@ -72,6 +72,9 @@ if Scheme == 'onedark' then
 	require('onedark').setup {
 	    style = 'deep'
 	}
+end
+if Scheme == 'gruvbox' then
+	vim.o.background = "dark" -- or "light" for light mode
 end
 
 vim.cmd("colorscheme " .. Scheme)
