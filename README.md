@@ -39,5 +39,5 @@ Collection of my most used key combinations.
 | ```<space>gp``` | git push                |
 | ```<space>gl``` | git pull                |
 | ```<space>ff``` | telescope find file     |
-| ```<space>gl``` | telescope find buffer   |
+| ```<space>fb``` | telescope find buffer   |
 
