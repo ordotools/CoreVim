@@ -4,6 +4,8 @@
 
 Simple configuration with fast loading and little more than the essentials.
 
+Uses Packer as a plugin manager.
+
 ```nvim --startuptime``` = 145.615ms
 
 ### Future
