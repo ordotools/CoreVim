@@ -28,13 +28,16 @@ You will have to install [Node](https://nodejs.org/en/download/) for some of the
 
 Collection of my most used key combinations.
 
-| Key(s) | Action |
-|---:|:---|
-| ```<space>``` | leader |
-| ```<space>cc``` | comment out line |
-| ```<space>cu``` | uncomment line |
-| ```<space>ga``` | git add |
+| Key(s)          | Action                  |
+|---:             |:---                     |
+| ```jj```        | ESC                     |
+| ```<space>```   | leader                  |
+| ```<space>cc``` | comment out line        |
+| ```<space>cu``` | uncomment line          |
+| ```<space>ga``` | git add                 |
 | ```<space>gc``` | git commit with message |
-| ```<space>gp``` | git push |
-| ```<space>gl``` | git pull |
+| ```<space>gp``` | git push                |
+| ```<space>gl``` | git pull                |
+| ```<space>ff``` | telescope find file     |
+| ```<space>gl``` | telescope find buffer   |
 
