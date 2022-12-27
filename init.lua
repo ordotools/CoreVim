@@ -50,14 +50,7 @@ vim.api.nvim_create_autocmd("FileType", {
 	command = "setlocal textwidth=80",
 })
 
--- TODO: Install:
--- vim-closetag
--- coc-pairs
--- see https://youtu.be/NnjkZYKzPds for more information
-
 require("plugins")
-
--- make sure that impatient is the first to load!
 require('impatient')
 
 -- catppuccin, onedarkpro, nightfly, onedark, nightfox, tokyonight, kanagawa
