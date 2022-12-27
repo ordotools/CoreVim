@@ -7,6 +7,7 @@ set.incsearch = true
 set.backup = false
 set.errorbells = false
 set.hlsearch = false
+set.incsearch = true
 set.showmode = false
 set.swapfile = false
 set.wrap = false
@@ -64,6 +65,7 @@ require('impatient')
 -- onedark themes    => darker, deep
 
 Scheme = 'kanagawa'
+--Scheme = 'catppuccin'
 
 require('user.colorschemes.'..Scheme..'_config')
 
@@ -78,5 +80,5 @@ vim.cmd("colorscheme " .. Scheme)
 
 require("plugconfig")
 require("keymapping")
-require("lsp-config")
-require("cmp-config")
+require("lsp")
+--require("cmp-config")

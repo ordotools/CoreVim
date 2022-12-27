@@ -1,6 +1,6 @@
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
-capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
+capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
 require("nvim-lsp-installer").setup({
 	automatic_installation = true,
@@ -26,17 +26,15 @@ vim.diagnostic.config({
 	update_in_insert = true,
 	severity_sort = false,
 	virtual_text = {
-		source = "always", -- Or "if_many"
+		source = "always",
 	},
 	float = {
-		source = "always", -- Or "if_many"
+		source = "always",
 	},
 })
 
--- luasnip setup
 local luasnip = require("luasnip")
 local lspkind = require("lspkind")
--- nvim-cmp setup
 local cmp = require("cmp")
 cmp.setup({
 	snippet = {
@@ -77,8 +75,8 @@ cmp.setup({
 	},
 	formatting = {
 		format = lspkind.cmp_format({
-			mode = "symbol", -- show only symbol annotations
-			maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+			mode = "symbol",
+			maxwidth = 50,
 		}),
 	},
 })
@@ -94,45 +92,5 @@ lspconfig.sumneko_lua.setup({
 })
 
 lspconfig.emmet_ls.setup({
-    -- on_attach = on_attach,
-    --capabilities = capabilities,
     filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less' },
 })
-
--- from u/lukas-reineke on reddit:
--- https://www.reddit.com/r/neovim/comments/jvisg5/lets_talk_formatting_again/
---vim.lsp.handlers["textDocument/formatting"] = function(err, _, result, _, bufnr)
-    --if err ~= nil or result == nil then
-        --return
-    --end
-    --if not vim.api.nvim_buf_get_option(bufnr, "modified") then
-        --local view = vim.fn.winsaveview()
-        --vim.lsp.util.apply_text_edits(result, bufnr)
-        --vim.fn.winrestview(view)
-        --if bufnr == vim.api.nvim_get_current_buf() then
-            --vim.api.nvim_command("noautocmd :update")
-        --end
-    --end
---end
-
---local on_attach = function(client)
-    --if client.resolved_capabilities.document_formatting then
-        --vim.api.nvim_command [[augroup Format]]
-        --vim.api.nvim_command [[autocmd! * <buffer>]]
-        --vim.api.nvim_command [[autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting()]]
-        --vim.api.nvim_command [[augroup END]]
-    --end
---end
-
---require "lspconfig".efm.setup {
-    --on_attach = on_attach;
-    --init_options = {documentFormatting = true},
-    --settings = {
-        --rootMarkers = {".git/"},
-        --languages = {
-            --lua = {
-                --{formatCommand = "lua-format -i", formatStdin = true}
-            --}
-        --}
-    --}
---}
