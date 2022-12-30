@@ -60,7 +60,7 @@ return require("packer").startup(function()
 		requires = { 'kyazdani42/nvim-web-devicons', opt = true }
 	})
 	use 'liuchengxu/vim-which-key'
-	use 'tjdevries/express_line.nvim'
+	--use 'tjdevries/express_line.nvim'
 
 	-- TERMINAL
 	use {
@@ -79,8 +79,7 @@ return require("packer").startup(function()
 
 			-- Autocompletion
 			{'hrsh7th/nvim-cmp'},
-			{'hrsh7th/cmp-cmdline'},
-			{'hrsh7th/cmp-buffer'}, -- This is not working
+			{'hrsh7th/cmp-buffer'},
 			{'hrsh7th/cmp-path'},
 			{'saadparwaiz1/cmp_luasnip'},
 			{'hrsh7th/cmp-nvim-lsp'},
@@ -91,6 +90,7 @@ return require("packer").startup(function()
 			{'rafamadriz/friendly-snippets'},
 		}
 	}
+	use 'hrsh7th/cmp-cmdline'
 
 	-- GIT INTEGRATION
 	use({

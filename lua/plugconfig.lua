@@ -2,8 +2,8 @@
 
 require("alpha").setup(require'alpha.themes.startify'.config) -- dashboard
 
---require("user.ui.lualine_config")
-require("user.ui.expressline_config")
+require("user.ui.lualine_config")
+--require("user.ui.expressline_config")
 
 require("user.ui.nvimtree_config")
 
