@@ -63,7 +63,7 @@ return require("packer").startup(function()
 	--use 'tjdevries/express_line.nvim'
 
 	-- TERMINAL
-	use {
+	use { -- I just love this plugin
 		"akinsho/toggleterm.nvim",
 		tag = '*',
 	}
@@ -118,13 +118,12 @@ return require("packer").startup(function()
 
 	-- FILETYPES/SYNTAX-TYPES
 	use("lervag/vimtex")
-	use 'kkharji/sqlite.lua' -- requires $ luarocks install sqlite luv
+	use "kkharji/sqlite.lua" -- requires $ luarocks install sqlite luv
 
 	-- OTHER
 	use("lukas-reineke/indent-blankline.nvim")
 	use('mrjones2014/smart-splits.nvim')
 	use 'mbbill/undotree'
-
 
 	-- THEME CREATION
 	use('rktjmp/lush.nvim')
