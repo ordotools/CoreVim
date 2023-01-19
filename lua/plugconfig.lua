@@ -1,6 +1,6 @@
 -- Only one-liners are allowed.
 
---require("alpha").setup(require'alpha.themes.startify'.config) -- dashboard
+require("alpha").setup(require'alpha.themes.startify'.config) -- dashboard
 
 require("user.ui.lualine_config")
 --require("user.ui.expressline_config")

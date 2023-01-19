@@ -10,15 +10,13 @@ if fn.empty(fn.glob(install_path)) > 0 then
 		install_path,
 	})
 end
-
 vim.cmd([[packadd packer.nvim]])
-
 return require("packer").startup(function()
 
-	use("wbthomason/packer.nvim")
+	use "wbthomason/packer.nvim"
 
 	-- STARTUP
-	--use 'goolord/alpha-nvim'
+	use 'goolord/alpha-nvim'
 	use 'Shatur/neovim-session-manager'
 	use 'lewis6991/impatient.nvim'
 
@@ -31,9 +29,9 @@ return require("packer").startup(function()
 	use 'olimorris/onedarkpro.nvim'
 	use 'EdenEast/nightfox.nvim'
 	use 'folke/tokyonight.nvim'
-    use 'rebelot/kanagawa.nvim'
-    use  'ellisonleao/gruvbox.nvim'
-    use 'sainnhe/everforest'
+	use 'rebelot/kanagawa.nvim'
+	use  'ellisonleao/gruvbox.nvim'
+	use 'sainnhe/everforest'
 
 	-- SYNTAX HIGHLIGHTING
 	use('nvim-treesitter/nvim-treesitter', {run = ":TSUpdate"})
@@ -60,8 +58,6 @@ return require("packer").startup(function()
 		'nvim-lualine/lualine.nvim',
 		requires = { 'kyazdani42/nvim-web-devicons', opt = true }
 	})
-	--use 'liuchengxu/vim-which-key'
-	--use 'tjdevries/express_line.nvim'
 	use "j-hui/fidget.nvim"
 
 	-- TERMINAL
@@ -81,7 +77,7 @@ return require("packer").startup(function()
 
 			-- Autocompletion
 			{'hrsh7th/nvim-cmp'},
-			{'hrsh7th/cmp-buffer'},
+		{'hrsh7th/cmp-buffer'},
 			{'hrsh7th/cmp-path'},
 			{'saadparwaiz1/cmp_luasnip'},
 			{'hrsh7th/cmp-nvim-lsp'},
