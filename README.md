@@ -1,5 +1,7 @@
 # corei8 NeoVim Configuration
 
+[!theme demo](./wtih_telescope.png)
+
 ## About
 
 Simple configuration with fast loading and little more than the essentials.
