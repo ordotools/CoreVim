@@ -32,7 +32,9 @@ return require("packer").startup(function()
 	use 'olimorris/onedarkpro.nvim'
 	use 'EdenEast/nightfox.nvim'
 	use 'folke/tokyonight.nvim'
-	use 'rebelot/kanagawa.nvim'
+    use 'rebelot/kanagawa.nvim'
+    use  'ellisonleao/gruvbox.nvim'
+    use 'sainnhe/everforest'
 
 	-- SYNTAX HIGHLIGHTING
 	use('nvim-treesitter/nvim-treesitter', {run = ":TSUpdate"})

@@ -5,6 +5,8 @@ require("alpha").setup(require'alpha.themes.startify'.config) -- dashboard
 require("user.ui.lualine_config")
 --require("user.ui.expressline_config")
 
+require("user.ui.tabby_config")
+
 require("user.ui.nvimtree_config")
 
 --require("tabby").setup({tabline = require("tabby.presets").tab_with_top_win,})
@@ -19,7 +21,7 @@ require('user.ui.telescope_config')
 
 require("user.ui.nvim-session-manager_config")
 
-require("gitsigns").setup()
+require("gitsigns").setup {}
 
 require("fidget").setup{}
 --require("todo-comments").setup {}
