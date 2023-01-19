@@ -1,6 +1,6 @@
 # corei8 NeoVim Configuration
 
-[!theme demo](./wtih_telescope.png)
+![theme demo](./wtih_telescope.png)
 
 ## About
 
