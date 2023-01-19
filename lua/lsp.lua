@@ -1,3 +1,9 @@
+require('mason.settings').set({
+  ui = {
+    border = 'rounded'
+  }
+})
+
 local lsp = require 'lsp-zero'
 
 lsp.set_preferences({
@@ -8,6 +14,19 @@ lsp.set_preferences({
   cmp_capabilities = true,
   manage_nvim_cmp = true,
   call_servers = 'local',
+  virtual_text = false,
+  signs = true,
+  update_in_insert = false,
+  underline = true,
+  severity_sort = true,
+  float = {
+    focusable = false,
+    style = 'minimal',
+    border = 'rounded',
+    source = 'always',
+    header = '',
+    prefix = '',
+  },
   sign_icons = {
     error = '✘',
     warn = '▲',
