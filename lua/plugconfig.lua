@@ -7,13 +7,13 @@ require("user.ui.lualine_config")
 
 require("user.ui.nvimtree_config")
 
-require("tabby").setup({tabline = require("tabby.presets").tab_with_top_win,})
+--require("tabby").setup({tabline = require("tabby.presets").tab_with_top_win,})
 
 require('user.git.gitsigns_config')
 
 --require('user.ui.trouble_config')
 
-require('user.ui.indent-blankline_config')
+--require('user.ui.indent-blankline_config')
 
 require('user.ui.telescope_config')
 
@@ -21,6 +21,7 @@ require("user.ui.nvim-session-manager_config")
 
 require("gitsigns").setup()
 
+require("fidget").setup{}
 --require("todo-comments").setup {}
 
 require('user.ui.treesitter_config')

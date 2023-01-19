@@ -124,11 +124,6 @@ _G.packer_plugins = {
     path = "/Users/frbarnes/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
-  ["express_line.nvim"] = {
-    loaded = true,
-    path = "/Users/frbarnes/.local/share/nvim/site/pack/packer/start/express_line.nvim",
-    url = "https://github.com/tjdevries/express_line.nvim"
-  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/Users/frbarnes/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -143,11 +138,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/frbarnes/.local/share/nvim/site/pack/packer/start/impatient.nvim",
     url = "https://github.com/lewis6991/impatient.nvim"
-  },
-  ["indent-blankline.nvim"] = {
-    loaded = true,
-    path = "/Users/frbarnes/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
-    url = "https://github.com/lukas-reineke/indent-blankline.nvim"
   },
   ["kanagawa.nvim"] = {
     loaded = true,
@@ -293,6 +283,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/frbarnes/.local/share/nvim/site/pack/packer/start/vim-closetag",
     url = "https://github.com/alvan/vim-closetag"
+  },
+  ["vim-cursorword"] = {
+    loaded = true,
+    path = "/Users/frbarnes/.local/share/nvim/site/pack/packer/start/vim-cursorword",
+    url = "https://github.com/itchyny/vim-cursorword"
   },
   ["vim-fugitive"] = {
     loaded = true,

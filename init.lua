@@ -7,6 +7,7 @@ set.incsearch = true
 set.backup = false
 set.errorbells = false
 set.hlsearch = false
+set.laststatus = 3
 set.incsearch = true
 set.showmode = false
 set.swapfile = false
@@ -31,6 +32,8 @@ vim.o.updatetime = 250
 set.termguicolors = true
 set.splitbelow = true
 set.splitright = true
+set.winbar = '%t %p%% %M'
+--set.winbar = '%t %p%% %M%#TabLine#'
 
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "*",

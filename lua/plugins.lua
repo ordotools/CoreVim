@@ -59,8 +59,9 @@ return require("packer").startup(function()
 		'nvim-lualine/lualine.nvim',
 		requires = { 'kyazdani42/nvim-web-devicons', opt = true }
 	})
-	use 'liuchengxu/vim-which-key'
+	--use 'liuchengxu/vim-which-key'
 	--use 'tjdevries/express_line.nvim'
+	use "j-hui/fidget.nvim"
 
 	-- TERMINAL
 	use { -- I just love this plugin
@@ -121,9 +122,10 @@ return require("packer").startup(function()
 	use "kkharji/sqlite.lua" -- requires $ luarocks install sqlite luv
 
 	-- OTHER
-	use("lukas-reineke/indent-blankline.nvim")
+	--use("lukas-reineke/indent-blankline.nvim") # not sure if I want to keep this
 	use('mrjones2014/smart-splits.nvim')
 	use 'mbbill/undotree'
+	use "itchyny/vim-cursorword"
 
 	-- THEME CREATION
 	use('rktjmp/lush.nvim')
