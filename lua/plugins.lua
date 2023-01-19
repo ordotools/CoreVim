@@ -27,7 +27,6 @@ return require("packer").startup(function()
 		"catppuccin/nvim",
 		as = "catppuccin",
 	})
-	use 'navarasu/onedark.nvim'
 	use 'bluz71/vim-nightfly-guicolors'
 	use 'olimorris/onedarkpro.nvim'
 	use 'EdenEast/nightfox.nvim'
