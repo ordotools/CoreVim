@@ -1,6 +1,4 @@
-local lsp = require('lsp-zero')
-
---lsp.preset('recommended')
+local lsp = require 'lsp-zero'
 
 lsp.set_preferences({
   suggest_lsp_servers = true,
@@ -19,8 +17,11 @@ lsp.set_preferences({
 })
 
 lsp.ensure_installed({
-	'eslint',
-	'sumneko_lua',
+  'eslint',
+  'sumneko_lua',
+  'jedi_language_server'
 })
+
+lsp.nvim_workspace()
 
 lsp.setup()

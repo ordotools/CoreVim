@@ -18,7 +18,7 @@ return require("packer").startup(function()
 	use("wbthomason/packer.nvim")
 
 	-- STARTUP
-	use 'goolord/alpha-nvim'
+	--use 'goolord/alpha-nvim'
 	use 'Shatur/neovim-session-manager'
 	use 'lewis6991/impatient.nvim'
 
