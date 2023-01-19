@@ -30,7 +30,7 @@ vim.o.updatetime = 250
 vim.opt.termguicolors = true
 vim.opt.splitbelow = true
 vim.opt.splitright = true
-vim.opt.winbar = '%t %p%% %M' -- Lets try to make this better eventually.
+vim.opt.winbar = ' %t %p%% %M ' -- Lets try to make this better eventually.
 --vim.opt.winbar = '%t %p%% %M%#TabLine#'
 
 --vim.api.nvim_create_autocmd("FileType", {
