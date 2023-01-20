@@ -1,4 +1,4 @@
-require("alpha").setup(require'alpha.themes.dashboard'.config) --startify
+require("alpha").setup(require'alpha.themes.startify'.config) --startify, dashboard
 
 require("user.ui.lualine_config")
 
