@@ -54,7 +54,7 @@ require 'impatient'
 -- onedark themes    => darker, deep
 -- everforest themes => hard, medium(default), soft
 
-Scheme = 'nordfox'
+Scheme = 'catppuccin'
 
 require('user.colorschemes.'..Scheme..'_config')
 
