@@ -30,6 +30,7 @@ vim.opt.undofile = true
 vim.opt.wildmenu = true
 vim.opt.winbar = ' %t %p%% %M ' -- Lets try to make this better eventually.
 vim.opt.wrap = false
+vim.opt.cmdheight = 0
 
 vim.api.nvim_create_autocmd("CursorHold,CursorHoldI", {
 	pattern = "*",
