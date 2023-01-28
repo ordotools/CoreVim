@@ -30,7 +30,7 @@ vim.opt.undofile = true
 vim.opt.wildmenu = true
 vim.opt.winbar = ' %t %p%% %M ' -- Lets try to make this better eventually.
 vim.opt.wrap = false
-vim.opt.cmdheight = 0
+--vim.opt.cmdheight = 0
 
 vim.api.nvim_create_autocmd("CursorHold,CursorHoldI", {
 	pattern = "*",
@@ -39,15 +39,13 @@ vim.api.nvim_create_autocmd("CursorHold,CursorHoldI", {
 
 local augroup = vim.api.nvim_create_augroup("my_textwidth", { clear = true })
 
-vim.api.nvim_create_autocmd("FileType", {
-	pattern = "text,markdown,tex",
-	group = augroup,
-	command = "vim.opt.local textwidth=80",
-})
+--vim.api.nvim_create_autocmd("FileType", {
+	--pattern = "text,markdown,tex",
+	--group = augroup,
+	--command = "vim.opt.local textwidth=80",
+--})
 
 require 'plugins'
--- make sure that impatient is the first to load!
-
 require 'impatient'
 
 -- catppuccin, onedarkpro, nightfly, onedark, nightfox, tokyonight, kanagawa, gruvbox
@@ -55,10 +53,8 @@ require 'impatient'
 -- onedark themes    => darker, deep
 -- everforest themes => hard, medium(default), soft
 
-Scheme = 'catppuccin'
-
+Scheme = 'kanagawa'
 require('user.colorschemes.'..Scheme..'_config')
-
 if Scheme == 'onedark' then
 	require('onedark').vim.opt.p {
 	    style = 'deep'
@@ -74,7 +70,18 @@ end
 
 vim.cmd("colorscheme " .. Scheme)
 
+-- TODO: get this to work eventually.
+--" ++once supported in Nvim 0.4+ and Vim 8.1+
+--autocmd CmdlineEnter * ++once call s:wilder_init() | call wilder#main#start()
+
+--function! s:wilder_init() abort
+  --call wilder#setup(...)
+  --call wilder#set_option(..., ...)
+
+  --call wilder#set_option('pipeline', ...)
+  --call wilder#set_option('renderer', ...)
+--endfunction
+
 require "plugconfig"
 require "keymapping"
 require "lsp"
---require("cmp-config")
