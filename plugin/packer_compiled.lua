@@ -99,11 +99,6 @@ _G.packer_plugins = {
     path = "/Users/frbarnes/.local/share/nvim/site/pack/packer/start/cmp-buffer",
     url = "https://github.com/hrsh7th/cmp-buffer"
   },
-  ["cmp-cmdline"] = {
-    loaded = true,
-    path = "/Users/frbarnes/.local/share/nvim/site/pack/packer/start/cmp-cmdline",
-    url = "https://github.com/hrsh7th/cmp-cmdline"
-  },
   ["cmp-nvim-lsp"] = {
     loaded = true,
     path = "/Users/frbarnes/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
@@ -189,11 +184,6 @@ _G.packer_plugins = {
     path = "/Users/frbarnes/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
-  ["neovim-session-manager"] = {
-    loaded = true,
-    path = "/Users/frbarnes/.local/share/nvim/site/pack/packer/start/neovim-session-manager",
-    url = "https://github.com/Shatur/neovim-session-manager"
-  },
   nerdcommenter = {
     loaded = true,
     path = "/Users/frbarnes/.local/share/nvim/site/pack/packer/start/nerdcommenter",
@@ -249,11 +239,6 @@ _G.packer_plugins = {
     path = "/Users/frbarnes/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
-  ["sqlite.lua"] = {
-    loaded = true,
-    path = "/Users/frbarnes/.local/share/nvim/site/pack/packer/start/sqlite.lua",
-    url = "https://github.com/kkharji/sqlite.lua"
-  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/Users/frbarnes/.local/share/nvim/site/pack/packer/start/telescope.nvim",
@@ -274,20 +259,10 @@ _G.packer_plugins = {
     path = "/Users/frbarnes/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
     url = "https://github.com/folke/tokyonight.nvim"
   },
-  undotree = {
-    loaded = true,
-    path = "/Users/frbarnes/.local/share/nvim/site/pack/packer/start/undotree",
-    url = "https://github.com/mbbill/undotree"
-  },
   ["vim-closetag"] = {
     loaded = true,
     path = "/Users/frbarnes/.local/share/nvim/site/pack/packer/start/vim-closetag",
     url = "https://github.com/alvan/vim-closetag"
-  },
-  ["vim-cursorword"] = {
-    loaded = true,
-    path = "/Users/frbarnes/.local/share/nvim/site/pack/packer/start/vim-cursorword",
-    url = "https://github.com/itchyny/vim-cursorword"
   },
   ["vim-fugitive"] = {
     loaded = true,
@@ -308,11 +283,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/frbarnes/.local/share/nvim/site/pack/packer/start/vim-surround",
     url = "https://github.com/tpope/vim-surround"
-  },
-  vimtex = {
-    loaded = true,
-    path = "/Users/frbarnes/.local/share/nvim/site/pack/packer/start/vimtex",
-    url = "https://github.com/lervag/vimtex"
   },
   ["wilder.nvim"] = {
     loaded = true,

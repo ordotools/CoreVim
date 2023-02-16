@@ -17,7 +17,8 @@ return require("packer").startup(function()
 
 	-- STARTUP
 	use 'goolord/alpha-nvim'
-	use 'Shatur/neovim-session-manager'
+
+	--use 'Shatur/neovim-session-manager'
 	use 'lewis6991/impatient.nvim'
 
 	-- THEMES
@@ -30,7 +31,7 @@ return require("packer").startup(function()
 	use 'EdenEast/nightfox.nvim'
 	use 'folke/tokyonight.nvim'
 	use 'rebelot/kanagawa.nvim'
-	use  'ellisonleao/gruvbox.nvim'
+	use 'ellisonleao/gruvbox.nvim'
 	use 'sainnhe/everforest'
 
 	-- SYNTAX HIGHLIGHTING
@@ -50,9 +51,6 @@ return require("packer").startup(function()
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
 
-	-- BUFFERS & TABS
-	--use 'nanozuki/tabby.nvim'
-
 	-- STATUSLINE
 	use({
 		'nvim-lualine/lualine.nvim',
@@ -67,7 +65,6 @@ return require("packer").startup(function()
 	}
 
 	-- COMPLETION
-	-- doing it this way is super easy
 	use {
 		'VonHeikemen/lsp-zero.nvim',
 		requires = {
@@ -78,7 +75,7 @@ return require("packer").startup(function()
 
 			-- Autocompletion
 			{'hrsh7th/nvim-cmp'},
-		{'hrsh7th/cmp-buffer'},
+			{'hrsh7th/cmp-buffer'},
 			{'hrsh7th/cmp-path'},
 			{'saadparwaiz1/cmp_luasnip'},
 			{'hrsh7th/cmp-nvim-lsp'},
@@ -90,43 +87,39 @@ return require("packer").startup(function()
 		}
 	}
 
-	use 'hrsh7th/cmp-cmdline'
+	--use 'hrsh7th/cmp-cmdline'
 
 	use 'gelguy/wilder.nvim'
 
 	-- GIT INTEGRATION
-	use({
-		"lewis6991/gitsigns.nvim",
-	})
-	use({
-		"tpope/vim-fugitive",
-	})
+	use 'lewis6991/gitsigns.nvim'
+	use 'tpope/vim-fugitive'
 	use 'kdheepak/lazygit.nvim'
 
 	-- SHIFTS vs TABS
-	use("tpope/vim-sleuth")
+	use 'tpope/vim-sleuth'
 
 	-- SURROUNDS
-	use("tpope/vim-surround")
-	use("alvan/vim-closetag")
-	use("jiangmiao/auto-pairs")
+	use 'tpope/vim-surround'
+	use 'alvan/vim-closetag'
+	use 'jiangmiao/auto-pairs'
 
 	-- COMMENTS
-	use("preservim/nerdcommenter")
+	use 'preservim/nerdcommenter'
 	use {
 		"folke/todo-comments.nvim",
 		requires = "nvim-lua/plenary.nvim",
 	}
 
 	-- FILETYPES/SYNTAX-TYPES
-	use("lervag/vimtex")
-	use "kkharji/sqlite.lua" -- requires $ luarocks install sqlite luv
+	--use("lervag/vimtex")
+	--use "kkharji/sqlite.lua" -- requires $ luarocks install sqlite luv
 
 	-- OTHER
 	--use("lukas-reineke/indent-blankline.nvim") # not sure if I want to keep this
 	--use('mrjones2014/smart-splits.nvim')
-	use 'mbbill/undotree'
-	use "itchyny/vim-cursorword"
+	--use 'mbbill/undotree'
+	--use 'itchyny/vim-cursorword'
 
 	-- THEME CREATION
 	use('rktjmp/lush.nvim')
