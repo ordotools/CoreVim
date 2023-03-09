@@ -2,6 +2,7 @@
 
 ![code size](https://img.shields.io/github/repo-size/corei8/CoreVim?style=flat-square)
 ![language](https://img.shields.io/github/languages/top/corei8/CoreVim?style=flat-square)
+![frequency](https://img.shields.io/github/commit-activity/m/corei8/CoreVim?style=flat-square)
 
 ![theme demo](./wtih_telescope.png)
 
