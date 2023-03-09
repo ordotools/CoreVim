@@ -6,6 +6,8 @@
 
 ![theme demo](./wtih_telescope.png)
 
+![theme demo](./wtih_tree.png)
+
 ## About
 
 Simple configuration with fast loading and little more than the essentials.
