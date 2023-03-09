@@ -30,8 +30,6 @@ Clone into `~/.config/nvim`:
 git clone https://github.com/corei8/CoreVim/ ~/.config/nvim
 ```
 
-You will have to install [Node](https://nodejs.org/en/download/) for some of the LSP servers.
-
 ## Keymapping
 
 Collection of my most used key combinations.
