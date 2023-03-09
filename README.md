@@ -6,7 +6,7 @@
 
 ![theme demo](./wtih_telescope.png)
 
-![theme demo](./wtih_tree.png)
+![theme demo](./with_tree.png)
 
 ## About
 
