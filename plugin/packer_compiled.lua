@@ -124,11 +124,6 @@ _G.packer_plugins = {
     path = "/Users/frbarnes/.local/share/nvim/site/pack/packer/start/everforest",
     url = "https://github.com/sainnhe/everforest"
   },
-  ["fidget.nvim"] = {
-    loaded = true,
-    path = "/Users/frbarnes/.local/share/nvim/site/pack/packer/start/fidget.nvim",
-    url = "https://github.com/j-hui/fidget.nvim"
-  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/Users/frbarnes/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -168,11 +163,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/frbarnes/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
-  },
-  ["lush.nvim"] = {
-    loaded = true,
-    path = "/Users/frbarnes/.local/share/nvim/site/pack/packer/start/lush.nvim",
-    url = "https://github.com/rktjmp/lush.nvim"
   },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
@@ -244,11 +234,6 @@ _G.packer_plugins = {
     path = "/Users/frbarnes/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
-  ["todo-comments.nvim"] = {
-    loaded = true,
-    path = "/Users/frbarnes/.local/share/nvim/site/pack/packer/start/todo-comments.nvim",
-    url = "https://github.com/folke/todo-comments.nvim"
-  },
   ["toggleterm.nvim"] = {
     loaded = true,
     path = "/Users/frbarnes/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
@@ -268,11 +253,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/frbarnes/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
-  },
-  ["vim-nightfly-guicolors"] = {
-    loaded = true,
-    path = "/Users/frbarnes/.local/share/nvim/site/pack/packer/start/vim-nightfly-guicolors",
-    url = "https://github.com/bluz71/vim-nightfly-guicolors"
   },
   ["vim-sleuth"] = {
     loaded = true,

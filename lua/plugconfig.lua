@@ -12,13 +12,13 @@ require('user.ui.telescope_config')
 
 require("gitsigns").setup {}
 
-require("fidget").setup {} -- nice but not needed
+--require("fidget").setup {} -- nice but not needed
 
 require('user.ui.treesitter_config')
 
 --require('user.files.vimtex_config')
 
-require('user.colorschemes.nightfly_config')
+--require('user.colorschemes.nightfly_config')
 
 require('user.colorschemes.onedarkpro_config')
 

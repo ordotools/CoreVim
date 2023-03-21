@@ -18,7 +18,6 @@ return require("packer").startup(function()
 	-- STARTUP
 	use 'goolord/alpha-nvim'
 
-	--use 'Shatur/neovim-session-manager'
 	use 'lewis6991/impatient.nvim'
 
 	-- THEMES
@@ -26,7 +25,6 @@ return require("packer").startup(function()
 		"catppuccin/nvim",
 		as = "catppuccin",
 	})
-	use 'bluz71/vim-nightfly-guicolors'
 	use 'olimorris/onedarkpro.nvim'
 	use 'EdenEast/nightfox.nvim'
 	use 'folke/tokyonight.nvim'
@@ -56,7 +54,7 @@ return require("packer").startup(function()
 		'nvim-lualine/lualine.nvim',
 		requires = { 'kyazdani42/nvim-web-devicons', opt = true }
 	})
-	use "j-hui/fidget.nvim"
+	--use "j-hui/fidget.nvim"
 
 	-- TERMINAL
 	use { -- I just love this plugin
@@ -106,10 +104,10 @@ return require("packer").startup(function()
 
 	-- COMMENTS
 	use 'preservim/nerdcommenter'
-	use {
-		"folke/todo-comments.nvim",
-		requires = "nvim-lua/plenary.nvim",
-	}
+	--use {
+		--"folke/todo-comments.nvim",
+		--requires = "nvim-lua/plenary.nvim",
+	--}
 
 	-- FILETYPES/SYNTAX-TYPES
 	--use("lervag/vimtex")
@@ -122,7 +120,7 @@ return require("packer").startup(function()
 	--use 'itchyny/vim-cursorword'
 
 	-- THEME CREATION
-	use('rktjmp/lush.nvim')
+	--use 'rktjmp/lush.nvim'
 
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()

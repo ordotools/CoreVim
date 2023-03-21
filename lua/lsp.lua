@@ -36,9 +36,6 @@ lsp.set_preferences({
 })
 
 lsp.ensure_installed({
-  'eslint',
-  'sumneko_lua',
-  'jedi_language_server'
 })
 
 lsp.nvim_workspace()

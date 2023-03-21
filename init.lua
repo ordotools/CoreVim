@@ -30,14 +30,13 @@ vim.opt.undofile = true
 vim.opt.wildmenu = true
 vim.opt.winbar = ' %t %p%% %M ' -- Lets try to make this better eventually.
 vim.opt.wrap = false
---vim.opt.cmdheight = 0
 
 vim.api.nvim_create_autocmd("CursorHold,CursorHoldI", {
 	pattern = "*",
 	command = "lua vim.diagnostic.open_float(nil, {focus=false})",
 })
 
-local augroup = vim.api.nvim_create_augroup("my_textwidth", { clear = true })
+--local augroup = vim.api.nvim_create_augroup("my_textwidth", { clear = true })
 
 --vim.api.nvim_create_autocmd("FileType", {
 	--pattern = "text,markdown,tex",
@@ -85,3 +84,4 @@ vim.cmd("colorscheme " .. Scheme)
 require "plugconfig"
 require "keymapping"
 require "lsp"
+
