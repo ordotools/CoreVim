@@ -36,52 +36,14 @@ vim.api.nvim_create_autocmd("CursorHold,CursorHoldI", {
 	command = "lua vim.diagnostic.open_float(nil, {focus=false})",
 })
 
---local augroup = vim.api.nvim_create_augroup("my_textwidth", { clear = true })
-
---vim.api.nvim_create_autocmd("FileType", {
-	--pattern = "text,markdown,tex",
-	--group = augroup,
-	--command = "vim.opt.local textwidth=80",
---})
-
 require 'plugins'
 require 'impatient'
-
--- catppuccin, onedarkpro, nightfly, onedark, nightfox, tokyonight, kanagawa, gruvbox
--- nightfox themes   => nightfox, dayfox, dawnfox, duskfox, nordfox, terafox
--- onedark themes    => darker, deep
--- everforest themes => hard, medium(default), soft
+require 'plugconfig'
 
 Scheme = 'kanagawa'
 require('user.colorschemes.'..Scheme..'_config')
-if Scheme == 'onedark' then
-	require('onedark').vim.opt.p {
-	    style = 'deep'
-	}
-end
-if Scheme == 'gruvbox' then
-	vim.o.background = "dark" -- or "light" for light mode
-end
-if Scheme == 'gruvbox' then
-	vim.o.background = "dark" -- or "light" for light mode
-	--let g:everforest_background = 'soft'
-end
+vim.cmd('colorscheme ' .. Scheme)
 
-vim.cmd("colorscheme " .. Scheme)
-
--- TODO: get this to work eventually.
---" ++once supported in Nvim 0.4+ and Vim 8.1+
---autocmd CmdlineEnter * ++once call s:wilder_init() | call wilder#main#start()
-
---function! s:wilder_init() abort
-  --call wilder#setup(...)
-  --call wilder#set_option(..., ...)
-
-  --call wilder#set_option('pipeline', ...)
-  --call wilder#set_option('renderer', ...)
---endfunction
-
-require "plugconfig"
-require "keymapping"
-require "lsp"
+require 'keymapping'
+require 'lsp'
 

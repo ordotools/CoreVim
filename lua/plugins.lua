@@ -17,20 +17,10 @@ return require("packer").startup(function()
 
 	-- STARTUP
 	use 'goolord/alpha-nvim'
-
 	use 'lewis6991/impatient.nvim'
 
 	-- THEMES
-	use({
-		"catppuccin/nvim",
-		as = "catppuccin",
-	})
-	use 'olimorris/onedarkpro.nvim'
-	use 'EdenEast/nightfox.nvim'
-	use 'folke/tokyonight.nvim'
 	use 'rebelot/kanagawa.nvim'
-	use 'ellisonleao/gruvbox.nvim'
-	use 'sainnhe/everforest'
 
 	-- SYNTAX HIGHLIGHTING
 	use('nvim-treesitter/nvim-treesitter', {run = ":TSUpdate"})
@@ -54,7 +44,6 @@ return require("packer").startup(function()
 		'nvim-lualine/lualine.nvim',
 		requires = { 'kyazdani42/nvim-web-devicons', opt = true }
 	})
-	--use "j-hui/fidget.nvim"
 
 	-- TERMINAL
 	use { -- I just love this plugin
@@ -84,8 +73,6 @@ return require("packer").startup(function()
 			{'rafamadriz/friendly-snippets'},
 		}
 	}
-
-	--use 'hrsh7th/cmp-cmdline'
 
 	use 'gelguy/wilder.nvim'
 

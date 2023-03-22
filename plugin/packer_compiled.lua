@@ -89,11 +89,6 @@ _G.packer_plugins = {
     path = "/Users/frbarnes/.local/share/nvim/site/pack/packer/start/auto-pairs",
     url = "https://github.com/jiangmiao/auto-pairs"
   },
-  catppuccin = {
-    loaded = true,
-    path = "/Users/frbarnes/.local/share/nvim/site/pack/packer/start/catppuccin",
-    url = "https://github.com/catppuccin/nvim"
-  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/Users/frbarnes/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -119,11 +114,6 @@ _G.packer_plugins = {
     path = "/Users/frbarnes/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
-  everforest = {
-    loaded = true,
-    path = "/Users/frbarnes/.local/share/nvim/site/pack/packer/start/everforest",
-    url = "https://github.com/sainnhe/everforest"
-  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/Users/frbarnes/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -133,11 +123,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/frbarnes/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
-  },
-  ["gruvbox.nvim"] = {
-    loaded = true,
-    path = "/Users/frbarnes/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
-    url = "https://github.com/ellisonleao/gruvbox.nvim"
   },
   ["impatient.nvim"] = {
     loaded = true,
@@ -179,11 +164,6 @@ _G.packer_plugins = {
     path = "/Users/frbarnes/.local/share/nvim/site/pack/packer/start/nerdcommenter",
     url = "https://github.com/preservim/nerdcommenter"
   },
-  ["nightfox.nvim"] = {
-    loaded = true,
-    path = "/Users/frbarnes/.local/share/nvim/site/pack/packer/start/nightfox.nvim",
-    url = "https://github.com/EdenEast/nightfox.nvim"
-  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/Users/frbarnes/.local/share/nvim/site/pack/packer/start/nvim-cmp",
@@ -209,11 +189,6 @@ _G.packer_plugins = {
     path = "/Users/frbarnes/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
-  ["onedarkpro.nvim"] = {
-    loaded = true,
-    path = "/Users/frbarnes/.local/share/nvim/site/pack/packer/start/onedarkpro.nvim",
-    url = "https://github.com/olimorris/onedarkpro.nvim"
-  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/Users/frbarnes/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -238,11 +213,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/frbarnes/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
     url = "https://github.com/akinsho/toggleterm.nvim"
-  },
-  ["tokyonight.nvim"] = {
-    loaded = true,
-    path = "/Users/frbarnes/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
-    url = "https://github.com/folke/tokyonight.nvim"
   },
   ["vim-closetag"] = {
     loaded = true,
