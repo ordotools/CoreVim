@@ -38,8 +38,8 @@ Collection of my most used key combinations.
 
 | Key(s)          | Action                  |
 |---:             |:---                     |
-| ```jj```        | ESC                     |
 | ```<space>```   | leader                  |
+| ```jj```        | Toggle Insert Mode      |
 | ```<space>cc``` | comment out line        |
 | ```<space>cu``` | uncomment line          |
 | ```<space>ga``` | git add                 |
