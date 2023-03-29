@@ -16,3 +16,5 @@ require('user.ui.treesitter_config')
 require('user.term.toggleterm_config')
 
 require('user.term.wilder_config')
+
+--require('user.ui.corestatus_config')

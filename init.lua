@@ -28,7 +28,7 @@ vim.opt.termguicolors = true
 vim.opt.termguicolors = true
 vim.opt.undofile = true
 vim.opt.wildmenu = true
-vim.opt.winbar = ' %t %p%% %M ' -- Lets try to make this better eventually.
+--vim.opt.winbar = ' %n %t %M%=%p%% ' -- in the days before barbecue
 vim.opt.wrap = false
 
 vim.api.nvim_create_autocmd("CursorHold,CursorHoldI", {

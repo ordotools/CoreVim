@@ -28,10 +28,14 @@ lsp.set_preferences({
     prefix = '',
   },
   sign_icons = {
-    error = '✘',
-    warn = '▲',
-    hint = '⚑',
-    info = ''
+    --error = '✘',
+    --warn = '▲',
+    --hint = '⚑',
+    --info = ''
+    error = '',
+    warn = '',
+    hint = '',
+    info = ''
   }
 })
 
