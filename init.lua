@@ -5,6 +5,7 @@ vim.o.updatetime = 250
 vim.opt.backup = false
 vim.opt.cursorline = true
 vim.opt.cursorlineopt = "number"
+vim.opt.colorcolumn = "80"
 vim.opt.errorbells = false
 vim.opt.expandtab = true
 vim.opt.exrc = true
@@ -12,6 +13,8 @@ vim.opt.hidden = true
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 vim.opt.laststatus = 3
+vim.opt.listchars = "trail:…,nbsp:°,eol:«"
+vim.opt.list = false
 vim.opt.nu = true
 vim.opt.relativenumber = true
 vim.opt.scrolloff = 8
@@ -47,3 +50,4 @@ vim.cmd('colorscheme ' .. Scheme)
 require 'keymapping'
 require 'lsp'
 
+--require('barbecue').setup()

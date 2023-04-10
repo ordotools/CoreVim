@@ -4,7 +4,8 @@ require('mason.settings').set({
   }
 })
 
-local lsp = require 'lsp-zero'
+--local lsp = require 'lsp-zero'
+local lsp = require('lsp-zero').preset({})
 
 lsp.set_preferences({
   suggest_lsp_servers = true,
@@ -43,5 +44,13 @@ lsp.ensure_installed({
 })
 
 lsp.nvim_workspace()
+
+lsp.on_attach(function(client, bufnr)
+  lsp.default_keymaps({buffer = bufnr})
+
+  if client.server_capabilities.documentSymbolProvider then
+    require('nvim-navic').attach(client, bufnr)
+  end
+end)
 
 lsp.setup()

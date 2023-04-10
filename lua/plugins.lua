@@ -25,6 +25,7 @@ return require("packer").startup(function()
 	-- SYNTAX HIGHLIGHTING
 	use('nvim-treesitter/nvim-treesitter', {run = ":TSUpdate"})
 	use 'nvim-treesitter/playground'
+	use	'nvim-treesitter/nvim-treesitter-context'
 
 	-- FILE EXPLORERATION
 	use({
@@ -44,23 +45,22 @@ return require("packer").startup(function()
 		'nvim-lualine/lualine.nvim',
 		requires = { 'kyazdani42/nvim-web-devicons', opt = true }
 	})
-	use({
-		"utilyre/barbecue.nvim",
-		tag = "*",
-		requires = {
-			"SmiteshP/nvim-navic",
-			"nvim-tree/nvim-web-devicons", -- optional dependency
-		},
-		after = "nvim-web-devicons", -- keep this if you're using NvChad
-		config = function()
-			require("barbecue").setup()
-		end,
-	})
-	--use 'freddiehaddad/feline.nvim'
+	use {
+		"SmiteshP/nvim-navic",
+		requires = "neovim/nvim-lspconfig"
+	}
+	--use({
+		--'utilyre/barbecue.nvim',
+		--tag = "*",
+		--requires = {
+			--"SmiteshP/nvim-navic",
+			--"nvim-tree/nvim-web-devicons", -- optional dependency
+		--},
+	--})
 
 	-- TERMINAL
 	use { -- I just love this plugin
-		"akinsho/toggleterm.nvim",
+		'akinsho/toggleterm.nvim',
 		tag = '*',
 	}
 
@@ -96,6 +96,7 @@ return require("packer").startup(function()
 
 	-- SHIFTS vs TABS
 	use 'tpope/vim-sleuth'
+	use 'Bekaboo/deadcolumn.nvim' -- see the length of the current line with color
 
 	-- SURROUNDS
 	use 'tpope/vim-surround'
