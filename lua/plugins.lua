@@ -11,8 +11,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
 	})
 end
 vim.cmd([[packadd packer.nvim]])
-return require("packer").startup(function()
-
+return require("packer").startup(function(use)
 	use 'wbthomason/packer.nvim'
 
 	-- STARTUP
@@ -49,17 +48,9 @@ return require("packer").startup(function()
 		"SmiteshP/nvim-navic",
 		requires = "neovim/nvim-lspconfig"
 	}
-	--use({
-		--'utilyre/barbecue.nvim',
-		--tag = "*",
-		--requires = {
-			--"SmiteshP/nvim-navic",
-			--"nvim-tree/nvim-web-devicons", -- optional dependency
-		--},
-	--})
 
 	-- TERMINAL
-	use { -- I just love this plugin
+	use {
 		'akinsho/toggleterm.nvim',
 		tag = '*',
 	}
@@ -86,7 +77,6 @@ return require("packer").startup(function()
 			{'rafamadriz/friendly-snippets'},
 		}
 	}
-
 	use 'gelguy/wilder.nvim'
 
 	-- GIT INTEGRATION
@@ -101,27 +91,28 @@ return require("packer").startup(function()
 	-- SURROUNDS
 	use 'tpope/vim-surround'
 	use 'alvan/vim-closetag'
-	use 'jiangmiao/auto-pairs'
+	use 'windwp/nvim-autopairs'
+	--use 'jiangmiao/auto-pairs'
 
 	-- COMMENTS
-	use 'preservim/nerdcommenter'
-	--use {
-		--"folke/todo-comments.nvim",
-		--requires = "nvim-lua/plenary.nvim",
-	--}
+	use {
+		"folke/todo-comments.nvim",
+		requires = "nvim-lua/plenary.nvim",
+		config = function()
+			require("todo-comments").setup {
+			}
+		end
+	}
+
+	-- EYE CANDY
+	use 'karb94/neoscroll.nvim'
 
 	-- FILETYPES/SYNTAX-TYPES
 	--use("lervag/vimtex")
 	--use "kkharji/sqlite.lua" -- requires $ luarocks install sqlite luv
 
 	-- OTHER
-	--use("lukas-reineke/indent-blankline.nvim") # not sure if I want to keep this
-	--use('mrjones2014/smart-splits.nvim')
-	--use 'mbbill/undotree'
-	--use 'itchyny/vim-cursorword'
-
-	-- THEME CREATION
-	--use 'rktjmp/lush.nvim'
+	use 'mbbill/undotree'
 
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()
