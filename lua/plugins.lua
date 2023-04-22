@@ -78,6 +78,7 @@ return require("packer").startup(function(use)
 		}
 	}
 	use 'gelguy/wilder.nvim'
+	use 'windwp/nvim-ts-autotag'
 
 	-- GIT INTEGRATION
 	use 'lewis6991/gitsigns.nvim'
@@ -92,9 +93,9 @@ return require("packer").startup(function(use)
 	use 'tpope/vim-surround'
 	use 'alvan/vim-closetag'
 	use 'windwp/nvim-autopairs'
-	--use 'jiangmiao/auto-pairs'
 
 	-- COMMENTS
+	use 'tpope/vim-commentary'
 	use {
 		"folke/todo-comments.nvim",
 		requires = "nvim-lua/plenary.nvim",
@@ -104,12 +105,8 @@ return require("packer").startup(function(use)
 		end
 	}
 
-	-- EYE CANDY
-	use 'karb94/neoscroll.nvim'
-
-	-- FILETYPES/SYNTAX-TYPES
-	--use("lervag/vimtex")
-	--use "kkharji/sqlite.lua" -- requires $ luarocks install sqlite luv
+	-- -- EYE CANDY
+	-- use 'karb94/neoscroll.nvim'
 
 	-- OTHER
 	use 'mbbill/undotree'

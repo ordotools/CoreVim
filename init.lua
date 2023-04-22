@@ -31,13 +31,19 @@ vim.opt.termguicolors = true
 vim.opt.termguicolors = true
 vim.opt.undofile = true
 vim.opt.wildmenu = true
---vim.opt.winbar = ' %n %t %M%=%p%% ' -- in the days before barbecue
+-- vim.opt.winbar = ' %n %t %M%=%p%% ' -- in the days before barbecue
 vim.opt.wrap = false
 
 vim.api.nvim_create_autocmd("CursorHold,CursorHoldI", {
 	pattern = "*",
 	command = "lua vim.diagnostic.open_float(nil, {focus=false})",
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "tex", -- FIXME: this is not working right now.
+	command = "setfiletype tex",
+	}
+)
 
 require 'plugins'
 require 'impatient'
@@ -49,5 +55,7 @@ vim.cmd('colorscheme ' .. Scheme)
 
 require 'keymapping'
 require 'lsp'
+
+-- npairs.setup({ map_cr = true })
 
 --require('barbecue').setup()

@@ -4,7 +4,6 @@ require('mason.settings').set({
   }
 })
 
---local lsp = require 'lsp-zero'
 local lsp = require('lsp-zero').preset({})
 
 lsp.set_preferences({

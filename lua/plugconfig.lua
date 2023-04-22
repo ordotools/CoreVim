@@ -21,4 +21,8 @@ require('user.term.wilder_config')
 
 require('user.ui.deadcolumn_config')
 
-require('user.ui.neoscroll_config')
+-- require('user.ui.neoscroll_config')
+
+require("nvim-autopairs").setup {}
+
+require('nvim-ts-autotag').setup {}
