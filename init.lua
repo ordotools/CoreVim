@@ -31,7 +31,7 @@ vim.opt.termguicolors = true
 vim.opt.termguicolors = true
 vim.opt.undofile = true
 vim.opt.wildmenu = true
--- vim.opt.winbar = ' %n %t %M%=%p%% ' -- in the days before barbecue
+vim.opt.winbar = ' %n %t %M%=%p%% ' -- in the days before barbecue
 vim.opt.wrap = false
 
 vim.api.nvim_create_autocmd("CursorHold,CursorHoldI", {
@@ -40,22 +40,30 @@ vim.api.nvim_create_autocmd("CursorHold,CursorHoldI", {
 })
 
 vim.api.nvim_create_autocmd("FileType", {
-	pattern = "tex", -- FIXME: this is not working right now.
+	pattern = "tex",
 	command = "setfiletype tex",
 	}
 )
 
-require 'plugins'
-require 'impatient'
-require 'plugconfig'
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
 
-Scheme = 'kanagawa'
-require('user.colorschemes.'..Scheme..'_config')
-vim.cmd('colorscheme ' .. Scheme)
+require("lazy").setup("plugins")
+
+--Scheme = 'kanagawa'
+--require('user.colorschemes.'..Scheme..'_config')
+--vim.cmd('colorscheme ' .. Scheme)
+vim.cmd('colorscheme  kanagawa')
 
 require 'keymapping'
-require 'lsp'
-
--- npairs.setup({ map_cr = true })
-
---require('barbecue').setup()
+-- require 'lsp'

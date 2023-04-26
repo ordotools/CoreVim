@@ -3,7 +3,7 @@ require("user.ui.alpha_config")
 require("user.ui.lualine_config")
 --require("user.ui.feline_config")
 
-require("user.ui.nvimtree_config")
+--require("user.ui.nvimtree_config")
 
 require('user.git.gitsigns_config')
 

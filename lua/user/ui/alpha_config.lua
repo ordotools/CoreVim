@@ -21,12 +21,13 @@ local function get_extension(fn)
   return ext
 end
 
---local function footer()
+local function footer()
   --local total_plugins = require("lazy").stats().count
-  --local date = os.date("%d-%m-%Y")
-  --local time = os.date("%H:%M:%S")
-  --return "[ " .. total_plugins .. " plugins] [ " .. date .. "] [ " .. time .. "]"
---end
+  local total_plugins = "52"
+  local date = os.date("%d-%m-%y")
+  local time = os.date("%h:%m:%s")
+  return "[ " .. total_plugins .. " plugins] [ " .. date .. "] [ " .. time .. "]"
+end
 
 local function icon(fn)
   local nwd = require("nvim-web-devicons")
@@ -51,10 +52,10 @@ local function file_button(fn, sc, short_fn)
   end
   ico_txt = ico .. "  "
 
-  local file_button_el = dashboard.button(sc, ico_txt .. short_fn, "<cmd>e " .. fn .. " <CR>")
+  local file_button_el = dashboard.button(sc, ico_txt .. short_fn, "<cmd>e " .. fn .. " <cr>")
   local fn_start = short_fn:match(".*/")
   if fn_start ~= nil then
-    table.insert(fb_hl, { "Type", #ico_txt - 2, #fn_start + #ico_txt - 2 })
+    table.insert(fb_hl, { "type", #ico_txt - 2, #fn_start + #ico_txt - 2 })
   end
   file_button_el.opts.hl = fb_hl
   return file_button_el
@@ -64,7 +65,7 @@ local default_mru_ignore = { "gitcommit" }
 
 local mru_opts = {
   ignore = function(path, ext)
-    return (string.find(path, "COMMIT_EDITMSG")) or (vim.tbl_contains(default_mru_ignore, ext))
+    return (string.find(path, "commit_editmsg")) or (vim.tbl_contains(default_mru_ignore, ext))
   end,
 }
 
@@ -128,19 +129,27 @@ local function mru(start, cwd, items_number, opts)
   }
 end
 
+-- local logo = {
+--  [[ ██████╗ ██████╗ ██████╗ ███████╗██╗   ██╗██╗███╗   ███╗]],
+--  [[██╔════╝██╔═══██╗██╔══██╗██╔════╝██║   ██║██║████╗ ████║]],
+--  [[██║     ██║   ██║██████╔╝█████╗  ██║   ██║██║██╔████╔██║]],
+--  [[██║     ██║   ██║██╔══██╗██╔══╝  ╚██╗ ██╔╝██║██║╚██╔╝██║]],
+--  [[╚██████╗╚██████╔╝██║  ██║███████╗ ╚████╔╝ ██║██║ ╚═╝ ██║]],
+--  [[ ╚═════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝  ╚═══╝  ╚═╝╚═╝     ╚═╝]],
+-- }
 local logo = {
- [[ ██████╗ ██████╗ ██████╗ ███████╗██╗   ██╗██╗███╗   ███╗]],
- [[██╔════╝██╔═══██╗██╔══██╗██╔════╝██║   ██║██║████╗ ████║]],
- [[██║     ██║   ██║██████╔╝█████╗  ██║   ██║██║██╔████╔██║]],
- [[██║     ██║   ██║██╔══██╗██╔══╝  ╚██╗ ██╔╝██║██║╚██╔╝██║]],
- [[╚██████╗╚██████╔╝██║  ██║███████╗ ╚████╔╝ ██║██║ ╚═╝ ██║]],
- [[ ╚═════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝  ╚═══╝  ╚═╝╚═╝     ╚═╝]],
+ [[███╗ ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗]],
+ [[████╗██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║]],
+ [[██╔████║█████╗  ██║   ██║██║   ██║██║██╔████╔██║]],
+ [[██║╚███║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║]],
+ [[██║ ╚██║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║]],
+ [[╚═╝  ╚═╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝]],
 }
 local section_header = {
   type = "text",
   val = logo,
   opts = {
-    hl = "Operator",
+    hl = "operator",
     shrink_margin = false,
     position = "center",
   }
@@ -151,9 +160,9 @@ local section_mru = {
   val = {
     {
       type = "text",
-      val = "Recent files",
+      val = "recent files",
       opts = {
-        hl = "Constant",
+        hl = "constant",
         shrink_margin = false,
         position = "center",
       },
@@ -172,32 +181,32 @@ local section_mru = {
 local buttons = {
   type = "group",
   val = {
-    { type = "text", val = "Quick links", opts = { hl = "Constant", position = "center" } },
+    { type = "text", val = "quick links", opts = { hl = "constant", position = "center" } },
     { type = "padding", val = 1 },
-    dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
-    dashboard.button("o", "ﭯ  Recently opened files", ":Telescope oldfiles<CR>"),
-    dashboard.button("f", "  Find file", ":lua require('telescope.builtin').find_files()<CR>"),
-    --dashboard.button("p", "  Find project", ":Telescope repo list<CR>"),
-    dashboard.button("r", "  Find word", ":lua require('telescope.builtin').live_grep()<CR>"),
-    --dashboard.button("g", "  Find modified file", ":lua require('config.plugins.telescope').my_git_status()<CR>"),
-    dashboard.button("m", "  Show mark", ":Telescope marks"),
-    --dashboard.button("t", "  Show todo", ":TodoTelescope<CR>"),
-    dashboard.button("s", "  CoreVim plugins", ":e ~/.config/nvim/lua/plugins.lua<CR>"),
-    -- dashboard.button("u", "  Sync plugins", ":PackerSync<CR>"),
-    --dashboard.button("l", "  Lazy", ":Lazy<CR>"),
-    dashboard.button("u", "  Sync plugins", ":PackerSync<CR>"),
-    dashboard.button("h", "  Neovim Check health", ":checkhealth<CR>"),
-    dashboard.button("q", "  Quit", "<Cmd>qa<CR>")
+    dashboard.button("e", "  new file", ":ene <bar> startinsert <cr>"),
+    dashboard.button("o", "ﭯ  recently opened files", ":telescope oldfiles<cr>"),
+    dashboard.button("f", "  find file", ":lua require('telescope.builtin').find_files()<cr>"),
+    --dashboard.button("p", "  find project", ":telescope repo list<cr>"),
+    dashboard.button("r", "  find word", ":lua require('telescope.builtin').live_grep()<cr>"),
+    --dashboard.button("g", "  find modified file", ":lua require('config.plugins.telescope').my_git_status()<cr>"),
+    dashboard.button("m", "  show mark", ":telescope marks"),
+    --dashboard.button("t", "  show todo", ":todotelescope<cr>"),
+    dashboard.button("s", "  corevim plugins", ":e ~/.config/nvim/lua/plugins.lua<cr>"),
+    -- dashboard.button("u", "  sync plugins", ":packersync<cr>"),
+    --dashboard.button("l", "  lazy", ":lazy<cr>"),
+    dashboard.button("u", "  sync plugins", ":packersync<cr>"),
+    dashboard.button("h", "  neovim check health", ":checkhealth<cr>"),
+    dashboard.button("q", "  quit", "<cmd>qa<cr>")
   },
   position = "center",
 }
 
---local section_footer = {
-  --type = "group",
-  --val = {
-    --{ type = "text", val = footer(), opts = { hl = "Constant", position = "center" } },
-  --}
---}
+local section_footer = {
+  type = "group",
+  val = {
+    { type = "text", val = footer(), opts = { hl = "constant", position = "center" } },
+  }
+}
 
 local opts = {
   layout = {
