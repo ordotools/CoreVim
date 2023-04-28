@@ -295,4 +295,26 @@ return {
   --  end,
   --},
 
+  {
+      'nvim-lualine/lualine.nvim',
+      requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+      config = function()
+          require('lualine').setup {
+              options = {
+                  theme = 'auto', -- kanagawa
+                  section_separators = { left = '', right = '' },
+                  component_separators = { left = '', right = '' },
+                  extensions = {
+                      'fugitive',
+                      'nvim-tree',
+                      'toggleterm'
+                  }
+              }
+          }
+      end,
+  },
+  {
+      "SmiteshP/nvim-navic",
+      requires = "neovim/nvim-lspconfig"
+  },
 }
