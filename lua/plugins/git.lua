@@ -49,5 +49,6 @@ return {
         },
       }
     end,
+    lazy = true,
   }
 }
