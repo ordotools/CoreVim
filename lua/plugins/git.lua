@@ -4,7 +4,6 @@ return {
 
   {
     'lewis6991/gitsigns.nvim',
-
     config = function ()
       require('gitsigns').setup {
         signs = {
@@ -48,6 +47,6 @@ return {
         },
       }
     end,
-    lazy = true,
+    lazy = false,
   }
 }

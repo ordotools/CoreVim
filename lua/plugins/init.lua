@@ -22,7 +22,6 @@ return {
   'gelguy/wilder.nvim',
   'windwp/nvim-ts-autotag',
 
-  -- GIT INTEGRATION
   -- SHIFTS vs TABS
   'tpope/vim-sleuth',
   'Bekaboo/deadcolumn.nvim',
