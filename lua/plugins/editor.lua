@@ -19,16 +19,12 @@ return {
        hijack_cursor = true,
        hijack_netrw = true,
        hijack_unnamed_buffer_when_opening = false,
-       -- ignore_buffer_on_setup = false,
-       -- open_on_setup = true,
-       -- open_on_setup_file = false,
-       open_on_tab = false, sort_by = "name",
+       open_on_tab = false,
+       sort_by = "name",
        reload_on_bufenter = true,
        view = {
          adaptive_size = false,
-         width = 30,
-         -- height = 30,
-         hide_root_folder = false,
+         width = 25,
          side = "left",
          preserve_window_proportions = false,
          number = false,
@@ -44,6 +40,7 @@ return {
          highlight_git = false,
          highlight_opened_files = "none",
          root_folder_modifier = ":~",
+         root_folder_label = false,
          indent_markers = {
            enable = true,
            icons = {
@@ -67,10 +64,7 @@ return {
            glyphs = {
              default = "",
              symlink = "",
-             folder = {
-               arrow_closed = "",
-               arrow_open = "",
-               default = "",
+             folder = { arrow_closed = "", arrow_open = "", default = "",
                open = "",
                empty = "",
                empty_open = "",
@@ -147,33 +141,18 @@ return {
          prefix = "[FILTER]: ",
          always_show_folders = true,
        },
-
       }
     end,
-    -- lazy = true,
   },
+
+  -- {
+  --   "lukas-reineke/indent-blankline.nvim",
+  --   config = function ()
+  --     require("indent_blankline").setup {
+  --       show_current_context = true,
+  --       show_current_context_start = true,
+  --   }
+  --   end,
+  --   lazy = true,
+  -- },
 }
-
-
--- local opts = {
---     scope = 'line',
---     modes = { 'i', 'ic', 'ix', 'R', 'Rc', 'Rx', 'Rv', 'Rvc', 'Rvx' },
---     blending = {
---         threshold = 0.75,
---         colorcode = '#000000',
---         hlgroup = {
---             'Normal',
---             'background',
---         },
---     },
---     warning = {
---         alpha = 0.4,
---         colorcode = '#FF0000',
---         hlgroup = {
---             'Error',
---             'background',
---         },
---     },
--- }
-
--- require('deadcolumn').setup(opts) -- Call the setup function

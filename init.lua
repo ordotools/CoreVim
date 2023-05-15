@@ -58,7 +58,10 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup("plugins")
+require("lazy").setup("plugins", {
+  ui = {border = "rounded"},
+  change_detection = {notify = false,}
+})
 
 --Scheme = 'kanagawa'
 --require('user.colorschemes.'..Scheme..'_config')
