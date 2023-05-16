@@ -5,16 +5,22 @@ return {
     dependencies = {
       -- LSP Support
       {'neovim/nvim-lspconfig'},
+
       {
       'williamboman/mason.nvim',
       build = function()
         pcall(vim.cmd, 'MasonUpdate')
       end,
       },
+
       {'williamboman/mason-lspconfig.nvim'}, -- Optional
+
       {'hrsh7th/nvim-cmp'},     -- Required
+
       {'hrsh7th/cmp-nvim-lsp'}, -- Required
+
       {'L3MON4D3/LuaSnip'},     -- Required
+
     },
     config = function()
       local lsp = require('lsp-zero').preset({})
@@ -85,20 +91,6 @@ return {
             { name = 'buffer' },
           })
       })
-      -- cmp.setup({
-      --   mapping = {
-      --     -- `Enter` key to confirm completion
-      --     ['<CR>'] = cmp.mapping.confirm({select = false}),
-      --     -- ['<Shift-Tab>'] = cmp.mapping.scroll_docs(4),
-      --     -- ['<Tab>'] = cmp.mapping.scroll_docs(-4),
-      --     -- Ctrl+Space to trigger completion menu
-      --     ['<C-Space>'] = cmp.mapping.complete(),
-
-      --     -- Navigate between snippet placeholder
-      --     ['<C-f>'] = cmp_action.luasnip_jump_forward(),
-      --     ['<C-b>'] = cmp_action.luasnip_jump_backward(),
-      --   }
-      -- })
     end,
   },
 }
