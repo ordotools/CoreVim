@@ -4,7 +4,7 @@
 ![language](https://img.shields.io/github/languages/top/corei8/CoreVim?style=flat-square)
 ![frequency](https://img.shields.io/github/commit-activity/m/corei8/CoreVim?style=flat-square)
 
-![theme demo](./with_tree.png)
+![theme demo](https://photos.app.goo.gl/gDkKCzsDvwv86ziV7)
 
 ## About
 
