@@ -1,4 +1,5 @@
 return {
+
   {
     'rebelot/kanagawa.nvim',
     lazy = true,
@@ -29,6 +30,12 @@ return {
         light = "lotus"
       },
     }
-  end,
-},
+    end,
+  },
+
+  {
+    'sainnhe/gruvbox-material',
+    lazy = true,
+  },
+
 }

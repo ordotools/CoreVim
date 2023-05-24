@@ -5,7 +5,7 @@ vim.o.updatetime = 250
 vim.opt.backup = false
 vim.opt.cursorline = true
 vim.opt.cursorlineopt = "number"
-vim.opt.colorcolumn = "80"
+-- vim.opt.colorcolumn = "80"
 vim.opt.errorbells = false
 vim.opt.expandtab = true
 vim.opt.exrc = true
@@ -35,15 +35,24 @@ vim.opt.winbar = ' %n %t %M%=%p%% ' -- in the days before barbecue
 vim.opt.wrap = false
 
 vim.api.nvim_create_autocmd("CursorHold,CursorHoldI", {
-	pattern = "*",
-	command = "lua vim.diagnostic.open_float(nil, {focus=false})",
+  pattern = "*",
+  command = "lua vim.diagnostic.open_float(nil, {focus=false})",
 })
 
 vim.api.nvim_create_autocmd("FileType", {
-	pattern = "tex",
-	command = "setfiletype tex",
-	}
-)
+  pattern = "tex",
+  command = "setfiletype tex",
+})
+
+-- vim.api.nvim_set_hl(0, "NormalFloat", {
+--  bg = "bg",
+--  fg = "#d8bd92",
+-- )
+-- 
+-- im.api.nvim_set_hl(0, "FloatBorder", {
+--  bg = "bg",
+--  fg = "#d8bd92",
+-- )
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -59,7 +68,23 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins", {
-  ui = {border = "rounded"},
+  ui = {
+    border = "rounded",
+    icons = {
+      cmd = "⌘",
+      config = "🛠",
+      event = "📅",
+      ft = "📂",
+      init = "⚙",
+      keys = "🗝",
+      plugin = "🔌",
+      runtime = "💻",
+      source = "📄",
+      start = "🚀",
+      task = "📌",
+      lazy = "💤 ",
+    },
+  },
   change_detection = {notify = false,}
 })
 
@@ -67,6 +92,7 @@ require("lazy").setup("plugins", {
 --require('user.colorschemes.'..Scheme..'_config')
 --vim.cmd('colorscheme ' .. Scheme)
 vim.cmd('colorscheme  kanagawa')
+-- vim.cmd('colorscheme gruvbox-material')
 
 require 'keymapping'
 -- require 'lsp'

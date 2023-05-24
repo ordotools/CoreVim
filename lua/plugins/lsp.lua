@@ -1,4 +1,5 @@
 return {
+
   {
     'VonHeikemen/lsp-zero.nvim',
     branch = 'v2.x',
@@ -12,15 +13,10 @@ return {
         pcall(vim.cmd, 'MasonUpdate')
       end,
       },
-
-      {'williamboman/mason-lspconfig.nvim'}, -- Optional
-
-      {'hrsh7th/nvim-cmp'},     -- Required
-
-      {'hrsh7th/cmp-nvim-lsp'}, -- Required
-
-      {'L3MON4D3/LuaSnip'},     -- Required
-
+      {'williamboman/mason-lspconfig.nvim'},
+      {'hrsh7th/nvim-cmp'},
+      {'hrsh7th/cmp-nvim-lsp'},
+      {'L3MON4D3/LuaSnip'},
     },
     config = function()
       local lsp = require('lsp-zero').preset({})
@@ -29,8 +25,45 @@ return {
         lsp.default_keymaps({buffer = bufnr})
       end)
 
+      lsp.set_preferences({
+        suggest_lsp_servers = true,
+        setup_servers_on_start = true,
+        set_lsp_keymaps = true,
+        configure_diagnostics = true,
+        cmp_capabilities = true,
+        manage_nvim_cmp = true,
+        call_servers = 'local',
+        virtual_text = false,
+        signs = true,
+        update_in_insert = false,
+        underline = true,
+        severity_sort = true,
+        float = {
+          focusable = false,
+          style = 'minimal',
+          border = 'rounded',
+          source = 'always',
+          header = '',
+          prefix = '',
+        },
+        sign_icons = {
+          error = '',
+          warn = '',
+          hint = '',
+          info = ''
+        }
+      })
+
       -- (Optional) Configure lua language server for neovim
       require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
+
+      lsp.on_attach(function(client, bufnr)
+        lsp.default_keymaps({buffer = bufnr})
+
+        if client.server_capabilities.documentSymbolProvider then
+          require('nvim-navic').attach(client, bufnr)
+        end
+      end)
 
       lsp.setup()
       -- Make sure you setup `cmp` after lsp-zero

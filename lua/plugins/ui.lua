@@ -61,27 +61,27 @@ return {
   },
 
   {
-      'nvim-lualine/lualine.nvim',
-      requires = { 'kyazdani42/nvim-web-devicons', opt = true },
-      config = function()
-          require('lualine').setup {
-              options = {
-                  theme = 'auto', -- kanagawa
-                  section_separators = { left = '', right = '' },
-                  component_separators = { left = '', right = '' },
-                  extensions = {
-                      'fugitive',
-                      'nvim-tree',
-                      'toggleterm'
-                  }
-              }
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = false },
+    config = function()
+      require('lualine').setup {
+        options = {
+          theme = 'auto', -- kanagawa
+          section_separators = { left = '', right = '' },
+          component_separators = { left = '', right = '' },
+          extensions = {
+            'fugitive',
+            'nvim-tree',
+            'toggleterm'
           }
-      end,
+        }
+      }
+    end,
   },
 
   {
-      "SmiteshP/nvim-navic",
-      requires = "neovim/nvim-lspconfig"
+    "SmiteshP/nvim-navic",
+    requires = "neovim/nvim-lspconfig"
   },
 
 }

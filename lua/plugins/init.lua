@@ -1,6 +1,11 @@
 return {
 
   {
+    "nvim-tree/nvim-web-devicons",
+    lazy=true,
+  },
+
+  {
     'akinsho/toggleterm.nvim',
     config = function()
       require("toggleterm").setup{
@@ -16,7 +21,7 @@ return {
 
   -- SHIFTS vs TABS
   'tpope/vim-sleuth',
-  'Bekaboo/deadcolumn.nvim',
+  -- 'Bekaboo/deadcolumn.nvim', -- just not a great return on investment
 
   -- SURROUNDS
   'tpope/vim-surround',
