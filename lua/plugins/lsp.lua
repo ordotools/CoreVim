@@ -5,18 +5,18 @@ return {
     branch = 'v2.x',
     dependencies = {
       -- LSP Support
-      {'neovim/nvim-lspconfig'},
+      'neovim/nvim-lspconfig',
 
       {
-      'williamboman/mason.nvim',
-      build = function()
-        pcall(vim.cmd, 'MasonUpdate')
-      end,
+        'williamboman/mason.nvim',
+        build = function()
+          pcall(vim.cmd, 'MasonUpdate')
+        end,
       },
-      {'williamboman/mason-lspconfig.nvim'},
-      {'hrsh7th/nvim-cmp'},
-      {'hrsh7th/cmp-nvim-lsp'},
-      {'L3MON4D3/LuaSnip'},
+      'williamboman/mason-lspconfig.nvim',
+      'hrsh7th/nvim-cmp',
+      'hrsh7th/cmp-nvim-lsp',
+      'L3MON4D3/LuaSnip',
     },
     config = function()
       local lsp = require('lsp-zero').preset({})
@@ -67,10 +67,15 @@ return {
 
       lsp.setup()
       -- Make sure you setup `cmp` after lsp-zero
-
+      local cmp_autopairs = require('nvim-autopairs.completion.cmp')
       local cmp = require('cmp')
       local cmp_action = require('lsp-zero').cmp_action()
       local luasnip = require('luasnip')
+
+      cmp.event:on(
+        'confirm_done',
+        cmp_autopairs.on_confirm_done()
+      )
 
       cmp.setup({
         snippet = {
