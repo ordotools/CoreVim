@@ -9,26 +9,28 @@ return {
     'akinsho/toggleterm.nvim',
     config = function()
       require("toggleterm").setup{
-          open_mapping = [[||]],
-          hide_numbers = true,
-          direction = "float",
+        open_mapping = [[||]],
+        hide_numbers = true,
+        direction = "float",
       }
     end,
   },
 
-  -- 'gelguy/wilder.nvim',
   'windwp/nvim-ts-autotag',
 
-  -- SHIFTS vs TABS
   'tpope/vim-sleuth',
-  -- 'Bekaboo/deadcolumn.nvim', -- just not a great return on investment
 
-  -- SURROUNDS
   'tpope/vim-surround',
-  'alvan/vim-closetag',
-  'windwp/nvim-autopairs',
 
-  -- COMMENTS
+  'alvan/vim-closetag',
+
+  {
+    'windwp/nvim-autopairs',
+    config = function ()
+      require("nvim-autopairs").setup {}
+    end,
+  },
+
   'tpope/vim-commentary',
 
   {
