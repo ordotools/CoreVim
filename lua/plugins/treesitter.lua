@@ -1,4 +1,5 @@
 return {
+
   {
     'nvim-treesitter/nvim-treesitter',
     lazy = false,
@@ -17,4 +18,5 @@ return {
   'nvim-treesitter/playground',
 
   'nvim-treesitter/nvim-treesitter-context',
+
 }
