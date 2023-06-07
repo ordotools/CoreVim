@@ -28,10 +28,6 @@ lsp.set_preferences({
     prefix = '',
   },
   sign_icons = {
-    --error = '✘',
-    --warn = '▲',
-    --hint = '⚑',
-    --info = ''
     error = '',
     warn = '',
     hint = '',
@@ -39,14 +35,10 @@ lsp.set_preferences({
   }
 })
 
-lsp.ensure_installed({
-})
-
 lsp.nvim_workspace()
 
 lsp.on_attach(function(client, bufnr)
   lsp.default_keymaps({buffer = bufnr})
-
   if client.server_capabilities.documentSymbolProvider then
     require('nvim-navic').attach(client, bufnr)
   end

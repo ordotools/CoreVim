@@ -22,10 +22,7 @@ vim.opt.shiftwidth = 4
 vim.opt.showmode = false
 vim.opt.signcolumn = "yes"
 vim.opt.smartindent = true
-vim.opt.softtabstop = 4
-vim.opt.splitbelow = true
-vim.opt.splitright = true
-vim.opt.swapfile = false
+vim.opt.softtabstop = 4 vim.opt.splitbelow = true vim.opt.splitright = true vim.opt.swapfile = false
 vim.opt.tabstop = 4
 vim.opt.termguicolors = true
 vim.opt.termguicolors = true
@@ -88,11 +85,10 @@ require("lazy").setup("plugins", {
   change_detection = {notify = false,}
 })
 
---Scheme = 'kanagawa'
---require('user.colorschemes.'..Scheme..'_config')
---vim.cmd('colorscheme ' .. Scheme)
-vim.cmd('colorscheme  kanagawa')
--- vim.cmd('colorscheme gruvbox-material')
+-- vim.cmd('colorscheme  kanagawa')
+vim.cmd('colorscheme gruvbox-material')
+-- vim.cmd('colorscheme catppuccin-macchiato')
+-- vim.cmd('colorscheme catppuccin-mocha')
 
 require 'keymapping'
 -- require 'lsp'

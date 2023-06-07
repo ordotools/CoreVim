@@ -38,4 +38,15 @@ return {
     lazy = true,
   },
 
+  {
+    'catppuccin/nvim',
+    lazy = true,
+    name = 'catppuccin'
+  },
+
+  {
+    'savq/melange-nvim',
+    lazy = true,
+  }
+
 }
