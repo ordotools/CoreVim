@@ -17,6 +17,7 @@ return {
         },
         n = {"<cmd>NvimTreeToggle<cr>", "Toggle NvimTree"},
         g = {
+          name = "git",
           d = {":diffget //3<cr>", "git diff"},
           s = {":G<cr>", "git command"},
           a = {":G add .<cr>", "git add"},
