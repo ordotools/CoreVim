@@ -30,23 +30,32 @@ return {
         light = "lotus"
       },
     }
-    end,
-  },
+  end,
+},
 
-  {
-    'sainnhe/gruvbox-material',
-    lazy = true,
-  },
+{
+  'sainnhe/gruvbox-material',
+  lazy = true,
+},
 
-  {
-    'catppuccin/nvim',
-    lazy = true,
-    name = 'catppuccin'
-  },
+{
+  'catppuccin/nvim',
+  lazy = true,
+  name = 'catppuccin'
+},
 
-  {
-    'savq/melange-nvim',
-    lazy = true,
-  }
+{
+  'savq/melange-nvim',
+  lazy = true,
+},
+
+{
+  'ramojus/mellifluous.nvim',
+  lazy = true,
+  config = function()
+    require'mellifluous'.setup({ --[[...]] }) -- optional, see configuration section.
+    -- vim.cmd('colorscheme mellifluous')
+  end,
+}
 
 }

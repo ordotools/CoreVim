@@ -3,6 +3,7 @@ return {
   {
     'nvim-treesitter/nvim-treesitter',
     lazy = false,
+    version = nil,
     priority = 1000,
     config = function ()
       require('nvim-treesitter.configs').setup {

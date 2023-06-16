@@ -14,6 +14,7 @@ return {
         f = {
           name = "file",
           f = {"<cmd>Telescope find_files<cr>", "Find File"},
+          b = {"<cmd>Telescope buffers<cr>", "Search Buffers"},
         },
         n = {"<cmd>NvimTreeToggle<cr>", "Toggle NvimTree"},
         g = {
@@ -21,7 +22,7 @@ return {
           d = {":diffget //3<cr>", "git diff"},
           s = {":G<cr>", "git command"},
           a = {":G add .<cr>", "git add"},
-          c = {":G commit -m ''<Left>", "git commit -m"},
+          c = {":G commit -m ''<left>", "git commit -m"},
           p = {":G push<cr>", "git push"},
           l = {":G pull<cr>", "git pull"},
           g = {":LazyGit<cr>", "LazyGit"}

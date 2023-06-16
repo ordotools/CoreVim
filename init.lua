@@ -1,3 +1,20 @@
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
+
+-- TODO: These are plugins to keep in mind:
+-- https://github.com/folke/noice.nvim
+
+
 vim.g.mapleader = " "
 vim.g.python3_host_prog = "~/.config/nvim/nvimpyenv/bin/python"
 vim.g.syntax = true
@@ -51,18 +68,6 @@ vim.api.nvim_create_autocmd("FileType", {
 --  fg = "#d8bd92",
 -- )
 
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
-end
-vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins", {
   ui = {
