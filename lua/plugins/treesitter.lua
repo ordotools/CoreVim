@@ -11,7 +11,12 @@ return {
         auto_install = true,
         highlight = {
           enable = true,
+          disable = "tex",
         },
+        indent = {
+          enable = true,
+        },
+        parser_install_dir = nil,
       }
     end,
   },
