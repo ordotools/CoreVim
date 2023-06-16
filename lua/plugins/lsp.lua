@@ -25,6 +25,14 @@ return {
         lsp.default_keymaps({buffer = bufnr})
       end)
 
+      lsp.set_sign_icons({
+        error = '✘',
+        warn = '▲',
+        hint = '⚑',
+        info = '»'
+      })
+
+
       lsp.set_preferences({
         suggest_lsp_servers = true,
         setup_servers_on_start = true,
@@ -99,10 +107,10 @@ return {
               i = cmp.mapping.abort(),
               c = cmp.mapping.close(),
             }),
-          ["<CR>"] = cmp.mapping.confirm({
-              behavior = cmp.ConfirmBehavior.Replace,
-              select = true,
-            }),
+          -- ['<CR>'] = cmp.mapping.confirm({
+          --     behavior = cmp.ConfirmBehavior.Replace,
+          --     select = true,
+          --   }),
           ['<Tab>'] = function(fallback)
             if cmp.visible() then
               cmp.select_next_item()
