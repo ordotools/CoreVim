@@ -7,7 +7,7 @@ return {
     priority = 1000,
     config = function ()
       require('nvim-treesitter.configs').setup {
-        ensure_isntalled = {"lua", "python", "html"},
+        ensure_installed = {"lua", "python", "html"},
         auto_install = true,
         highlight = {
           enable = true,

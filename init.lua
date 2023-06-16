@@ -11,7 +11,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- TODO: These are plugins to keep in mind:
+-- These are plugins to keep in mind:
 -- https://github.com/folke/noice.nvim
 
 
