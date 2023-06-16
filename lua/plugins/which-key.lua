@@ -18,6 +18,7 @@ return {
           h = {"<cmd>Telescope help_tags<cr>", "Search Help Tags"},
           b = {"<cmd>Telescope buffers<cr>", "Search Buffers"},
         },
+        t = {"<cmd>TodoQuickFix<cr>", "TODO Quick Fix"},
         n = {"<cmd>NvimTreeToggle<cr>", "Toggle NvimTree"},
         g = {
           name = "git",
