@@ -14,6 +14,8 @@ return {
         f = {
           name = "file",
           f = {"<cmd>Telescope find_files<cr>", "Find File"},
+          g = {"<cmd>Telescope live_grep<cr>", "Live Grep"},
+          h = {"<cmd>Telescope help_tags<cr>", "Search Help Tags"},
           b = {"<cmd>Telescope buffers<cr>", "Search Buffers"},
         },
         n = {"<cmd>NvimTreeToggle<cr>", "Toggle NvimTree"},
