@@ -10,8 +10,6 @@ return {
       require('lualine').setup {
         options = {
           theme = 'auto',
-          -- section_separators = { left = '', right = '' },
-          -- component_separators = { left = '', right = '' },
           section_separators = { left = '', right = '' },
           component_separators = { left = '', right = '' },
           extensions = {
@@ -45,7 +43,7 @@ return {
                 hint = ' ',
               },
               update_in_insert = true,
-              always_visible = true,
+              always_visible = false,
             },
           },
           lualine_c = {'filename'},

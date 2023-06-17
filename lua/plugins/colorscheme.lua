@@ -26,36 +26,39 @@ return {
         },
         theme = "wave",            -- Load "wave" theme when 'background' option is not set
         background = {               -- map the value of 'background' option to a theme
-        dark = "dragon",           -- try "dragon" !
-        light = "lotus"
-      },
-    }
-  end,
-},
+          dark = "dragon",           -- try "dragon" !
+          light = "lotus"
+        },
+      }
+    end,
+  },
 
-{
-  'sainnhe/gruvbox-material',
-  lazy = true,
-},
+  {
+    'sainnhe/gruvbox-material',
+    lazy = true,
+  },
 
-{
-  'catppuccin/nvim',
-  lazy = true,
-  name = 'catppuccin'
-},
+  {
+    'catppuccin/nvim',
+    lazy = true,
+    name = 'catppuccin'
+  },
 
-{
-  'savq/melange-nvim',
-  lazy = true,
-},
+  {
+    'savq/melange-nvim',
+    lazy = true,
+  },
 
-{
-  'ramojus/mellifluous.nvim',
-  lazy = true,
-  config = function()
-    require'mellifluous'.setup({ --[[...]] }) -- optional, see configuration section.
-    -- vim.cmd('colorscheme mellifluous')
-  end,
-}
+  {
+    'ramojus/mellifluous.nvim',
+    lazy = true,
+    config = function()
+      require'mellifluous'.setup({ --[[...]] }) -- optional, see configuration section.
+      -- vim.cmd('colorscheme mellifluous')
+    end,
+  },
+  -- {
+  --   'svermeulen/text-to-colorscheme.nvim'
+  -- },
 
 }
