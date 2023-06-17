@@ -33,10 +33,6 @@ return {
             {
               'diagnostics',
               symbols = {
-                -- error = 'E',
-                -- warn = 'W',
-                -- info = 'I',
-                -- hint = 'H',
                 error = ' ',
                 warn = ' ',
                 info = ' ',
@@ -63,3 +59,12 @@ return {
   },
 
 }
+  -- {
+  --   'freddiehaddad/feline.nvim',
+  --   dependencies = { "lewis6991/gitsigns.nvim", "folke/noice.nvim" },
+  --         -- require('feline').setup()
+  --     -- require('feline').winbar.setup()
+  --     -- require('feline').statuscolumn.setup()
+  --   end,
+  -- }
+

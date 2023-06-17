@@ -48,13 +48,13 @@ vim.opt.tabstop = 4
 vim.opt.termguicolors = true
 vim.opt.undofile = true
 vim.opt.wildmenu = true
-vim.opt.winbar = ' %n %t %M%=%p%% ' -- in the days before barbecue
+-- vim.opt.winbar = ' %n %t %M%=%p%% ' -- in the days before barbecue
 vim.opt.wrap = false
 
--- vim.api.nvim_create_autocmd("CursorHold,CursorHoldI", {
---   pattern = "*",
---   command = "lua vim.diagnostic.open_float(nil, {focus=false})",
--- })
+vim.api.nvim_create_autocmd("CursorHold,CursorHoldI", {
+  pattern = "*",
+  command = "lua vim.diagnostic.open_float(nil, {focus=false})",
+})
 
 -- vim.api.nvim_set_hl(0, "NormalFloat", {
 --  bg = "bg",
@@ -88,10 +88,11 @@ require("lazy").setup("plugins", {
   change_detection = {notify = false,}
 })
 
+vim.cmd[[colorscheme tokyonight-moon]]
 -- vim.cmd('colorscheme  kanagawa')
 -- vim.cmd('colorscheme gruvbox-material')
 -- vim.cmd('colorscheme catppuccin-macchiato')
-vim.cmd('colorscheme catppuccin-mocha')
+-- vim.cmd('colorscheme catppuccin-mocha')
 
 require 'keymapping'
--- require 'lsp'
+require 'lsp'
