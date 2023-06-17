@@ -51,15 +51,10 @@ vim.opt.wildmenu = true
 vim.opt.winbar = ' %n %t %M%=%p%% ' -- in the days before barbecue
 vim.opt.wrap = false
 
-vim.api.nvim_create_autocmd("CursorHold,CursorHoldI", {
-  pattern = "*",
-  command = "lua vim.diagnostic.open_float(nil, {focus=false})",
-})
-
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "tex",
-  command = "setfiletype tex",
-})
+-- vim.api.nvim_create_autocmd("CursorHold,CursorHoldI", {
+--   pattern = "*",
+--   command = "lua vim.diagnostic.open_float(nil, {focus=false})",
+-- })
 
 -- vim.api.nvim_set_hl(0, "NormalFloat", {
 --  bg = "bg",
@@ -74,7 +69,7 @@ vim.api.nvim_create_autocmd("FileType", {
 
 require("lazy").setup("plugins", {
   ui = {
-    border = "rounded",
+    border = "none", -- rounded
     icons = {
       cmd = "⌘",
       config = "🛠",
