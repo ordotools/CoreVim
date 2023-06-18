@@ -1,5 +1,22 @@
 return {
 
+  -- {
+  --   'stevearc/dressing.nvim',
+  --   opts = {},
+  --   config = function ()
+  --     require('dressing').setup {
+  --       input = {
+  --         border = 'none',
+  --         win_options = {
+
+  --         }
+  --       }
+  --     }
+  --   end,
+  --   -- lazy = true
+  -- },
+
+
   {
     "goolord/alpha-nvim",
     event = "VimEnter",

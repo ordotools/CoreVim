@@ -1,8 +1,13 @@
 return {
 
-  'tpope/vim-fugitive',
+  {
+    'tpope/vim-fugitive',
+    keys = {
+      { "<leader>ga", ":G add .<cr>", desc = "$ git add ." },
+    },
+  },
 
-  'kdheepak/lazygit.nvim',
+  -- 'kdheepak/lazygit.nvim',
 
   {
     'lewis6991/gitsigns.nvim',

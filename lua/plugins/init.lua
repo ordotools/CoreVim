@@ -27,8 +27,12 @@ return {
       {'hrsh7th/nvim-cmp'},                  -- Required
       {'hrsh7th/cmp-nvim-lsp'},              -- Required
       {'L3MON4D3/LuaSnip'},                  -- Required
+      {'hrsh7th/cmp-buffer'},
+      {'hrsh7th/cmp-path'},
+      {'hrsh7th/cmp-cmdline'},
     },
   },
+
   {
     "nvim-tree/nvim-web-devicons",
     lazy=true,
@@ -45,13 +49,25 @@ return {
     end,
   },
 
-  'windwp/nvim-ts-autotag',
+  {
+    'windwp/nvim-ts-autotag',
+    event = 'BufEnter',
+  },
 
-  'tpope/vim-sleuth',
+  {
+    'tpope/vim-sleuth',
+    event = 'BufEnter',
+  },
 
-  'tpope/vim-surround',
+  {
+    'tpope/vim-surround',
+    event = 'BufEnter',
+  },
 
-  'alvan/vim-closetag',
+  {
+    'alvan/vim-closetag',
+    event = 'BufEnter',
+  },
 
   {
     'windwp/nvim-autopairs',
@@ -62,7 +78,10 @@ return {
     end,
   },
 
-  'tpope/vim-commentary',
+  {
+    'tpope/vim-commentary',
+    event = 'BufEnter',
+  },
 
   {
     "folke/todo-comments.nvim",
