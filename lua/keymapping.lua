@@ -3,7 +3,7 @@
 vim.cmd([[
 
 inoremap jj <ESC>
-noremap <leader>s :%s//g<left><left>
+"noremap <leader>s :%s//g<left><left>
 
 " LaTeX bindings
 vmap <leader>xb c\textbf{<C-r>"}<ESC>

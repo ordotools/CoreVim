@@ -12,6 +12,7 @@ return {
       local wk = require("which-key")
 
       wk.register({
+
         f = {
           name = "  Search",
           f = {"<cmd>Telescope find_files<cr>", "Find File"},
@@ -20,37 +21,31 @@ return {
           b = {"<cmd>Telescope buffers<cr>", "Search Buffers"},
           t = {"<cmd>TodoTelescope keywords=TODO,FIX<cr>", "Search TODOs"},
         },
-        t = {"<cmd>TodoQuickFix<cr>", "TODO Quick Fix"},
-        -- n = {"<cmd>NvimTreeToggle<cr>", "Toggle NvimTree"},
-        x = {
-          b = {'c\textbf{<cr>"}<esc>', "Bold", noremap=false},
-          i = {'c\textbf{<cr>"}<esc>', "Italic", noremap=false}
-        }
-      },{
-          prefix = "<leader>"
-        })
 
-      wk.register({
-        s = {":%s//g<left><left>", "Search & Replace in File"},
-      },{
-          prefix = "<leader>",
-          noremap = true,
-      })
-
-      wk.register({
         g = {
           name = "  Git",
-          d = {":diffget //3<cr>", "git diff"},
-          s = {":G<cr>", "git command"},
-          -- a = {":G add .<cr>", "git add"},
-          c = {":G commit -m ''<left>", "git commit -m"},
-          p = {":G push<cr>", "git push"},
-          l = {":G pull<cr>", "git pull"},
-          g = {":LazyGit<cr>", "LazyGit"}
+          d = {":diffget //3<cr>", "Diff"},
+          -- a = {":G add .<cr>", "Add"},
+          c = {":G commit -m ''<left>", "Commit", noremap=true},
+          p = {":G push<cr>", "Push"},
+          l = {":G pull<cr>", "Pull"},
+          s = {":G<cr>", "Command"},
         },
-      },{
-          prefix = "<leader>",
-          noremap = true,
+
+        t = {"<cmd>TodoQuickFix<cr>", "TODO Quick Fix"},
+
+        x = {
+          name = "  LaTeX",
+          b = {'c\textbf{<cr>"}<esc>', "Bold", noremap=false},
+          i = {'c\textbf{<cr>"}<esc>', "Italic", noremap=false}
+        },
+
+        s = {":%s//g<left><left>", "Search & Replace in File", noremap=true},
+
+      },{ -- opts
+
+          prefix = "<leader>"
+
         })
 
     end,

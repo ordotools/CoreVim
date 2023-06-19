@@ -3,7 +3,7 @@ return {
   {
     'tpope/vim-fugitive',
     keys = {
-      { "<leader>ga", ":G add .<cr>", desc = "$ git add ." },
+      { "<leader>ga", ":G add .<cr>", desc = "Add" },
     },
   },
 
