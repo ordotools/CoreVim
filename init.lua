@@ -56,16 +56,6 @@ vim.api.nvim_create_autocmd("CursorHold,CursorHoldI", {
   command = "lua vim.diagnostic.open_float(nil, {focus=false})",
 })
 
--- vim.api.nvim_set_hl(0, "NormalFloat", {
---  bg = "bg",
---  fg = "#d8bd92",
--- )
--- 
--- im.api.nvim_set_hl(0, "FloatBorder", {
---  bg = "bg",
---  fg = "#d8bd92",
--- )
-
 
 require("lazy").setup("plugins", {
   ui = {
@@ -95,4 +85,9 @@ vim.cmd[[colorscheme tokyonight-moon]]
 -- vim.cmd('colorscheme catppuccin-mocha')
 
 require 'keymapping'
-require 'lsp'
+-- require 'lsp'
+
+vim.api.nvim_exec_autocmds("FileType",{})
+
+require('utils')
+

@@ -2,8 +2,13 @@ return {
 
   {
     'nvim-treesitter/nvim-treesitter',
-    lazy = false,
+    lazy = true,
+    event = "VeryLazy",
     version = nil,
+    requires = {
+      'nvim-treesitter/playground',
+      'nvim-treesitter/nvim-treesitter-context',
+    },
     priority = 1000,
     config = function ()
       require('nvim-treesitter.configs').setup {
@@ -21,7 +26,5 @@ return {
     end,
   },
 
-  'nvim-treesitter/playground',
-  'nvim-treesitter/nvim-treesitter-context',
 
 }

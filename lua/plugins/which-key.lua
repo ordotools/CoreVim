@@ -7,21 +7,39 @@ return {
       vim.o.timeout = true
       vim.o.timeoutlen = 300
     end,
-    -- opts = {},
     config = function ()
+
       local wk = require("which-key")
-      local mappings = {
+
+      wk.register({
         f = {
-          name = "file",
+          name = "  Search",
           f = {"<cmd>Telescope find_files<cr>", "Find File"},
           g = {"<cmd>Telescope live_grep<cr>", "Live Grep"},
           h = {"<cmd>Telescope help_tags<cr>", "Search Help Tags"},
           b = {"<cmd>Telescope buffers<cr>", "Search Buffers"},
+          t = {"<cmd>TodoTelescope keywords=TODO,FIX<cr>", "Search TODOs"},
         },
         t = {"<cmd>TodoQuickFix<cr>", "TODO Quick Fix"},
         -- n = {"<cmd>NvimTreeToggle<cr>", "Toggle NvimTree"},
+        x = {
+          b = {'c\textbf{<cr>"}<esc>', "Bold", noremap=false},
+          i = {'c\textbf{<cr>"}<esc>', "Italic", noremap=false}
+        }
+      },{
+          prefix = "<leader>"
+        })
+
+      wk.register({
+        s = {":%s//g<left><left>", "Search & Replace in File"},
+      },{
+          prefix = "<leader>",
+          noremap = true,
+      })
+
+      wk.register({
         g = {
-          name = "git",
+          name = "  Git",
           d = {":diffget //3<cr>", "git diff"},
           s = {":G<cr>", "git command"},
           -- a = {":G add .<cr>", "git add"},
@@ -30,14 +48,12 @@ return {
           l = {":G pull<cr>", "git pull"},
           g = {":LazyGit<cr>", "LazyGit"}
         },
-        x = {
-          b = {'c\textbf{<cr>"}<esc>', "Bold", noremap=false},
-          i = {'c\textbf{<cr>"}<esc>', "Italic", noremap=false}
-      }
-    }
-    local opts = {prefix = "<leader>"}
-    wk.register(mappings, opts)
-  end,
-}
+      },{
+          prefix = "<leader>",
+          noremap = true,
+        })
+
+    end,
+  }
 
 }

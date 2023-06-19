@@ -6,6 +6,8 @@ return {
       'kyazdani42/nvim-web-devicons',
       opt = false
     },
+    lazy = true,
+    event = "VeryLazy",
     -- event = "BufEnter",
     config = function()
       require('lualine').setup {
