@@ -27,7 +27,7 @@ return {
         sort_by = "name",
         reload_on_bufenter = true,
         view = {
-          adaptive_size = false,
+          adaptive_size = true,
           width = 25,
           side = "left",
           preserve_window_proportions = false,
