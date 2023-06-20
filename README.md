@@ -8,6 +8,8 @@
 
 This configuration is undergoing some major changes now, but will be optimized soon.
 
+Currently Neovim starts in <100ms, which is, for all intents and puposes, instantaneous, but I will be trying to lazyload more of the plugins.
+
 ### Future
 
 Working on built-in color schemes for easier switching.
