@@ -4,11 +4,11 @@
 ![language](https://img.shields.io/github/languages/top/corei8/CoreVim?style=flat-square)
 ![frequency](https://img.shields.io/github/commit-activity/m/corei8/CoreVim?style=flat-square)
 
-![theme demo](https://photos.app.goo.gl/gDkKCzsDvwv86ziV7)
-
 ## About
 
 This configuration is undergoing some major changes now, but will be optimized soon.
+
+Currently Neovim starts in <100ms, which is, for all intents and puposes, instantaneous, but I will be trying to lazyload more of the plugins.
 
 ### Future
 
