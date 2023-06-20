@@ -45,7 +45,7 @@ return {
               always_visible = false,
             },
           },
-          lualine_c = {'filename'},
+          lualine_c = {'filename',require('auto-session.lib').current_session_name},
           lualine_x = {
             'filetype'
           },

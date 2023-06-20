@@ -24,12 +24,21 @@ return {
 
         g = {
           name = "  Git",
+          -- mode = "nv",
           d = {":diffget //3<cr>", "Diff"},
           -- a = {":G add .<cr>", "Add"},
           c = {":G commit -m ''<left>", "Commit", noremap=true},
           p = {":G push<cr>", "Push"},
           l = {":G pull<cr>", "Pull"},
           s = {":G<cr>", "Command"},
+
+          i = {
+            name = "  Gist",
+            i = {"<cmd>GistCreate<cr>", "Gist from Selection", mode="v"},
+            f = {"<cmd>GistCreateFromFile<cr>", "Gist from File", mode="n"},
+            l = {"<cmd>GistsList<cr>", "Gist List", mode="n"},
+          },
+
         },
 
         t = {"<cmd>TodoQuickFix<cr>", "TODO Quick Fix"},

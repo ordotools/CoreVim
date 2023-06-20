@@ -17,11 +17,13 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+-- vim.opt.winbar = ' %n %t %M%=%p%% ' -- in the days before barbecue
 vim.g.mapleader = " "
 vim.g.python3_host_prog = "~/.config/nvim/nvimpyenv/bin/python"
 vim.g.syntax = true
 vim.o.updatetime = 250
 vim.opt.backup = false
+vim.opt.clipboard = "unnamedplus"
 vim.opt.cursorline = true
 vim.opt.cursorlineopt = "number"
 vim.opt.errorbells = false
@@ -48,7 +50,6 @@ vim.opt.tabstop = 4
 vim.opt.termguicolors = true
 vim.opt.undofile = true
 vim.opt.wildmenu = true
--- vim.opt.winbar = ' %n %t %M%=%p%% ' -- in the days before barbecue
 vim.opt.wrap = false
 
 vim.api.nvim_create_autocmd("CursorHold,CursorHoldI", {
