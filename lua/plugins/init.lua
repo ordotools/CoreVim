@@ -3,8 +3,8 @@ return {
   {
     'VonHeikemen/lsp-zero.nvim',
     branch = 'v2.x',
-    lazy = true,
-    event = "VeryLazy",
+    -- lazy = true, -- FIX: see if lazy disabled helps with starting lsp
+    -- event = "VeryLazy",
     dependencies = {                         -- LSP Support:
       {'neovim/nvim-lspconfig'},             -- Required
       {                                      -- Optional
@@ -28,7 +28,10 @@ return {
       {'williamboman/mason-lspconfig.nvim'}, -- Optional
       {'hrsh7th/nvim-cmp'},                  -- Required
       {'hrsh7th/cmp-nvim-lsp'},              -- Required
-      {'L3MON4D3/LuaSnip'},                  -- Required
+      {
+        'L3MON4D3/LuaSnip',                  -- Required
+        dependencies = { "rafamadriz/friendly-snippets" },
+      },
       {'hrsh7th/cmp-buffer'},
       {'hrsh7th/cmp-path'},
       {'hrsh7th/cmp-cmdline'},

@@ -13,8 +13,10 @@ return {
       require('lualine').setup {
         options = {
           theme = 'auto',
-          section_separators = { left = '', right = '' },
-          component_separators = { left = '', right = '' },
+          -- section_separators = { left = '', right = '' },
+          -- component_separators = { left = '', right = '' },
+          section_separators = { left = '', right = '' },
+          component_separators = { left = '', right = '' },
           extensions = {
             'fugitive',
             'nvim-tree',
@@ -36,16 +38,34 @@ return {
             {
               'diagnostics',
               symbols = {
-                error = ' ',
-                warn = ' ',
-                info = ' ',
-                hint = ' ',
+                error = '✘ ',
+                warn = '▲ ',
+                hint = '⚑ ',
+                info = '» '
               },
               update_in_insert = true,
               always_visible = false,
             },
           },
-          lualine_c = {'filename',require('auto-session.lib').current_session_name},
+          lualine_c = {
+            {
+              'filename',
+              separator = {right = '',},
+              symbols = {
+                modified = '+',
+                readonly = '-',
+                unnamed = '',
+                newfile = '[New]',
+              }
+            },
+            {
+              require('auto-session.lib').current_session_name,
+              -- separator = {right = '', left = ''},
+              -- separator = {right = '', left = ''},
+              separator = {right = '', left = '>'},
+              -- color = "lualine_filename_normal"
+            },
+          },
           lualine_x = {
             'filetype'
           },
