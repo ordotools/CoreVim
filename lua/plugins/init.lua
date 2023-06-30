@@ -1,45 +1,64 @@
 return {
-
   {
-    'VonHeikemen/lsp-zero.nvim',
-    branch = 'v2.x',
-    -- lazy = true, -- FIX: see if lazy disabled helps with starting lsp
-    -- event = "VeryLazy",
-    dependencies = {                         -- LSP Support:
-      {'neovim/nvim-lspconfig'},             -- Required
-      {                                      -- Optional
-        'williamboman/mason.nvim',
-        run = "MasonUpdate",
-        config = function ()
-          require("mason").setup({
-            pip = {
-              upgrade_pip = true,
-            },
-            ui = {
-              icons = {
-                package_installed = "✓",
-                package_pending = "➜",
-                package_uninstalled = "✗"
-              }
-            }
-          })
-        end,
-      },
-      {'williamboman/mason-lspconfig.nvim'}, -- Optional
-      {'hrsh7th/nvim-cmp'},                  -- Required
-      {'hrsh7th/cmp-nvim-lsp'},              -- Required
-      {
-        'L3MON4D3/LuaSnip',                  -- Required
-        dependencies = { "rafamadriz/friendly-snippets" },
-      },
-      {'hrsh7th/cmp-buffer'},
-      {'hrsh7th/cmp-path'},
-      {'hrsh7th/cmp-cmdline'},
+      'VonHeikemen/lsp-zero.nvim',
+      branch = 'v2.x',
+      dependencies = {
+        -- LSP Support
+        {'neovim/nvim-lspconfig'},             -- Required
+        {                                      -- Optional
+          'williamboman/mason.nvim',
+          build = function()
+            pcall(vim.cmd, 'MasonUpdate')
+          end,
+        },
+        {'williamboman/mason-lspconfig.nvim'}, -- Optional
+
+        -- Autocompletion
+        {'hrsh7th/nvim-cmp'},     -- Required
+        {'hrsh7th/cmp-nvim-lsp'}, -- Required
+        {'L3MON4D3/LuaSnip'},     -- Required
+      }
     },
-    config = function ()
-      require('lsp')
-    end
-  },
+  -- {
+  --   'VonHeikemen/lsp-zero.nvim',
+  --   branch = 'v2.x',
+  --   -- lazy = true, -- FIX: see if lazy disabled helps with starting lsp
+  --   -- event = "VeryLazy",
+  --   dependencies = {                         -- LSP Support:
+  --     {'neovim/nvim-lspconfig'},             -- Required
+  --     {                                      -- Optional
+  --       'williamboman/mason.nvim',
+  --       build = ":MasonUpdate",
+  --       config = function ()
+  --         require("mason").setup({
+  --           pip = {
+  --             upgrade_pip = true,
+  --           },
+  --           ui = {
+  --             icons = {
+  --               package_installed = "✓",
+  --               package_pending = "➜",
+  --               package_uninstalled = "✗"
+  --             }
+  --           }
+  --         })
+  --       end,
+  --     },
+  --     {'williamboman/mason-lspconfig.nvim'}, -- Optional
+  --     {'hrsh7th/nvim-cmp'},                  -- Required
+  --     {'hrsh7th/cmp-nvim-lsp'},              -- Required
+  --     {
+  --       'L3MON4D3/LuaSnip',                  -- Required
+  --       dependencies = { "rafamadriz/friendly-snippets" },
+  --     },
+  --     {'hrsh7th/cmp-buffer'},
+  --     {'hrsh7th/cmp-path'},
+  --     {'hrsh7th/cmp-cmdline'},
+  --   },
+  --   -- config = function ()
+  --   --   require('lsp')
+  --   -- end
+  -- },
 
   {
     "nvim-tree/nvim-web-devicons",

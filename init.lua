@@ -88,9 +88,9 @@ vim.cmd[[colorscheme tokyonight-moon]]
 -- vim.cmd('colorscheme catppuccin-mocha')
 
 require 'keymapping'
--- require 'lsp'
+require 'lsp'
 
-vim.api.nvim_exec_autocmds("FileType",{})
+-- vim.api.nvim_exec_autocmds("FileType",{})
 
 require('utils')
 

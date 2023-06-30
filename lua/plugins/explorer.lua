@@ -68,7 +68,9 @@ return {
             glyphs = {
               default = "",
               symlink = "",
-              folder = { arrow_closed = "", arrow_open = "", default = "",
+              -- folder = { arrow_closed = "", arrow_open = "", default = "",
+              folder = { arrow_closed = "", arrow_open = "",
+                default = "",
                 open = "",
                 empty = "",
                 empty_open = "",
@@ -100,10 +102,10 @@ return {
           enable = true,
           show_on_dirs = true,
           icons = {
-            hint = "",
-            info = "",
-            warning = "",
-            error = "",
+            error = '✘',
+            warning = '▲',
+            hint = '⚑',
+            info = '»'
           },
         },
         filters = {
