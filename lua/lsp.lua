@@ -28,7 +28,7 @@ lsp.set_sign_icons({
 
 require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 
-require('lspconfig').ruff_ls.setup {}
+-- require('lspconfig').ruff_ls.setup {}
 
 lsp.setup()
 

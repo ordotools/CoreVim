@@ -6,11 +6,11 @@ inoremap jj <ESC>
 noremap <leader>s :%s//g<left><left>
 
 " Telescope
-nmap <leader>ff Telescope find_files<cr>
-nmap <leader>fg Telescope live_grep<cr>
-nmap <leader>fh Telescope help_tags<cr>
-nmap <leader>fb Telescope buffers<cr>
-nmap <leader>ft TodoTelescope keywords=TODO,FIX<cr>
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+nnoremap <leader>ft TodoTelescope keywords=TODO,FIX<cr>
 
 " Git
 nmap <leader>gd diffget //3<cr>
