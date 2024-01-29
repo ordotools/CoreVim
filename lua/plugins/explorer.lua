@@ -6,9 +6,9 @@ return {
     dependencies = {
       "nvim-tree/nvim-web-devicons",
     },
-    keys = {
-      { "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "NvimTree" },
-    },
+    -- keys = {
+    --   { "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "NvimTree" },
+    -- },
     config = function()
       require("nvim-tree").setup {
         respect_buf_cwd = true,
@@ -33,10 +33,12 @@ return {
           preserve_window_proportions = false,
           number = false,
           relativenumber = false,
-          signcolumn = "yes", mappings = { custom_only = false,
-            list = {
-            },
-          },
+          signcolumn = "yes",
+          -- mappings = {
+          --   custom_only = false,
+          --   list = {
+          --   },
+          -- },
         },
         renderer = {
           add_trailing = false,

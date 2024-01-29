@@ -5,6 +5,9 @@ inoremap jj <ESC>
 " Search
 noremap <leader>s :%s//g<left><left>
 
+" Explorer
+nnoremap <leader>e <cmd>NvimTreeToggle<cr>
+
 " Telescope
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
@@ -13,11 +16,11 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 nnoremap <leader>ft TodoTelescope keywords=TODO,FIX<cr>
 
 " Git
-nmap <leader>gd diffget //3<cr>
-noremap <leader>gc G commit -m ''<left>
-nmap <leader>gp G push<cr>
-nmap <leader>gt G push --tag<cr>
-nmap <leader>gl G pull<cr>
+nmap <leader>gd :diffget //3<cr>
+nnoremap <leader>gc :G commit -m ''<left>
+nmap <leader>gp :G push<cr>
+nmap <leader>gt :G push --tag<cr>
+nmap <leader>gl :G pull<cr>
 
 " Gist
 vmap <leader>gii GistCreate<cr>
