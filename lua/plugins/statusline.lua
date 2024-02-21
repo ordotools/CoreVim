@@ -28,66 +28,23 @@ return {
           always_divide_middle = false, -- not sure what this does
         },
         sections = {
-          lualine_a = {
-            {
-              'branch',
-              icon = ''
-            }
+            lualine_a = {'mode'},
+            lualine_b = {'branch', 'diff', 'diagnostics'},
+            lualine_c = {'filename'},
+            lualine_x = {'encoding', 'fileformat', 'filetype'},
+            lualine_y = {'progress'},
+            lualine_z = {'location'}
           },
-          lualine_b = {
-            {
-              'diagnostics',
-              symbols = {
-                error = '✘ ',
-                warn = '▲ ',
-                hint = '⚑ ',
-                info = '» '
-              },
-              update_in_insert = true,
-              always_visible = false,
-            },
+          inactive_sections = {
+            lualine_a = {},
+            lualine_b = {},
+            lualine_c = {'filename'},
+            lualine_x = {'location'},
+            lualine_y = {},
+            lualine_z = {}
           },
-          lualine_c = {
-            {
-              'filename',
-              separator = {right = '',},
-              symbols = {
-                modified = '+',
-                readonly = '-',
-                unnamed = '',
-                newfile = '[New]',
-              }
-            },
-            {
-              require('auto-session.lib').current_session_name,
-              -- separator = {right = '', left = ''},
-              -- separator = {right = '', left = ''},
-              separator = {right = '', left = '>'},
-              -- color = "lualine_filename_normal"
-            },
-          },
-          lualine_x = {
-            'filetype'
-          },
-          lualine_y = {
-            {
-              'diff',
-              always_visible = true,
-            }
-          },
-          lualine_z = {'mode'}
-        },
       }
     end,
   },
 
 }
-  -- {
-  --   'freddiehaddad/feline.nvim',
-  --   dependencies = { "lewis6991/gitsigns.nvim", "folke/noice.nvim" },
-  --         -- require('feline').setup()
-  --     -- require('feline').winbar.setup()
-  --     -- require('feline').statuscolumn.setup()
-  --   end,
-  -- }
-

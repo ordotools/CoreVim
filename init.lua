@@ -76,7 +76,8 @@ require("lazy").setup("plugins", {
   change_detection = {notify = false,}
 })
 
-vim.cmd[[colorscheme tokyonight-moon]]
+vim.cmd('colorscheme rose-pine')
+-- vim.cmd[[colorscheme tokyonight-moon]]
 -- vim.cmd('colorscheme  kanagawa')
 -- vim.cmd('colorscheme gruvbox-material')
 -- vim.cmd('colorscheme catppuccin-macchiato')
