@@ -5,7 +5,7 @@ if not vim.loop.fs_stat(lazypath) then
     "clone",
     "--filter=blob:none",
     "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
+    "--branch=stable",
     lazypath,
   })
 end
@@ -13,13 +13,8 @@ vim.opt.rtp:prepend(lazypath)
 
 vim.loader.enable()
 
--- These are plugins to keep in mind:
--- https://github.com/folke/noice.nvim
-
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
-
--- vim.opt.winbar = ' %n %t %M%=%p%% ' -- in the days before barbecue
 vim.g.mapleader = " "
 vim.g.python3_host_prog = "~/.config/nvim/nvimpyenv/bin/python"
 vim.g.syntax = true

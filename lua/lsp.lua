@@ -1,16 +1,3 @@
--- local lsp = require('lsp-zero').preset({})
-
--- lsp.on_attach(function(client, bufnr)
---   lsp.default_keymaps({buffer = bufnr})
--- end)
-
--- -- (Optional) Configure lua language server for neovim
--- require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
-
--- lsp.setup()
-
-
-
 local lsp = require('lsp-zero').preset({})
 
 vim.lsp.set_log_level("debug")
@@ -59,7 +46,7 @@ cmp.setup({
     ['<C-f>'] = cmp_action.luasnip_jump_forward(),
     ['<C-b>'] = cmp_action.luasnip_jump_backward(),
     -- supertab:
-    ['<Tab>'] = cmp_action.luasnip_supertab(),         -- REGULAR: .tab_complete(),
+    ['<Tab>'] = cmp_action.luasnip_supertab(),        -- REGULAR: .tab_complete(),
     ['<S-Tab>'] = cmp_action.luasnip_shift_supertab(), -- REGULAR: .select_prev_or_fallback(),
   },
 

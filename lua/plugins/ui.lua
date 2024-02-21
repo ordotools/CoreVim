@@ -1,21 +1,11 @@
 return {
 
   -- {
-  --   'stevearc/dressing.nvim',
-  --   opts = {},
-  --   config = function ()
-  --     require('dressing').setup {
-  --       input = {
-  --         border = 'none',
-  --         win_options = {
-
-  --         }
-  --       }
-  --     }
-  --   end,
-  --   -- lazy = true
+  --   "j-hui/fidget.nvim",
+  --   opts = {
+  --     -- options
+  --   },
   -- },
-
 
   {
     "goolord/alpha-nvim",
