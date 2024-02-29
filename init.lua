@@ -90,5 +90,5 @@ require 'lsp'
 
 require 'utils'
 
-require('mini.files').setup()
+-- require('mini.files').setup()
 
