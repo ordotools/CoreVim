@@ -1,5 +1,5 @@
 return {
   {
-    "~/Users/frbarnes/github/gabc.nvim"
+    dir="~/Users/frbarnes/github/gabc.nvim"
   }
 }

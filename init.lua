@@ -31,7 +31,6 @@ vim.opt.hlsearch = false
 vim.opt.incsearch = true
 vim.opt.laststatus = 3
 vim.opt.list = true
--- vim.opt.listchars = "trail:…,nbsp:°,eol:«"
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '⎵' }
 vim.opt.nu = true
 vim.opt.relativenumber = true
@@ -50,10 +49,10 @@ vim.opt.undofile = true
 vim.opt.wildmenu = true
 vim.opt.wrap = false
 
-vim.api.nvim_create_autocmd("CursorHold,CursorHoldI", {
-  pattern = "*",
-  command = "lua vim.diagnostic.open_float(nil, {focus=false})",
-})
+--vim.api.nvim_create_autocmd("CursorHold,CursorHoldI", {
+--  pattern = "*",
+--  command = "lua vim.diagnostic.open_float(nil, {focus=false})",
+--})
 
 
 require("lazy").setup("plugins", {
@@ -89,5 +88,7 @@ require 'lsp'
 
 -- vim.api.nvim_exec_autocmds("FileType",{})
 
-require('utils')
+require 'utils'
+
+require('mini.files').setup()
 

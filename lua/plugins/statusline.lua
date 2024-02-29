@@ -8,13 +8,10 @@ return {
     },
     lazy = true,
     event = "VeryLazy",
-    -- event = "BufEnter",
     config = function()
       require('lualine').setup {
         options = {
           theme = 'auto',
-          -- section_separators = { left = '', right = '' },
-          -- component_separators = { left = '', right = '' },
           section_separators = { left = '', right = '' },
           component_separators = { left = '', right = '' },
           extensions = {
@@ -25,7 +22,7 @@ return {
           refresh = {
             statusline = 250,
           },
-          always_divide_middle = false, -- not sure what this does
+          always_divide_middle = false,
         },
         sections = {
             lualine_a = {'mode'},

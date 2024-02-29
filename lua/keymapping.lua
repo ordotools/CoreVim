@@ -6,7 +6,8 @@ inoremap jj <ESC>
 noremap <leader>s :%s//g<left><left>
 
 " Explorer
-nnoremap <leader>e <cmd>NvimTreeToggle<cr>
+"nnoremap <leader>e <cmd>NvimTreeToggle<cr>
+nnoremap <leader>e :lua MiniFiles.open()<cr>
 
 " Telescope
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
