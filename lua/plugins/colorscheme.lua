@@ -1,6 +1,19 @@
 return {
 
-  { "rose-pine/neovim", name = "rose-pine" },
+  {
+    "rose-pine/neovim",
+    name = "rose-pine",
+    config = function ()
+      require('rose-pine').setup({
+        disable_italics = true,
+        highlight_groups = {
+          -- these are my custom italicized highlight groups
+          Comment = { italic = true },
+          Keyword = { italic = true },
+        }
+      })
+    end
+  },
 
   {
     'rebelot/kanagawa.nvim',

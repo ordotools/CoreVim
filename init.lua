@@ -30,8 +30,9 @@ vim.opt.hidden = true
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 vim.opt.laststatus = 3
-vim.opt.list = false
-vim.opt.listchars = "trail:…,nbsp:°,eol:«"
+vim.opt.list = true
+-- vim.opt.listchars = "trail:…,nbsp:°,eol:«"
+vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '⎵' }
 vim.opt.nu = true
 vim.opt.relativenumber = true
 vim.opt.scrolloff = 8
