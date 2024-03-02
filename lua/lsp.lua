@@ -1,6 +1,6 @@
 local lsp = require('lsp-zero').preset({})
 
-vim.lsp.set_log_level("debug")
+vim.lsp.set_log_level("off") -- prevents infinite log growth
 
 lsp.on_attach(function(client, bufnr)
   lsp.default_keymaps({buffer = bufnr})
