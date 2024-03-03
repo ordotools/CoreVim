@@ -25,32 +25,5 @@ return {
     lazy=true,
   },
 
-  {
-    'akinsho/toggleterm.nvim',
-    config = function()
-      require("toggleterm").setup{
-        open_mapping = [[||]],
-        hide_numbers = true,
-        direction = "float",
-      }
-    end,
-    lazy = true,
-    event = "VeryLazy",
-  },
-
-  -- {
-  --   'windwp/nvim-ts-autotag',
-  --   event = 'BufEnter',
-  -- },
-
-  {
-    'tpope/vim-sleuth',
-    event = 'BufEnter',
-  },
-
-  {
-    'alvan/vim-closetag',
-    event = 'BufEnter',
-  },
 
 }
