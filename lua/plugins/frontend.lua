@@ -109,8 +109,8 @@ return {
     event = 'BufEnter',
   },
 
-  {
-    'alvan/vim-closetag',
-    event = 'BufEnter',
-  },
+  -- {
+  --   'alvan/vim-closetag',
+  --   event = 'BufEnter',
+  -- },
 }
