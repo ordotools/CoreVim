@@ -4,7 +4,7 @@ vim.lsp.set_log_level("off") -- prevents infinite log growth
 lsp_zero.on_attach(function(client, bufnr)
   -- see :help lsp-zero-keybindings
   lsp_zero.default_keymaps({ buffer = bufnr })
-  lsp_zero.buffer_autoformat()
+  -- lsp_zero.buffer_autoformat()
 end)
 
 lsp_zero.set_sign_icons({
