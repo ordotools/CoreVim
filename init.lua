@@ -49,12 +49,6 @@ vim.opt.undofile = true
 vim.opt.wildmenu = true
 vim.opt.wrap = false
 
---vim.api.nvim_create_autocmd("CursorHold,CursorHoldI", {
---  pattern = "*",
---  command = "lua vim.diagnostic.open_float(nil, {focus=false})",
---})
-
-
 require("lazy").setup("plugins", {
   ui = {
     border = "none", -- rounded
@@ -77,18 +71,16 @@ require("lazy").setup("plugins", {
 })
 
 vim.cmd('colorscheme rose-pine')
--- vim.cmd[[colorscheme tokyonight-moon]]
--- vim.cmd('colorscheme  kanagawa')
--- vim.cmd('colorscheme gruvbox-material')
--- vim.cmd('colorscheme catppuccin-macchiato')
--- vim.cmd('colorscheme catppuccin-mocha')
 
 require 'keymapping'
 require 'lsp'
-
--- vim.api.nvim_exec_autocmds("FileType",{})
-
 require 'utils'
 
--- require('mini.files').setup()
-
+vim.api.nvim_create_autocmd("User", {
+  pattern = "LazyVimStarted",
+  callback = function()
+    local stats = require("lazy").stats()
+    local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
+    print("⚡ Neovim loaded " .. stats.count .. " plugins in " .. ms .. "ms")
+  end,
+})

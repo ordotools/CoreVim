@@ -1,63 +1,83 @@
-local lsp = require('lsp-zero').preset({})
-
+local lsp_zero = require('lsp-zero')
 vim.lsp.set_log_level("off") -- prevents infinite log growth
 
-lsp.on_attach(function(client, bufnr)
-  lsp.default_keymaps({buffer = bufnr})
+lsp_zero.on_attach(function(client, bufnr)
+  -- see :help lsp-zero-keybindings
+  lsp_zero.default_keymaps({ buffer = bufnr })
+  lsp_zero.buffer_autoformat()
 end)
 
-lsp.set_sign_icons({
+lsp_zero.set_sign_icons({
   error = '✘',
   warn = '▲',
   hint = '⚑',
   info = '»'
 })
 
-require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
+require('lspconfig').lua_ls.setup(lsp_zero.nvim_lua_ls())
 
--- require('lspconfig').ruff_ls.setup {}
+require('mason').setup({})
+require('mason-lspconfig').setup({
+  ensure_installed = {},
+  handlers = {
+    lsp_zero.default_setup,
+    -- sample custom hanlder for installed servers:
+    --
+    -- tsserver = function()
+    --   require('lspconfig').tsserver.setup({
+    --     single_file_support = false,
+    --     on_attach = function(client, bufnr)
+    --       print('hello tsserver')
+    --     end
+    --   })
+    --
+  },
+})
 
-lsp.setup()
-
--- local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 local cmp = require('cmp')
 local cmp_action = require('lsp-zero').cmp_action()
 
--- cmp.event:on(
---   'confirm_done',
---   cmp_autopairs.on_confirm_done()
--- )
+require('luasnip.loaders.from_vscode').lazy_load()
 
 cmp.setup({
-
   snippet = { -- required
     expand = function(args)
       require('luasnip').lsp_expand(args.body)
     end,
   },
-
+  sources = {
+    { name = 'nvim_lsp' },
+    { name = 'luasnip' },
+    { name = 'buffer' },
+    { name = 'nvim_lua' },
+  },
+  formatting = {
+    fields = { 'menu', 'abbr', 'kind' },
+    format = function(entry, item)
+      local menu_icon = {
+        nvim_lsp = 'λ',
+        luasnip = '⋗',
+        buffer = 'Ω',
+        path = '🖫',
+        nvim_lua = 'Π',
+      }
+      item.menu = menu_icon[entry.source.name]
+      return item
+    end,
+  },
+  window = {
+    completion = cmp.config.window.bordered(),
+    documentation = cmp.config.window.bordered(),
+  },
   preselect = 'item',
   completion = {
     completeopt = 'menu,menuone,noinsert'
   },
-
-  mapping = {
-    ['<CR>'] = cmp.mapping.confirm({select = true}),
-    ['<C-f>'] = cmp_action.luasnip_jump_forward(),
-    ['<C-b>'] = cmp_action.luasnip_jump_backward(),
-    -- supertab:
-    ['<Tab>'] = cmp_action.luasnip_supertab(),        -- REGULAR: .tab_complete(),
-    ['<S-Tab>'] = cmp_action.luasnip_shift_supertab(), -- REGULAR: .select_prev_or_fallback(),
-  },
-
-  sources = {
-    {name = 'nvim_lsp'},
-    {name = 'luasnip', keyword_length = 2},
-    {name = 'path'},
-    {name = 'nvim_lua'},
-    {name = 'buffer', keyword_length = 3},
-  },
-
-  require("luasnip.loaders.from_vscode").lazy_load()
-
+  mapping = cmp.mapping.preset.insert({
+    ['<CR>'] = cmp.mapping.confirm({ select = false }),
+    ['<Tab>'] = cmp_action.luasnip_supertab(),
+    ['<S-Tab>'] = cmp_action.luasnip_shift_supertab(),
+    ['<C-u>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-d>'] = cmp.mapping.scroll_docs(4),
+  }),
 })

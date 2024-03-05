@@ -72,7 +72,8 @@ return {
   -- telescope
   {
     'nvim-telescope/telescope.nvim',
-    version = false,
+    branch = '0.1.5',
+    -- version = false,
     lazy = true,
     event = "VeryLazy",
     dependencies = { 'nvim-lua/plenary.nvim' },
