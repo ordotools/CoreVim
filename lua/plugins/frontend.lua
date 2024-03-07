@@ -35,7 +35,7 @@ return {
         auto_install = true,
         highlight = {
           enable = true,
-          -- disable = "tex", -- we might have to disable this for vimtex
+          disable = "tex",
         },
         indent = {
           enable = true,

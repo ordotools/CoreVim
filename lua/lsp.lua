@@ -79,6 +79,7 @@ cmp.setup({
   },
 
   preselect = 'item',
+
   completion = {
     completeopt = 'menu,menuone,noinsert'
   },
@@ -91,9 +92,9 @@ cmp.setup({
     ['<C-d>'] = cmp.mapping.scroll_docs(4),
   }),
 
-    cmp.event:on(
-        'confirm_done',
-        cmp_autopairs.on_confirm_done()
-    )
+  cmp.event:on(
+    'confirm_done',
+    cmp_autopairs.on_confirm_done()
+  )
 
 })

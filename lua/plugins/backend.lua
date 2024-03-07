@@ -9,8 +9,12 @@ return {
             require("mini.files").setup({})
             -- require("mini.indentscope").setup({})
             require("mini.pairs").setup({})
-            require("mini.surround").setup({})
+            -- require("mini.surround").setup({}) -- just not the same as the tpope way...
         end,
+    },
+
+    {
+        'tpope/vim-surround',
     },
 
     -- git
