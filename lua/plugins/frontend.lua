@@ -32,10 +32,11 @@ return {
     config = function ()
       require('nvim-treesitter.configs').setup {
         ensure_installed = {"lua", "python", "html"},
+        ignore_installed = {"latex"},
         auto_install = true,
         highlight = {
           enable = true,
-          disable = "tex",
+          disable = {"latex"},
         },
         indent = {
           enable = true,
@@ -61,7 +62,6 @@ return {
           component_separators = { left = '', right = '' },
           extensions = {
             'fugitive',
-            'nvim-tree',
             'toggleterm'
           },
           refresh = {
