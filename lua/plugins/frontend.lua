@@ -36,7 +36,9 @@ return {
         auto_install = true,
         highlight = {
           enable = true,
-          disable = {"latex"},
+          disable = {
+            -- "latex"
+          },
         },
         indent = {
           enable = true,
@@ -107,6 +109,12 @@ return {
   {
     'tpope/vim-sleuth',
     event = 'BufEnter',
+  },
+
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    opts = { },
   },
 
   -- {

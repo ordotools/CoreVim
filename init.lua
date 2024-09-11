@@ -13,8 +13,8 @@ vim.opt.rtp:prepend(lazypath)
 
 vim.loader.enable()
 
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
+-- vim.g.loaded_netrw = 1
+-- vim.g.loaded_netrwPlugin = 1
 vim.g.mapleader = " "
 vim.g.python3_host_prog = "~/.config/nvim/nvimpyenv/bin/python"
 vim.g.syntax = true
@@ -24,7 +24,7 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.cursorline = true
 vim.opt.cursorlineopt = "number"
 vim.opt.errorbells = false
-vim.opt.expandtab = true
+vim.opt.expandtab = false
 vim.opt.exrc = true
 vim.opt.hidden = true
 vim.opt.hlsearch = false
@@ -39,7 +39,7 @@ vim.opt.shiftwidth = 4
 vim.opt.showmode = false
 vim.opt.signcolumn = "yes"
 vim.opt.smartindent = true
-vim.opt.softtabstop = 4
+vim.opt.tabstop = 4
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.swapfile = false

@@ -7,14 +7,15 @@ noremap <leader>s :%s//g<left><left>
 
 " Explorer
 "nnoremap <leader>e <cmd>NvimTreeToggle<cr>
-nnoremap <leader>e :lua MiniFiles.open()<cr>
+"nnoremap <leader>e :lua MiniFiles.open()<cr>
+nnoremap <leader>e :Explore<cr>
 
 " Telescope
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
-nnoremap <leader>ft TodoTelescope keywords=TODO,FIX<cr>
+" nnoremap <leader>ff <cmd>Telescope find_files<cr>
+" nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+" nnoremap <leader>fb <cmd>Telescope buffers<cr>
+" nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+" nnoremap <leader>ft <cmd>TodoTelescope<cr>
 
 " Git
 nmap <leader>gd :diffget //3<cr>
@@ -38,3 +39,11 @@ vmap <leader>xi c\textit{<C-r>"}<ESC>
 nmap <leader>xi c\textit{<C-r>"}<left>
 
 ]])
+
+local builtin = require('telescope.builtin')
+
+vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
+vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+
