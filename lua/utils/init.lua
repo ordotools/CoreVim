@@ -3,7 +3,8 @@ local M = {}
 function M.reload(quiet)
   -- Reload options, mappings and plugins (this is managed automatically by lazy).
   -- Never reload base.3-autocmds to avoid issues.
-  local core_modules = { "lsp", "keymapping" }
+  -- local core_modules = { "lsp", "keymapping" }
+  local core_modules = { "keymapping" }
   local modules = vim.tbl_filter(
     function(module) return module:find "^user%." end,
     vim.tbl_keys(package.loaded)

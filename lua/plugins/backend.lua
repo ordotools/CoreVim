@@ -46,6 +46,7 @@ return {
     },
 
     -- telescope
+    -- TODO: install ripgrep via `brew install ripgrep` if grep is not working
     {
         'nvim-telescope/telescope.nvim',
         branch = '0.1.x',
