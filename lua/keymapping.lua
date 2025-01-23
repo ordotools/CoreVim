@@ -15,7 +15,7 @@ nnoremap <leader>e :Explore<cr>
 " nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 " nnoremap <leader>fb <cmd>Telescope buffers<cr>
 " nnoremap <leader>fh <cmd>Telescope help_tags<cr>
-" nnoremap <leader>ft <cmd>TodoTelescope<cr>
+nnoremap <leader>ft <cmd>TodoTelescope<cr>
 
 " Git
 nmap <leader>gd :diffget //3<cr>
