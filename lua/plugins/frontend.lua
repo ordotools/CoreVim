@@ -1,3 +1,5 @@
+local vague = require "lualine_vague"
+
 return {
 
   -- CONSIDERING:
@@ -57,6 +59,7 @@ return {
     end,
   },
 
+
   {
     'nvim-lualine/lualine.nvim',
     requires = {
@@ -68,7 +71,7 @@ return {
     config = function()
       require('lualine').setup {
         options = {
-          theme = 'auto',
+          theme = vague,
           section_separators = { left = '', right = '' },
           component_separators = { left = '', right = '' },
           extensions = {
