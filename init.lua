@@ -13,6 +13,9 @@ vim.opt.rtp:prepend(lazypath)
 
 vim.loader.enable()
 
+local config_path = vim.fn.stdpath('config')
+package.path = package.path .. ';' .. config_path .. '/?.lua'
+
 -- vim.g.loaded_netrw = 1
 -- vim.g.loaded_netrwPlugin = 1
 vim.g.mapleader = " "

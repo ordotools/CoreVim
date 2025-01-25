@@ -1,4 +1,4 @@
-local vague = require "lualine_vague"
+local vague = require("lua.utils.lualine_vague")
 
 return {
 
