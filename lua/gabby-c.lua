@@ -108,7 +108,7 @@ function M.syllabify_latin_word(word, is_last_word)
   if #syllables == 1 then
     output = base .. "()"
   else
-    output = table.concat(syllables, "()") .. "()"
+    output = table.concat(syllables, "()")
   end
 
   -- Handle punctuation additions
@@ -118,6 +118,8 @@ function M.syllabify_latin_word(word, is_last_word)
     output = output .. " :(:)"
   elseif punct == "," then
     output = output .. ",() (;)"
+  else
+    output = output .. "()"
   end
 
   return output
@@ -147,38 +149,74 @@ end
 
 vim.api.nvim_set_keymap('v', 'gs', [[:lua require'gabby-c'.syllabify_visual()<CR>]], { noremap = true, silent = true })
 
+----------------------------------
 function M.setup()
   vim.api.nvim_create_autocmd("FileType", {
     pattern = "gabc",
     callback = function()
-      vim.keymap.set("i", "<space>", function()
+      local function jump_parens(direction)
         local row, col = unpack(vim.api.nvim_win_get_cursor(0))
-        local line = vim.api.nvim_get_current_line()
+        local line_count = vim.api.nvim_buf_line_count(0)
 
-        local before = line:sub(1, col)
-        local after = line:sub(col + 1)
+        local start_line = row
+        local line_step = direction == "forward" and 1 or -1
 
-        -- Check if cursor is inside a pair of parentheses
-        local open_pos = before:find("[(][^)]*$")
-        local close_pos = after:find("^[^)]*[)]")
+        for i = 0, line_count do
+          local lnum = start_line + i * line_step
+          if lnum < 1 or lnum > line_count then break end
 
-        local in_parens = open_pos and close_pos
+          local text = vim.api.nvim_buf_get_lines(0, lnum - 1, lnum, false)[1]
+          local search_start = (lnum == row and direction == "forward") and col + 2 or 1
+          local search_end = (lnum == row and direction == "backward") and col or #text
 
-        if in_parens then
-          -- Search for next set of parentheses after the current cursor
-          local next_start, next_end = after:find("%b()")
-          if next_start then
-            -- Move cursor inside the next ()
-            vim.api.nvim_win_set_cursor(0, { row, col + next_start })
-            return
+          if direction == "forward" then
+            local s, e = text:find("%b()", search_start)
+            if s and e then
+              vim.api.nvim_win_set_cursor(0, { lnum, s })
+              return true
+            end
           else
-            vim.api.nvim_echo({{"[gabby-c] No further parentheses found.", "WarningMsg"}}, false, {})
-            return
+            -- backward: find all matches and go to the last one before cursor
+            local last_s
+            local i = 1
+            while true do
+              local s, e = text:find("%b()", i)
+              if not s or s >= search_end then break end
+              last_s = s
+              i = e + 1
+            end
+            if last_s then
+              vim.api.nvim_win_set_cursor(0, { lnum, last_s })
+              return true
+            end
           end
         end
 
-        -- Not in parentheses: insert a space
-        vim.api.nvim_feedkeys(" ", "n", false)
+        vim.api.nvim_echo({ { "[gabby-c] No matching parentheses found.", "WarningMsg" } }, false, {})
+        return false
+      end
+
+      -- <Space>: jump forward if inside parens
+      vim.keymap.set("i", "<Space>", function()
+        local row, col = unpack(vim.api.nvim_win_get_cursor(0))
+        local line = vim.api.nvim_get_current_line()
+        local before = line:sub(1, col)
+        local after = line:sub(col + 1)
+
+        local open = before:match("[(][^)]*$")
+        local close = after:match("^[^)]*[)]")
+
+        if open and close then
+          if jump_parens("forward") then return end
+        end
+
+        -- default: insert space
+        vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(" ", true, false, true), "i", false)
+      end, { buffer = true })
+
+      -- <M-Space>: jump backward
+      vim.keymap.set("i", "<M-Space>", function()
+        jump_parens("backward")
       end, { buffer = true })
     end,
   })
