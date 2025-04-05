@@ -75,7 +75,7 @@ require("lazy").setup("plugins", {
 
 
 -- require("colors.kanabox").setup()
-require("gabc_syllabifier")
+require("gabby-c").setup()
 vim.cmd('colorscheme vague')
 
 -- require 'lsp'

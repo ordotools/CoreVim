@@ -1,3 +1,11 @@
+
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = "*.gabc",
+  callback = function()
+    vim.bo.filetype = "gabc"
+  end,
+})
+
 local M = {}
 
 -- UTF-8 safe character iterator
@@ -137,7 +145,44 @@ function M.syllabify_visual()
   vim.api.nvim_buf_set_lines(0, start_pos[2] - 1, end_pos[2], false, new_lines)
 end
 
-vim.api.nvim_set_keymap('v', 'gs', [[:lua require'gabc_syllabifier'.syllabify_visual()<CR>]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', 'gs', [[:lua require'gabby-c'.syllabify_visual()<CR>]], { noremap = true, silent = true })
+
+function M.setup()
+  vim.api.nvim_create_autocmd("FileType", {
+    pattern = "gabc",
+    callback = function()
+      vim.keymap.set("i", "<space>", function()
+        local row, col = unpack(vim.api.nvim_win_get_cursor(0))
+        local line = vim.api.nvim_get_current_line()
+
+        local before = line:sub(1, col)
+        local after = line:sub(col + 1)
+
+        -- Check if cursor is inside a pair of parentheses
+        local open_pos = before:find("[(][^)]*$")
+        local close_pos = after:find("^[^)]*[)]")
+
+        local in_parens = open_pos and close_pos
+
+        if in_parens then
+          -- Search for next set of parentheses after the current cursor
+          local next_start, next_end = after:find("%b()")
+          if next_start then
+            -- Move cursor inside the next ()
+            vim.api.nvim_win_set_cursor(0, { row, col + next_start })
+            return
+          else
+            vim.api.nvim_echo({{"[gabby-c] No further parentheses found.", "WarningMsg"}}, false, {})
+            return
+          end
+        end
+
+        -- Not in parentheses: insert a space
+        vim.api.nvim_feedkeys(" ", "n", false)
+      end, { buffer = true })
+    end,
+  })
+end
 
 return M
 
