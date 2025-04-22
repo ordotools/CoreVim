@@ -8,7 +8,7 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 local M = {}
 
 ----------------------------------------------------------
--------  Add () behind heach vowel in visual mode  -------
+-------  Add () behind each vowel in visual mode  --------
 ----------------------------------------------------------
 
 local function utf8_chars(str)
